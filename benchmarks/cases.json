@@ -1,0 +1,2818 @@
+{
+"find": [
+{
+"code_postal": "01630",
+"commune": "Saint-Jean-de-Gonville",
+"adresse": "Route de Choudans"
+},
+{
+"code_postal": "01440",
+"commune": "Viriat",
+"adresse": "192 Route de Bourg"
+},
+{
+"code_postal": "01240",
+"commune": "Lent",
+"adresse": "10 Rue du Developpement"
+},
+{
+"code_postal": null,
+"commune": "Mézériat",
+"adresse": "1387a Route des 3 Rivieres"
+},
+{
+"code_postal": "01120",
+"commune": "Montluel",
+"adresse": "Cours Condé"
+},
+{
+"code_postal": "01190",
+"commune": "Saint-Bénigne",
+"adresse": "Route des Martollets"
+},
+{
+"code_postal": null,
+"commune": "Sainte-Julie",
+"adresse": "2267 Route de la Plaine"
+},
+{
+"code_postal": "01240",
+"commune": "Sait-Paul-de-Varax",
+"adresse": "19 Impasse des Naturelles"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1031 Rue de la Mairie"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "65 Chemin du Refuge"
+},
+{
+"code_postal": "01480",
+"commune": "Villeneuve",
+"adresse": "1 Allée des atalpas"
+},
+{
+"code_postal": "01700",
+"commune": "Saint-Maurice-de-Beynost",
+"adresse": "10 Chemin des Botes"
+},
+{
+"code_postal": "01460",
+"commune": "Montréal-la-Cluse",
+"adresse": "22 Aveue de Bresse"
+},
+{
+"code_postal": "01250",
+"commune": "Montagnat",
+"adresse": "2694 Route du Revermont"
+},
+{
+"code_postal": "01440",
+"commune": "Viriat",
+"adresse": "1317 Rue de Majornas"
+},
+{
+"code_postal": "01100",
+"commune": "Oyonnax",
+"adresse": "12 Rue Alphonse Bauin"
+},
+{
+"code_postal": null,
+"commune": "Briord",
+"adresse": "4 Rue d’Aillon"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "18 Route de Perouges"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "4 Chemin de Saint Jean"
+},
+{
+"code_postal": "01130",
+"commune": "Le Poizat-Lalleyriat",
+"adresse": "2491 Route de Geneve"
+},
+{
+"code_postal": "01500",
+"commune": null,
+"adresse": "7 Place du Champ de Mars"
+},
+{
+"code_postal": "01160",
+"commune": null,
+"adresse": "162 Route de la Dombes"
+},
+{
+"code_postal": "01300",
+"commune": "Brégnier-Cordon",
+"adresse": "Rue du Vieux Port"
+},
+{
+"code_postal": null,
+"commune": "Douvres",
+"adresse": "294 Route d'Ambérieu"
+},
+{
+"code_postal": "01130",
+"commune": "Le Poizat-Lalleyriat",
+"adresse": "233 Le Souey"
+},
+{
+"code_postal": "01750",
+"commune": "Replonges",
+"adresse": "Rue Janin"
+},
+{
+"code_postal": "01460",
+"commune": null,
+"adresse": "5 Lotissement Le Domaine de la Crozette"
+},
+{
+"code_postal": "01170",
+"commune": null,
+"adresse": "661 Rue Francois Estier"
+},
+{
+"code_postal": "01150",
+"commune": null,
+"adresse": "167 Impasse de la Taurelle"
+},
+{
+"code_postal": "01700",
+"commune": "Saint-Maurice-de-Beynost",
+"adresse": "57 Roue de Genève"
+},
+{
+"code_postal": "01170",
+"commune": "Chevry",
+"adresse": "Rue Equinox"
+},
+{
+"code_postal": "01160",
+"commune": "Saint-Martin-du-Mont",
+"adresse": "Route du Pied de la Cote"
+},
+{
+"code_postal": "01340",
+"commune": "Bresse Vallons",
+"adresse": "736 Route des Perthuisettes"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "7 Impasse Lacroix"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "265 Chemin de la Verpillère"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "221bis Rue de la Ruaz"
+},
+{
+"code_postal": "01360",
+"commune": "Béligneux",
+"adresse": "24 Lotissement le Bois Carre"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "669 Chemin du Foulon"
+},
+{
+"code_postal": "01390",
+"commune": null,
+"adresse": "145 Rue Georges Charpak"
+},
+{
+"code_postal": "01990",
+"commune": "Saint-Trivier-sur-Moignans",
+"adresse": "63 impass du champ Cropet"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "109 Rue du Tilleul"
+},
+{
+"code_postal": "01170",
+"commune": "Crozet",
+"adresse": "Route de Villeneuve"
+},
+{
+"code_postal": null,
+"commune": "Parcieux",
+"adresse": "767 Chemin du Dessous"
+},
+{
+"code_postal": "01630",
+"commune": null,
+"adresse": "70 Chemin du Foyer"
+},
+{
+"code_postal": "01600",
+"commune": "Trévoux",
+"adresse": "410 Rue des Magnolias Grandiflora"
+},
+{
+"code_postal": null,
+"commune": "Montmerle-sur-Saône",
+"adresse": "703 Rue de Chatillon"
+},
+{
+"code_postal": "01250",
+"commune": "Jasseron",
+"adresse": "17 Passge de la Gare"
+},
+{
+"code_postal": "01990",
+"commune": null,
+"adresse": "377 route de Villars"
+},
+{
+"code_postal": "01250",
+"commune": "Montagnat",
+"adresse": "152 Lotissement les Boutons d'r"
+},
+{
+"code_postal": "01390",
+"commune": null,
+"adresse": "50 Lotissement les Coquelicots"
+},
+{
+"code_postal": "01170",
+"commune": "Chevry",
+"adresse": "Route des 2 Journans"
+},
+{
+"code_postal": null,
+"commune": "Le Poizat-Lalleyriat",
+"adresse": "72 Rue sur la Vignette"
+},
+{
+"code_postal": null,
+"commune": "Béréziat",
+"adresse": "1076 Route de la Chassagnette"
+},
+{
+"code_postal": null,
+"commune": "Courmangoux",
+"adresse": "205 Rue du 16 Avril 1944"
+},
+{
+"code_postal": "01280",
+"commune": "Prévessin-Moës",
+"adresse": "194 Chemin de la Roselière"
+},
+{
+"code_postal": "01310",
+"commune": null,
+"adresse": "143 Chemin de l’Effondras"
+},
+{
+"code_postal": null,
+"commune": "Culoz-Béon",
+"adresse": "116 rue des Ecoles"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "9 Rue des Abattoirs"
+},
+{
+"code_postal": "01300",
+"commune": "Magnieu",
+"adresse": "Route de Musin"
+},
+{
+"code_postal": null,
+"commune": "Savigneux",
+"adresse": "1606 Route de Rancé"
+},
+{
+"code_postal": "01190",
+"commune": null,
+"adresse": "272 Route de Montrevel"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "170 Chemin des Covettes"
+},
+{
+"code_postal": null,
+"commune": "Prévessin-Moëns",
+"adresse": "168 Rue du Chat Perché"
+},
+{
+"code_postal": "01300",
+"commune": null,
+"adresse": "10 Rue Georges Girerd"
+},
+{
+"code_postal": "01200",
+"commune": "Chézery-Forens",
+"adresse": "489 impasse du ceux"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "156 Rue des Alluets"
+},
+{
+"code_postal": "01460",
+"commune": null,
+"adresse": "1 Impasse Comblon"
+},
+{
+"code_postal": "01340",
+"commune": null,
+"adresse": "231 Route des Orcieres"
+},
+{
+"code_postal": "01120",
+"commune": "Thil",
+"adresse": "334 Rue du Canal"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "270c Chemin de Betheneins"
+},
+{
+"code_postal": "01430",
+"commune": "Vieu-d'Izenave",
+"adresse": "108 Rue des Ecoes"
+},
+{
+"code_postal": "01170",
+"commune": "Gex",
+"adresse": "8 Rue des Abattoirs"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "12 Rue de Champ Novaz"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "191 Rue du Bugey"
+},
+{
+"code_postal": null,
+"commune": "Serrières-sur-Ain",
+"adresse": "225 Chemin des Entreponts"
+},
+{
+"code_postal": "01160",
+"commune": null,
+"adresse": "120 Route d’Echelette"
+},
+{
+"code_postal": "01170",
+"commune": "Gex",
+"adresse": "impasse des fayards"
+},
+{
+"code_postal": "01400",
+"commune": "Neuville-les-Dames",
+"adresse": "148 Alleede Machard"
+},
+{
+"code_postal": "01500",
+"commune": null,
+"adresse": "4 Route de Ternant"
+},
+{
+"code_postal": "01240",
+"commune": "La Chapelle-du-Châtelard",
+"adresse": "3 Rue du Pré"
+},
+{
+"code_postal": "01360",
+"commune": "Béligneux",
+"adresse": "Rue du Professeur Robert Hugonot"
+},
+{
+"code_postal": "01240",
+"commune": "Saint-Anré-le-Bouchoux",
+"adresse": "200 Impasse des Frenes"
+},
+{
+"code_postal": "01570",
+"commune": "Maniat",
+"adresse": "248 Rue du Platet"
+},
+{
+"code_postal": "01190",
+"commune": "Saint-Béngne",
+"adresse": "12 Impasse des Bonnots"
+},
+{
+"code_postal": "01800",
+"commune": "Meximieux",
+"adresse": "3 Rue de Franche Comte"
+},
+{
+"code_postal": "01851",
+"commune": "Marboz",
+"adresse": "1190 Roue de la Croze"
+},
+{
+"code_postal": "01000",
+"commune": "Bourg-en-Bresse",
+"adresse": "110 mail de la coférence de rio"
+},
+{
+"code_postal": "01110",
+"commune": "Champdor-Corcelles",
+"adresse": "Rue de Lachat"
+},
+{
+"code_postal": "01170",
+"commune": "Crozet",
+"adresse": "35 Impassedes Asters"
+},
+{
+"code_postal": "01460",
+"commune": "Montréal-la-Cluse",
+"adresse": "74 Avenue des NARIX"
+},
+{
+"code_postal": "01600",
+"commune": null,
+"adresse": "25bis Chemin de la Bruyere"
+},
+{
+"code_postal": "01100",
+"commune": null,
+"adresse": "32 Rue de Forchet"
+},
+{
+"code_postal": "01800",
+"commune": "Saint-Maurice-de-Gurdans",
+"adresse": "1a Impasse de Fort Janot"
+},
+{
+"code_postal": "01600",
+"commune": null,
+"adresse": "235 Rue des Alouettes"
+},
+{
+"code_postal": "01800",
+"commune": null,
+"adresse": "622 Chemin de la Bergerie"
+},
+{
+"code_postal": "01600",
+"commune": "Reyrieux",
+"adresse": "95 Rue des Oiseaux"
+},
+{
+"code_postal": "01160",
+"commune": "Priay",
+"adresse": "352 Montee de Bellgarde"
+},
+{
+"code_postal": "01300",
+"commune": null,
+"adresse": "5 Rue de la Poste"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "2 Chemin sous la Combe"
+},
+{
+"code_postal": null,
+"commune": "Chaveyriat",
+"adresse": "47 Route de Colignat"
+},
+{
+"code_postal": "01150",
+"commune": "Chazey-sur-Ain",
+"adresse": "Rue Principale"
+},
+{
+"code_postal": "01200",
+"commune": "Valserhône",
+"adresse": "644 Route de Vouvray"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "8 Rue de Thoire"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "34 Rue du Bosquet"
+},
+{
+"code_postal": null,
+"commune": "Sainte-Euphémie",
+"adresse": "380 Route de Miserieux"
+},
+{
+"code_postal": "01300",
+"commune": null,
+"adresse": "725 Route de Saint Champ"
+},
+{
+"code_postal": "01500",
+"commune": null,
+"adresse": "10 Chemin de la Grosse Pierre"
+},
+{
+"code_postal": "01630",
+"commune": "Saint-Jean-de-Gonville",
+"adresse": "78 Rue Saint Jean"
+},
+{
+"code_postal": "01480",
+"commune": "Jassas-Riottier",
+"adresse": "207 Rue Pasteur"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "7bis rue philibert le beau"
+},
+{
+"code_postal": "01750",
+"commune": null,
+"adresse": "116 Rue de Pain Blanc"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "7 Impasse du Tronchay"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "15 Avenue Paul Painlevé"
+},
+{
+"code_postal": "01851",
+"commune": null,
+"adresse": "165a Chemin des Jarois"
+},
+{
+"code_postal": null,
+"commune": "Pizay",
+"adresse": "18 Impasse des Grandes Rayes"
+},
+{
+"code_postal": "01640",
+"commune": "Saint-Jean-le-Vieux",
+"adresse": "Grande Rue"
+},
+{
+"code_postal": "01140",
+"commune": "Illiat",
+"adresse": "Route des maisons brûlées"
+},
+{
+"code_postal": null,
+"commune": "Oyonnax",
+"adresse": "13 Rue Andre Besillon"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "20 Rue des Oiseaux"
+},
+{
+"code_postal": null,
+"commune": "Coligny",
+"adresse": "110 Chemin des Pres de Charmoux"
+},
+{
+"code_postal": "01250",
+"commune": "Pouillat",
+"adresse": "504 Route du Champ Feuri"
+},
+{
+"code_postal": "01400",
+"commune": "L'Abergement-Clémenciat",
+"adresse": "128 Rue ds 5 Chemins"
+},
+{
+"code_postal": "01340",
+"commune": null,
+"adresse": "85 Rue Fontanelle"
+},
+{
+"code_postal": "01480",
+"commune": null,
+"adresse": "1 Allée des Lauriers"
+},
+{
+"code_postal": "01800",
+"commune": "Villieu-Loyes-Mollon",
+"adresse": "433 Grande Rue"
+},
+{
+"code_postal": "01630",
+"commune": null,
+"adresse": "251 Chemin du Vieux Nant"
+},
+{
+"code_postal": "01320",
+"commune": "Crans",
+"adresse": "94 Chemin de Sainte Catherine"
+},
+{
+"code_postal": "01100",
+"commune": "Groissiat",
+"adresse": "Rue du Praillon"
+},
+{
+"code_postal": "01700",
+"commune": "Miribel",
+"adresse": "Montée Neuve"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "55 Rue des Aulnes"
+},
+{
+"code_postal": "01700",
+"commune": null,
+"adresse": "17 Impasse de la Treille"
+},
+{
+"code_postal": "01990",
+"commune": "Saint-Trivier-sur-Moignans",
+"adresse": "impasse du champ du Bourg"
+},
+{
+"code_postal": "01240",
+"commune": "Saint-Paul-de-Varax",
+"adresse": "24 Rue Simoe Veil"
+},
+{
+"code_postal": "01380",
+"commune": "Bâgé-Dommartin",
+"adresse": "345 Route du Crridor"
+},
+{
+"code_postal": null,
+"commune": "Sermoyer",
+"adresse": "253 Chemin des Charmes"
+},
+{
+"code_postal": "01600",
+"commune": "Saint-Didier-de-Formans",
+"adresse": "1599 Chemin de Roncheveux"
+},
+{
+"code_postal": "01340",
+"commune": null,
+"adresse": "774 Chemin des Bruelles"
+},
+{
+"code_postal": null,
+"commune": "Valserhône",
+"adresse": "795 Rue Antoine Favre"
+},
+{
+"code_postal": null,
+"commune": "Prévessin-Moëns",
+"adresse": "151 Rue de Chantepie"
+},
+{
+"code_postal": "01570",
+"commune": "Manziat",
+"adresse": "Route d’Asnières"
+},
+{
+"code_postal": "01190",
+"commune": "Boz",
+"adresse": "312 Route des Loyons"
+},
+{
+"code_postal": "01160",
+"commune": "Neuville-sur-Ain",
+"adresse": "1 Rue de la Reverdère"
+},
+{
+"code_postal": "01100",
+"commune": "Oyonnax",
+"adresse": "Impasse Paul Golliat"
+},
+{
+"code_postal": "01130",
+"commune": null,
+"adresse": "133 Rue du Grand Golet"
+},
+{
+"code_postal": "01420",
+"commune": "Chanay",
+"adresse": "6 Chemin du Balmy"
+},
+{
+"code_postal": "01270",
+"commune": null,
+"adresse": "35b Che des Marcs"
+},
+{
+"code_postal": "01000",
+"commune": "Bourg-en-Bresse",
+"adresse": "16 re lazare carnot"
+},
+{
+"code_postal": "01700",
+"commune": "Beynst",
+"adresse": "73 Chemin Vert"
+},
+{
+"code_postal": "01140",
+"commune": "Saint-Éienne-sur-Chalaronne",
+"adresse": "43 Impasse Pre du Bourg"
+},
+{
+"code_postal": "01800",
+"commune": null,
+"adresse": "3 Rue Constantin"
+},
+{
+"code_postal": "01120",
+"commune": "Monluel",
+"adresse": "71 Grande Rue"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1051 Route de Grand Corent"
+},
+{
+"code_postal": "01160",
+"commune": null,
+"adresse": "52 Rue Saint Vincent"
+},
+{
+"code_postal": "01440",
+"commune": "Virit",
+"adresse": "46a Rue Prosper Convert"
+},
+{
+"code_postal": "01470",
+"commune": "Motagnieu",
+"adresse": "555 Route de Serrieres"
+},
+{
+"code_postal": "01800",
+"commune": null,
+"adresse": "160 Rue de la Mairie"
+},
+{
+"code_postal": "01500",
+"commune": "Ambérieu-en-Bugey",
+"adresse": "11 Rue des Mouettes"
+},
+{
+"code_postal": "01630",
+"commune": "Sergy",
+"adresse": "Route de Thoiry"
+},
+{
+"code_postal": null,
+"commune": "Thoiry",
+"adresse": "132 Rue de Pompe Magnin"
+},
+{
+"code_postal": "01200",
+"commune": "Montanges",
+"adresse": "84 Rue des Rys"
+},
+{
+"code_postal": "01960",
+"commune": "Sevas",
+"adresse": "189 Rue des Platanes"
+},
+{
+"code_postal": "01430",
+"commune": "Vieu-d'Izenave",
+"adresse": "Rue des Platières"
+},
+{
+"code_postal": "01570",
+"commune": "Feillens",
+"adresse": "142 Route des Beys"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "103c Chemin de Riambochon"
+},
+{
+"code_postal": "01700",
+"commune": "Miribel",
+"adresse": "Rue Victor Hugo"
+},
+{
+"code_postal": "01290",
+"commune": "Laiz",
+"adresse": "58 Route des Combes"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "106a Route de la Ferrand"
+},
+{
+"code_postal": "01310",
+"commune": "Montracol",
+"adresse": "3556 Route de Trevoux"
+},
+{
+"code_postal": "01500",
+"commune": "Saint-Denis-en-Bugey",
+"adresse": "4 Chemn Gambetta"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "138 Avenue Saint-Exupéry"
+},
+{
+"code_postal": "01480",
+"commune": "Messimy-sur-Saône",
+"adresse": "1067 Route d'Ars"
+},
+{
+"code_postal": null,
+"commune": "Valserhône",
+"adresse": "1 Rue de l'Avenir"
+},
+{
+"code_postal": "01350",
+"commune": "Ceyzérieu",
+"adresse": "293 Rue es Carmes"
+},
+{
+"code_postal": "01960",
+"commune": "Péronnas",
+"adresse": "782 Rue de la Chartruse"
+},
+{
+"code_postal": "01430",
+"commune": "Saint-Martin-du-Frêne",
+"adresse": "Chemin de la Mine"
+},
+{
+"code_postal": "01160",
+"commune": "Saint-Martin-du-Mont",
+"adresse": "225 Chemin des Sources"
+},
+{
+"code_postal": null,
+"commune": "Bourg-en-Bresse",
+"adresse": "1 avenue d'alsace lorraine"
+},
+{
+"code_postal": "01350",
+"commune": "Culoz-Béon",
+"adresse": "66 rue des coles"
+},
+{
+"code_postal": "01640",
+"commune": "Boyeux-Saint-Jérôme",
+"adresse": "Montée du Courtelas"
+},
+{
+"code_postal": "01250",
+"commune": "Ceyzérit",
+"adresse": "5 Rue Jayr"
+},
+{
+"code_postal": "01300",
+"commune": "Beley",
+"adresse": "16 Lotissement le Clos de la Rodette"
+},
+{
+"code_postal": null,
+"commune": "Tossiat",
+"adresse": "1045 Chemin des Teppes"
+},
+{
+"code_postal": null,
+"commune": "Saint-Just",
+"adresse": "59d Chemin de Rosepommier"
+},
+{
+"code_postal": "01710",
+"commune": "Thoiry",
+"adresse": "Rue du Quart"
+},
+{
+"code_postal": "01260",
+"commune": "Champagne-en-Valromey",
+"adresse": "Grande Rue"
+},
+{
+"code_postal": "01130",
+"commune": "Échallon",
+"adresse": "1468 Route du Haut-jura"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "85 Rue du Sablon"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "62 Rue de Lyon"
+},
+{
+"code_postal": "01190",
+"commune": "Ozan",
+"adresse": "33 Impase Bois Amis"
+},
+{
+"code_postal": "01960",
+"commune": "Péronnas",
+"adresse": "47 Rue de la Chartreuse"
+},
+{
+"code_postal": null,
+"commune": "Billiat",
+"adresse": "7 Rue Saint Michel"
+},
+{
+"code_postal": "01190",
+"commune": "Saint-Bénigne",
+"adresse": "483 Route de Chamerande"
+},
+{
+"code_postal": "01300",
+"commune": "Brégnier-Crdon",
+"adresse": "410 Chemin de la Plaine"
+},
+{
+"code_postal": "01300",
+"commune": "Parves et Nattages",
+"adresse": "Route du Rhône"
+},
+{
+"code_postal": "01290",
+"commune": null,
+"adresse": "600 Route des Villards"
+},
+{
+"code_postal": "01300",
+"commune": null,
+"adresse": "687 Route de Lechaud"
+},
+{
+"code_postal": "01800",
+"commune": "Meximieux",
+"adresse": "Rue des Vignes"
+},
+{
+"code_postal": "01150",
+"commune": "Sault-Brénaz",
+"adresse": "7 Ru des Mariniers"
+},
+{
+"code_postal": null,
+"commune": "Biziat",
+"adresse": "1 Lotissement le Grand Chêne"
+},
+{
+"code_postal": "01160",
+"commune": "Saint-Martin-du-Mont",
+"adresse": "Allee du Clos de la Fontaine"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1 Chemin de Bret"
+},
+{
+"code_postal": "01540",
+"commune": "Vonnas",
+"adresse": "Route des Communes"
+},
+{
+"code_postal": "01700",
+"commune": "Saint-Maurice-de-Beynost",
+"adresse": "24 Rue e la Faitenière"
+},
+{
+"code_postal": "01390",
+"commune": "Mionnay",
+"adresse": "Chemin des Platières"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "656 Les Rives du Rhone"
+},
+{
+"code_postal": "01350",
+"commune": "Ceyzériu",
+"adresse": "321 Route de Vongnes"
+},
+{
+"code_postal": "01380",
+"commune": "Bâgé-Dommartin",
+"adresse": "Route de Montrevel"
+},
+{
+"code_postal": null,
+"commune": "Artemare",
+"adresse": "11 Rue de Champeze"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "413 Chemin des Vernes"
+},
+{
+"code_postal": "01630",
+"commune": "Challex",
+"adresse": "146 Chemin du Vignoble"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "60 Rue des Pholiotes"
+},
+{
+"code_postal": null,
+"commune": "Prévessin-Moëns",
+"adresse": "44 Chemin des Crêts"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1040 impasse du creux"
+},
+{
+"code_postal": "01330",
+"commune": "Ambérieux-en-Dombes",
+"adresse": "54 Lotissement le Parc du Chateau"
+},
+{
+"code_postal": "01400",
+"commune": "Châtillon-sur-Chalronne",
+"adresse": "12 Place des Droits de l’Homme"
+},
+{
+"code_postal": "01570",
+"commune": null,
+"adresse": "85b Rue Vieille"
+},
+{
+"code_postal": "01260",
+"commune": "Valromey-sur-Séran",
+"adresse": "Rue d'Antioche"
+},
+{
+"code_postal": "01800",
+"commune": "Jyeux",
+"adresse": "1351 Chemin du Bois"
+},
+{
+"code_postal": null,
+"commune": "Boz",
+"adresse": "162 Rue de Montrillon"
+},
+{
+"code_postal": "01380",
+"commune": "Bâgé-Dommartin",
+"adresse": "Route de Bereziat"
+},
+{
+"code_postal": "01390",
+"commune": "Rancé",
+"adresse": "131 Chemin du Crêt"
+},
+{
+"code_postal": "01960",
+"commune": "Péronnas",
+"adresse": "1043 Chemin des Carronnières"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "14 Rue de la Vie Vieille"
+},
+{
+"code_postal": "01340",
+"commune": null,
+"adresse": "52 Résidence le Pré"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "51 Rue Briand Stresemann"
+},
+{
+"code_postal": "01710",
+"commune": null,
+"adresse": "238 Rue du Quart"
+},
+{
+"code_postal": "01170",
+"commune": "Gex",
+"adresse": "101 Rue du Commerce"
+},
+{
+"code_postal": "01140",
+"commune": null,
+"adresse": "10 Place des Dombes"
+},
+{
+"code_postal": "01370",
+"commune": "Val-Revermot",
+"adresse": "293 Route de Saint Etienne du Bois"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "4016 Route du Souget"
+},
+{
+"code_postal": "01750",
+"commune": null,
+"adresse": "65 Rue Mogen"
+},
+{
+"code_postal": "01140",
+"commune": "Thoissey",
+"adresse": "Rue des Roses"
+},
+{
+"code_postal": "01340",
+"commune": "Saint-Sulpice",
+"adresse": "789 Chemin e Lange"
+},
+{
+"code_postal": "01630",
+"commune": "Péron",
+"adresse": "358 Chemin du Moard"
+},
+{
+"code_postal": null,
+"commune": "Serrières-de-Briord",
+"adresse": "28 Rue du Pont"
+},
+{
+"code_postal": "01470",
+"commune": "Serrières-de-Briord",
+"adresse": "Rue du Dauphiné"
+},
+{
+"code_postal": "01390",
+"commune": "Mionny",
+"adresse": "135 Rue Principale"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "2 Impasse de la Gravière"
+},
+{
+"code_postal": null,
+"commune": "Saint-Genis-Pouilly",
+"adresse": "74 Rue Victor Hugo"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "7 Rue Pivarel"
+},
+{
+"code_postal": "01210",
+"commune": null,
+"adresse": "61 Impasse des Genévriers"
+},
+{
+"code_postal": "01560",
+"commune": null,
+"adresse": "496 Route de Bourg"
+},
+{
+"code_postal": "01470",
+"commune": null,
+"adresse": "518 Route des Ecoles"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "25 impasse des pâquerettes"
+},
+{
+"code_postal": "01340",
+"commune": "Malafretaz",
+"adresse": "Route de Condamnaz"
+},
+{
+"code_postal": null,
+"commune": "Oyonnax",
+"adresse": "21 Rue de la Fontaine"
+},
+{
+"code_postal": "01170",
+"commune": "Gex",
+"adresse": "169 impasse des blés"
+},
+{
+"code_postal": "01700",
+"commune": "Miibel",
+"adresse": "6 Rue du Pont de l’Ile"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "17 Impasse des Sauvages"
+},
+{
+"code_postal": "01240",
+"commune": "La Chapelle-du-Châtelard",
+"adresse": "2 Rue du Lieutenant Christian de Bellescize"
+},
+{
+"code_postal": "01500",
+"commune": "Saint-Denis-en-ugey",
+"adresse": "4bis Rue des Rochettes"
+},
+{
+"code_postal": "01260",
+"commune": "Haut Valromey",
+"adresse": "4 Rue du Col de Rchemond"
+},
+{
+"code_postal": null,
+"commune": "Bellignat",
+"adresse": "2bis Rue du Mont Olivet"
+},
+{
+"code_postal": null,
+"commune": "Gex",
+"adresse": "226 impasse des alpages"
+},
+{
+"code_postal": "01220",
+"commune": "Sauverny",
+"adresse": "Chemin des Poncettes"
+},
+{
+"code_postal": "01500",
+"commune": null,
+"adresse": "31 Rue des Arènes"
+},
+{
+"code_postal": "01100",
+"commune": "Bllignat",
+"adresse": "27 Avenue d'Oyonnax"
+},
+{
+"code_postal": "01750",
+"commune": null,
+"adresse": "530 Quai Jean Baptiste Bouchacourt"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "207 Rue des Grives"
+},
+{
+"code_postal": "01400",
+"commune": "Neuvile-les-Dames",
+"adresse": "372 Rue de la Bresse"
+},
+{
+"code_postal": "01570",
+"commune": null,
+"adresse": "194 Chemin du Pré du By"
+},
+{
+"code_postal": "01500",
+"commune": "Saint-Denis-en-Bugey",
+"adresse": "2 Allée es Acacias"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "55 Chemin de la Colline"
+},
+{
+"code_postal": "01470",
+"commune": "Serrières-d-Briord",
+"adresse": "32c Grande Rue"
+},
+{
+"code_postal": "01660",
+"commune": "Mézérat",
+"adresse": "57a Allee des Pensees"
+},
+{
+"code_postal": "01310",
+"commune": "Confrançon",
+"adresse": "Chemin des Grevillieres"
+},
+{
+"code_postal": "01450",
+"commune": "Labale",
+"adresse": "54 Rue de la Mairie"
+},
+{
+"code_postal": "01750",
+"commune": "Replonges",
+"adresse": "65 Impasse des Marchands"
+},
+{
+"code_postal": null,
+"commune": "Bourg-en-Bresse",
+"adresse": "7 rue des graves"
+},
+{
+"code_postal": "01090",
+"commune": "Guéreins",
+"adresse": "77 Ru des Vignes"
+},
+{
+"code_postal": "01500",
+"commune": "Ambérieu-en-Bugey",
+"adresse": "14 Rue Gustave Nolemaire"
+},
+{
+"code_postal": "01260",
+"commune": null,
+"adresse": "289 Rue de la Boucle des Plans"
+},
+{
+"code_postal": null,
+"commune": "Saint-Jean-sur-Veyle",
+"adresse": "613 Route de la Seigneurie"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1510 Chemin de la Chambière"
+},
+{
+"code_postal": "01570",
+"commune": "Manziat",
+"adresse": "318 Route des Greffes"
+},
+{
+"code_postal": "01190",
+"commune": "Saint-Étienne-sur-Reyssouze",
+"adresse": "route du bourg"
+},
+{
+"code_postal": "01640",
+"commune": "Saint-Jean-le-Vieux",
+"adresse": "Allee des Harpilles"
+},
+{
+"code_postal": "01750",
+"commune": null,
+"adresse": "13 Impasse Pussin"
+},
+{
+"code_postal": "01150",
+"commune": null,
+"adresse": "20 Impasse du Muguet"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "29 Impasse des Hortensias"
+},
+{
+"code_postal": "01300",
+"commune": "Murs-et-Gélignieux",
+"adresse": "6 Impasse du Rhône"
+},
+{
+"code_postal": "01240",
+"commune": "Dompierre-sur-Veyle",
+"adresse": "30 Impasse des Bleuets"
+},
+{
+"code_postal": "01100",
+"commune": "Oynnax",
+"adresse": "97 Rue Castellion"
+},
+{
+"code_postal": "01570",
+"commune": null,
+"adresse": "23 Rue des Vignes"
+},
+{
+"code_postal": "01480",
+"commune": "Ars-sur-Formans",
+"adresse": "Allée des Oliviers"
+},
+{
+"code_postal": "01800",
+"commune": "Meximieux",
+"adresse": "15 Rue Budin"
+},
+{
+"code_postal": "01370",
+"commune": "Val-Revermont",
+"adresse": "Rue du Vieux Village"
+},
+{
+"code_postal": null,
+"commune": "Saint-Maurice-de-Gourdans",
+"adresse": "2 Chemin du Bois Dalphin"
+},
+{
+"code_postal": "01640",
+"commune": "Boyeux-Saint-Jérme",
+"adresse": "355 Rue du Four"
+},
+{
+"code_postal": null,
+"commune": "Léaz",
+"adresse": "4 Lotissement le Saint Amand"
+},
+{
+"code_postal": null,
+"commune": "Trévoux",
+"adresse": "3 Boulevard des Combattants"
+},
+{
+"code_postal": "01500",
+"commune": "Ambérie-en-Bugey",
+"adresse": "50ter Rue Marcel et Ida Démia"
+},
+{
+"code_postal": "01480",
+"commune": "Fareins",
+"adresse": "Route de la Dombes"
+},
+{
+"code_postal": null,
+"commune": "Saint-Denis-en-Bugey",
+"adresse": "28 Rue Docteur Charcot"
+},
+{
+"code_postal": "01851",
+"commune": "Maroz",
+"adresse": "310 Route de la Croze"
+},
+{
+"code_postal": "01280",
+"commune": "Prévessin-Moëns",
+"adresse": "Chemin des Poussins"
+},
+{
+"code_postal": "01000",
+"commune": null,
+"adresse": "29 rue des acacias"
+},
+{
+"code_postal": "01000",
+"commune": "Bourgen-Bresse",
+"adresse": "58 allée renardel"
+},
+{
+"code_postal": "01500",
+"commune": "Ambéieu-en-Bugey",
+"adresse": "8 Chemin de la Vèze"
+},
+{
+"code_postal": "01630",
+"commune": "Saint-Jean-de-Gonville",
+"adresse": "1 Rue de la Charriere"
+},
+{
+"code_postal": "01150",
+"commune": "Sault-Brénaz",
+"adresse": "Rue de Chaillon"
+},
+{
+"code_postal": "01800",
+"commune": "Rignieux-le-Franc",
+"adresse": "140 Chemindu Gaillot"
+},
+{
+"code_postal": "01330",
+"commune": "Villars-les-Dombes",
+"adresse": "272 Allée de Montessuis"
+},
+{
+"code_postal": "01300",
+"commune": "Contrevoz",
+"adresse": "Rue du Mont Blanc"
+},
+{
+"code_postal": null,
+"commune": "Reyssouze",
+"adresse": "263 Grande Rue"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "5 place de la commune"
+},
+{
+"code_postal": "01370",
+"commune": "Saint-Étienne-du-Bois",
+"adresse": "Chemin de Montaplan"
+},
+{
+"code_postal": "01160",
+"commune": "Varambon",
+"adresse": "88 Rue e l'Eglise"
+},
+{
+"code_postal": "01220",
+"commune": "Grilly",
+"adresse": "286 Route de Pitgny"
+},
+{
+"code_postal": "01370",
+"commune": null,
+"adresse": "402 Route de la Grange d’Offre"
+},
+{
+"code_postal": "01210",
+"commune": "Versonex",
+"adresse": "250 Rue du Stade"
+},
+{
+"code_postal": null,
+"commune": "Bresse Vallons",
+"adresse": "51 Chemin de Balvay"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "14 Rue du Maquis"
+},
+{
+"code_postal": null,
+"commune": "Meximieux",
+"adresse": "12 Rue René Hyvert"
+},
+{
+"code_postal": null,
+"commune": "Sainte-Julie",
+"adresse": "80 Chemin du Golet"
+},
+{
+"code_postal": "01350",
+"commune": "Cuoz-Béon",
+"adresse": "4 Rue de la Charrière"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "5 Lotissement d'Avrissieu le Haut"
+},
+{
+"code_postal": "01990",
+"commune": "Relevant",
+"adresse": "336 Route de l Riviere"
+},
+{
+"code_postal": "01170",
+"commune": "Mijoux",
+"adresse": "1530 Chemin du Crzat d'Amont"
+},
+{
+"code_postal": "01280",
+"commune": "Prévessin-Moëns",
+"adresse": "216 Promenade e la Gotaz"
+},
+{
+"code_postal": "01310",
+"commune": "Polliat",
+"adresse": "230 Rue de la Passerelle"
+},
+{
+"code_postal": "01250",
+"commune": "Ceyzériat",
+"adresse": "Route des Soudanieres"
+},
+{
+"code_postal": null,
+"commune": "Viriat",
+"adresse": "72a Impasse des Tulipes"
+},
+{
+"code_postal": "01300",
+"commune": "Peyrieu",
+"adresse": "352 Rue d Surjoux"
+},
+{
+"code_postal": "01800",
+"commune": "Faramans",
+"adresse": "920 Route du Gailland"
+},
+{
+"code_postal": "01250",
+"commune": "Ceyzériat",
+"adresse": "732 Route de Tréconnas"
+},
+{
+"code_postal": null,
+"commune": "Meximieux",
+"adresse": "26 Rue les Galamieres"
+},
+{
+"code_postal": "01090",
+"commune": "Lurcy",
+"adresse": "199 Chemin Neuf"
+},
+{
+"code_postal": "01250",
+"commune": "Ramasse",
+"adresse": "Route des Vallieres"
+},
+{
+"code_postal": "01640",
+"commune": "Saint-Jean-le-Vieux",
+"adresse": "15 Cour Nicd"
+},
+{
+"code_postal": "01150",
+"commune": "Chazey-sur-Ain",
+"adresse": "163 Rue du Gros Noyer"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "254 Chemin de la Pralet"
+},
+{
+"code_postal": "01200",
+"commune": "Valserhône",
+"adresse": "29 Avenue Maréchal Leclerc"
+},
+{
+"code_postal": null,
+"commune": "Montluel",
+"adresse": "41 Rue Puits Pirollet"
+},
+{
+"code_postal": "01100",
+"commune": "Oyonax",
+"adresse": "36 Chemin de la Fruitière"
+},
+{
+"code_postal": "01360",
+"commune": null,
+"adresse": "203 Rue du Professeur Robert Hugonot"
+},
+{
+"code_postal": "01120",
+"commune": null,
+"adresse": "4bis Rue de Genève"
+},
+{
+"code_postal": "01110",
+"commune": "Platea d'Hauteville",
+"adresse": "80 Rue de Tré la Croix"
+},
+{
+"code_postal": "01090",
+"commune": "Montmerle-sur-Saône",
+"adresse": "247 Avenue des Mésanges"
+},
+{
+"code_postal": "01120",
+"commune": "Montuel",
+"adresse": "121 Chemin de la Ville Haute"
+},
+{
+"code_postal": "01440",
+"commune": "Viriat",
+"adresse": "255 Rue Prosper Convert"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1259 Rue de Genève"
+},
+{
+"code_postal": "01990",
+"commune": "Chaneins",
+"adresse": "2 Zone d’Activite Actiparc sud"
+},
+{
+"code_postal": "01570",
+"commune": null,
+"adresse": "675 Chemin des Condamines"
+},
+{
+"code_postal": "01290",
+"commune": null,
+"adresse": "323 Route des Villards"
+},
+{
+"code_postal": "01190",
+"commune": "Sermoyer",
+"adresse": "34 Route de Cuisery"
+},
+{
+"code_postal": null,
+"commune": "Laiz",
+"adresse": "48 Impasse des Curtelets"
+},
+{
+"code_postal": "01120",
+"commune": "Dagneux",
+"adresse": "Chemin des Arenes"
+},
+{
+"code_postal": "01110",
+"commune": "Champdor-Corcelles",
+"adresse": "Lotissement de la Sauge"
+},
+{
+"code_postal": "01570",
+"commune": "Feillens",
+"adresse": "95 Le Moulin Neuf"
+},
+{
+"code_postal": "01200",
+"commune": "Villes",
+"adresse": "28 Ruedu Lavoir"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "2226 route de béréziat"
+},
+{
+"code_postal": null,
+"commune": "Malafretaz",
+"adresse": "330 Route de la Pétillière"
+},
+{
+"code_postal": "01120",
+"commune": "Pizay",
+"adresse": "40 Rue du Grillet"
+},
+{
+"code_postal": "01570",
+"commune": "Manziat",
+"adresse": "122 Rue des Barbéries"
+},
+{
+"code_postal": "01170",
+"commune": "Vesancy",
+"adresse": "8 Rote de Divonne"
+},
+{
+"code_postal": null,
+"commune": "Saint-Jean-de-Niost",
+"adresse": "51 Chemin de Paraviset"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "121 rue brichemer"
+},
+{
+"code_postal": "01220",
+"commune": null,
+"adresse": "210 Rue de Plan"
+},
+{
+"code_postal": null,
+"commune": "Gex",
+"adresse": "306bis Rue Leone de Joinville"
+},
+{
+"code_postal": null,
+"commune": "Bourg-en-Bresse",
+"adresse": "21 rue aristide briand"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "68 Chemin de la Petite Prairie"
+},
+{
+"code_postal": null,
+"commune": "Chaveyriat",
+"adresse": "3516 Route de Vonnas"
+},
+{
+"code_postal": "01960",
+"commune": "Péronnas",
+"adresse": "63 Allée des GrangesNeuves"
+},
+{
+"code_postal": "01600",
+"commune": null,
+"adresse": "653 Route de Reyrieux"
+},
+{
+"code_postal": "01600",
+"commune": null,
+"adresse": "13 Boulevard des Combattants"
+},
+{
+"code_postal": "01000",
+"commune": null,
+"adresse": "5a rue des créts"
+},
+{
+"code_postal": "01330",
+"commune": "Ambérieux-en-Dmbes",
+"adresse": "69 La Ruelle"
+},
+{
+"code_postal": "01100",
+"commune": "Oyonnx",
+"adresse": "22 Ancien Chemin Royal"
+},
+{
+"code_postal": null,
+"commune": "Courtes",
+"adresse": "128 Route de la Blanchere"
+},
+{
+"code_postal": "01000",
+"commune": "Bourg-en-Bresse",
+"adresse": "19 rue de savoie"
+},
+{
+"code_postal": null,
+"commune": "Sergy",
+"adresse": "349 Chemin du Pontenay"
+},
+{
+"code_postal": "01570",
+"commune": "Feillens",
+"adresse": "Route des Combes"
+},
+{
+"code_postal": "01170",
+"commune": "Gex",
+"adresse": "922 Rue de Rogeland"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "269 Chemin de Roncheveux"
+},
+{
+"code_postal": "01250",
+"commune": "Hautecourt-Romanèche",
+"adresse": "66 Route de Neville"
+},
+{
+"code_postal": "01290",
+"commune": "Grièges",
+"adresse": "642 Rue d Corcelles"
+},
+{
+"code_postal": "01170",
+"commune": "Cessy",
+"adresse": "Impasse les Fontanettes"
+},
+{
+"code_postal": "01210",
+"commune": "Ferney-Voltaire",
+"adresse": "238 Chemin de la Planche Brûlée"
+},
+{
+"code_postal": "01260",
+"commune": "Champagne-en-Valromey",
+"adresse": "179 Rue de l Fontaine"
+},
+{
+"code_postal": "01580",
+"commune": "Izernore",
+"adresse": "23 Impasse des Margueites"
+},
+{
+"code_postal": "01370",
+"commune": "Saint-Étienne-du-Bois",
+"adresse": "295 Chemin la Croisee des 3 Routes"
+},
+{
+"code_postal": "01600",
+"commune": "Parcieux",
+"adresse": "12 Cos de la Belle Cordière"
+},
+{
+"code_postal": "01300",
+"commune": null,
+"adresse": "45 Rue de Champtel"
+},
+{
+"code_postal": "01410",
+"commune": null,
+"adresse": "103 rue de la caserne"
+},
+{
+"code_postal": "01450",
+"commune": "Poncin",
+"adresse": "Avenue du Parc"
+},
+{
+"code_postal": null,
+"commune": "Hautecourt-Romanèche",
+"adresse": "1025 Route de Neuville"
+},
+{
+"code_postal": "01320",
+"commune": null,
+"adresse": "20 Lotissement le Parc des Ormes"
+},
+{
+"code_postal": "01640",
+"commune": "L'bergement-de-Varey",
+"adresse": "24 Chemin du Verger"
+},
+{
+"code_postal": "01110",
+"commune": "Plateau d'Hauteville",
+"adresse": "180 Rue du Doceur Delannoy"
+},
+{
+"code_postal": "01640",
+"commune": "Jujurieux",
+"adresse": "Place du Four"
+},
+{
+"code_postal": "01130",
+"commune": "Nanta",
+"adresse": "6bis Rue des Abattoirs"
+},
+{
+"code_postal": "01000",
+"commune": "Bourg-en-Bresse",
+"adresse": "6 avenue de bad kreuznach"
+},
+{
+"code_postal": "01480",
+"commune": "Frans",
+"adresse": "Chemin des Caillates"
+},
+{
+"code_postal": "01300",
+"commune": "Belley",
+"adresse": "3 Grand Rue"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "1 place de la basilique"
+},
+{
+"code_postal": null,
+"commune": null,
+"adresse": "306 Route de Saint Jean"
+},
+{
+"code_postal": "01400",
+"commune": "Neuville-les-Dames",
+"adresse": "Rue du Cani"
+},
+{
+"code_postal": null,
+"commune": "Valserhône",
+"adresse": "50 Rue de la Pierre"
+},
+{
+"code_postal": "01460",
+"commune": "Port",
+"adresse": "Rue du 11 Novembre"
+}
+],
+"near": [
+[
+5.8147753530584705,
+46.10948146826731
+],
+[
+5.124289868436834,
+45.958146001879506
+],
+[
+5.719559332230787,
+45.775326743485046
+],
+[
+5.295816880361867,
+45.92284647660348
+],
+[
+5.389419179819967,
+46.029091684149435
+],
+[
+6.093953232203371,
+46.29925018581976
+],
+[
+6.060605485184592,
+46.321150353273346
+],
+[
+5.085845794294385,
+46.29754268862528
+],
+[
+5.972793749565756,
+46.18019951584652
+],
+[
+5.121140735710333,
+45.85218480023256
+],
+[
+6.04479168481241,
+46.28210519819373
+],
+[
+5.199031228693033,
+45.91535567355519
+],
+[
+5.999089968217955,
+46.252227113959144
+],
+[
+4.9227502332636295,
+46.43940118561238
+],
+[
+5.683593503894776,
+45.705920996729816
+],
+[
+5.3579217936701315,
+45.95261616791973
+],
+[
+4.985555942073708,
+45.83615316595837
+],
+[
+5.980446565803205,
+46.23888362354402
+],
+[
+5.685536229982671,
+45.76039479546788
+],
+[
+5.188243065341632,
+45.90279687948629
+],
+[
+5.137595926615394,
+46.329914241884715
+],
+[
+5.07180652217714,
+45.930973595124414
+],
+[
+6.136050345956721,
+46.360657113124894
+],
+[
+4.9578385143410255,
+46.31224978774047
+],
+[
+4.905539861787692,
+46.36077801964488
+],
+[
+5.636149060785028,
+46.24559784339982
+],
+[
+5.389830938649793,
+46.028029641612214
+],
+[
+5.631211441140385,
+46.24435438453847
+],
+[
+4.825003962386036,
+45.918231538408726
+],
+[
+6.009398046150777,
+46.273148588896916
+],
+[
+5.286726645963186,
+46.27882789607603
+],
+[
+5.357422185803391,
+45.95898115989855
+],
+[
+5.226258933768233,
+46.18039780885015
+],
+[
+4.894143281298615,
+46.2524963454573
+],
+[
+5.360554831058178,
+46.32964923883029
+],
+[
+4.946486772023902,
+45.82879041299963
+],
+[
+5.294618464191166,
+46.166863323575605
+],
+[
+5.3228091782326254,
+46.21213055289172
+],
+[
+5.651948185675334,
+46.26255483630806
+],
+[
+4.980463667423392,
+46.500071649620736
+],
+[
+5.247427680740815,
+46.33295426812178
+],
+[
+5.40952578657679,
+45.85487516463803
+],
+[
+4.838740914761074,
+46.02237447195359
+],
+[
+4.890525026675149,
+46.24314602209032
+],
+[
+5.820035496172988,
+46.11827812801409
+],
+[
+6.08602243195955,
+46.2534598815518
+],
+[
+5.645752297916243,
+46.26689817047474
+],
+[
+5.583014697394896,
+46.190631094523916
+],
+[
+6.100967394016913,
+46.30831793796251
+],
+[
+5.042095369565975,
+46.266793297698754
+],
+[
+5.054107311870144,
+45.85068774305076
+],
+[
+6.057243033941489,
+46.33284457865857
+],
+[
+5.657625151403001,
+46.27143430004189
+],
+[
+5.18130502811938,
+45.81412284334242
+],
+[
+5.950993988448556,
+46.21306045394946
+],
+[
+5.118647917528804,
+46.33613915500988
+],
+[
+5.317373136393718,
+46.187531783731025
+],
+[
+5.695937314461654,
+45.99853895720555
+],
+[
+5.023159565676375,
+46.21513246815947
+],
+[
+5.0136269120183306,
+46.39477648346024
+],
+[
+5.456546058378356,
+46.03024266922044
+],
+[
+5.966632764380442,
+46.17823800492993
+],
+[
+4.774994846969044,
+46.04399428147645
+],
+[
+4.966864051181749,
+45.830624273440016
+],
+[
+5.3687096434082315,
+46.33902377107028
+],
+[
+4.912932877527686,
+46.364392438034905
+],
+[
+5.3245166591711595,
+45.951297955402495
+],
+[
+5.980900252306577,
+46.24425987291687
+],
+[
+6.0582715249237955,
+46.34306743839972
+],
+[
+5.406368451861706,
+46.08546813280974
+],
+[
+5.724546728751378,
+45.82937509724377
+],
+[
+5.208407628024305,
+46.069099194817156
+],
+[
+5.7906908253506835,
+46.07570945380295
+],
+[
+5.045925904580481,
+46.326551976905485
+],
+[
+4.764457804326942,
+46.085840869407555
+],
+[
+5.528333623177139,
+46.08463930430508
+],
+[
+5.984237543257371,
+46.249949105991746
+],
+[
+5.224175676617212,
+46.21454211103397
+],
+[
+4.850735090038661,
+45.98667187092492
+],
+[
+4.856099136053096,
+46.2400318931723
+],
+[
+5.45320156850589,
+45.80841273476825
+],
+[
+5.941622627928549,
+46.211994961712435
+],
+[
+4.870903431943818,
+46.300766606637694
+],
+[
+4.929429943473714,
+45.89531155374762
+],
+[
+6.067072340893446,
+46.2813544291919
+],
+[
+6.040617271490947,
+46.31135335891809
+],
+[
+5.2954177137794325,
+46.012358184777064
+],
+[
+5.784048915595182,
+46.086539722030565
+],
+[
+5.737888031475177,
+46.22030343147407
+],
+[
+5.365167190270384,
+45.95369193908535
+],
+[
+5.5944727119106865,
+46.01381351083599
+],
+[
+5.525700106207126,
+46.18271856711029
+],
+[
+4.801368681225276,
+45.970519937596066
+],
+[
+5.240410998426288,
+46.21180313083934
+],
+[
+5.36211389942418,
+46.19191821152852
+],
+[
+5.151729156029957,
+46.35628797206545
+],
+[
+5.276465996932847,
+45.90372458632122
+],
+[
+6.006781754292392,
+46.247130849240285
+],
+[
+4.911157479803572,
+46.36134034361139
+],
+[
+6.081509217105319,
+46.252400133055005
+],
+[
+5.217868249193085,
+46.226153603407866
+],
+[
+5.175852647591522,
+46.368524810802
+],
+[
+5.075204767737957,
+46.11774708312859
+],
+[
+5.79833367300738,
+46.1616426453992
+],
+[
+5.642768396181552,
+46.24423229024294
+],
+[
+5.13089960850442,
+46.098647805236624
+],
+[
+4.9044191650814986,
+46.3562087963822
+],
+[
+5.019258323450902,
+46.17069621949921
+],
+[
+4.90097705377083,
+46.06806694016582
+],
+[
+5.222332698143154,
+46.19880315809548
+],
+[
+5.003499659484727,
+46.162903136446666
+],
+[
+5.726276003199912,
+45.82909461534486
+],
+[
+4.94975667128681,
+46.42630403708866
+],
+[
+5.338610925551172,
+45.939512111367485
+],
+[
+6.105080743083515,
+46.293927085358305
+],
+[
+5.196345835692336,
+45.90517935588371
+],
+[
+4.902673558547459,
+46.36439618333297
+],
+[
+5.416805792546021,
+46.15889716798333
+],
+[
+5.844511004613265,
+46.17121531098319
+],
+[
+4.947101698714873,
+45.82069778632376
+],
+[
+5.084525699780581,
+46.45471219793005
+],
+[
+5.245547017167855,
+45.946026352801255
+],
+[
+5.949812021572613,
+46.196230860204686
+],
+[
+5.436600527784954,
+46.136769597007145
+],
+[
+5.2080664266616274,
+45.910101354377694
+],
+[
+5.625943646020341,
+45.64144431288651
+],
+[
+4.903463759199698,
+46.35715035385705
+],
+[
+4.795467274147123,
+46.094013293016545
+],
+[
+5.352191317282798,
+45.92974292919629
+],
+[
+5.378054446257071,
+46.083523719615926
+],
+[
+5.229743068104001,
+46.19981005685005
+],
+[
+5.5803776184297735,
+46.14295221213575
+],
+[
+5.002739679725063,
+46.165878082018246
+],
+[
+5.101351329237138,
+46.46716858370368
+],
+[
+5.219463547761134,
+46.25067434726059
+],
+[
+5.791946848973821,
+45.99781664367639
+],
+[
+5.32962907468372,
+46.076128512210126
+],
+[
+5.330648521126387,
+45.94646282000086
+],
+[
+4.77567544427423,
+45.996423031032265
+],
+[
+5.362978909320425,
+46.272974685371906
+],
+[
+5.663950714656107,
+45.64046753983277
+],
+[
+5.22531225076629,
+46.2048448168582
+],
+[
+5.608285892157992,
+45.97578148954503
+],
+[
+5.763207083214391,
+45.72095853975457
+],
+[
+4.952460796937767,
+46.09092196493136
+],
+[
+6.031183221157881,
+46.25021797254131
+],
+[
+5.624849264218953,
+46.2902611568688
+],
+[
+5.77187337493083,
+46.05794563440253
+],
+[
+5.276426131419676,
+46.1626712223524
+],
+[
+5.054164026576006,
+45.85305596649875
+],
+[
+5.038312179196354,
+46.24844101061849
+],
+[
+5.230519319193549,
+46.200345367123994
+],
+[
+5.515923518711323,
+45.92908499140799
+],
+[
+5.318099521765285,
+46.19091048197942
+],
+[
+4.9929635676363855,
+46.338875793742126
+],
+[
+4.92706042056871,
+46.22770738773856
+],
+[
+5.731090132340978,
+45.78455640883734
+],
+[
+4.986153633368873,
+45.830877988628735
+],
+[
+5.250421763501621,
+46.21460498272668
+],
+[
+5.785016649294016,
+46.07649969725095
+],
+[
+4.9218933265506735,
+46.15193042651175
+],
+[
+5.688834083472521,
+45.748544052679215
+],
+[
+5.199220864991389,
+45.91335253741718
+],
+[
+5.702002283872403,
+45.872385246795844
+],
+[
+4.905552446961051,
+46.36748910390081
+],
+[
+4.877834624471187,
+46.303145545981316
+],
+[
+5.806027402824686,
+46.124544138960374
+],
+[
+4.977527041489143,
+45.835067734252675
+],
+[
+5.811023052469311,
+46.11787067084048
+],
+[
+4.940155240037313,
+46.34044741509932
+],
+[
+4.881097352872405,
+45.90400246045231
+],
+[
+5.183001748307317,
+45.9691212324869
+],
+[
+5.528832422002723,
+46.082097151832144
+],
+[
+5.175027679936177,
+46.309563899792316
+],
+[
+4.824374538791969,
+45.90636403467453
+],
+[
+5.426459171311804,
+46.22833795363589
+],
+[
+5.424895264430862,
+46.01592562505266
+],
+[
+4.888688405182614,
+46.34219895395035
+],
+[
+4.872627625976259,
+46.30506689687196
+],
+[
+5.690165663294964,
+45.88060577425767
+],
+[
+5.343834792508599,
+45.95761715333938
+],
+[
+4.903366054912367,
+45.99812190265623
+],
+[
+4.983892613724499,
+46.50454562654161
+],
+[
+4.875118096656909,
+46.18292480532797
+],
+[
+5.064709990412465,
+46.240133184546316
+],
+[
+5.678345875053094,
+45.90484747582113
+],
+[
+5.3887217897203055,
+46.05315800740115
+],
+[
+5.31636125376979,
+46.040876288843656
+],
+[
+5.0955564543605645,
+46.18382547979705
+],
+[
+4.908887043059109,
+46.0611321018021
+],
+[
+5.70883042922579,
+46.16578056961785
+],
+[
+5.4291178234050035,
+46.32287188916505
+],
+[
+5.384264975429922,
+46.302572781051396
+],
+[
+5.419318830851678,
+46.15135489835668
+],
+[
+5.249794059663812,
+46.20737490435589
+],
+[
+5.238556849374966,
+46.21769644348138
+],
+[
+5.7819981914802785,
+45.8497806572517
+],
+[
+5.572545441612767,
+46.163556564087024
+],
+[
+4.873776934733497,
+46.31053723442404
+],
+[
+5.090378467377058,
+45.88809408157012
+],
+[
+2.2099,
+48.7099
+],
+[
+5.0,
+46.0
+],
+[
+0.0,
+0.0
+]
+]
+}
