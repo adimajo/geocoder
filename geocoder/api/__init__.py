@@ -4,7 +4,7 @@ geocoding API
 .. autosummary::
     :toctree:
 
-    app
     Geocoder
+    provider
     rest
 """

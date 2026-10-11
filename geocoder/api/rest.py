@@ -3,8 +3,6 @@ defines all routes
 
 .. autosummary::
     get_jsoned_geocoded_data
-    geocode_one
-    geocode_file
 """
 import json
 

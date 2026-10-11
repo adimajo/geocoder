@@ -1,16 +1,18 @@
-.. Geocoder documentation master file, created by
-   sphinx-quickstart on Thu Oct 27 12:16:25 2022.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Geocoder
+========
 
-Welcome to Geocoder's documentation!
-====================================
+Geocoder is an address search engine for France. Unlike other APIs, it uses the database provided by the French
+government (Base Adresse Nationale, `BAN <https://adresse.data.gouv.fr/>`_) as its main source of information, runs
+on your own machine and does not impose any limit on the number of queries.
 
-.. autosummary::
-   :toctree: _autosummary
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents
 
-   geocoder
-
+   usage
+   rest_api
+   deployment
+   reference
 
 Indices and tables
 ==================

@@ -18,11 +18,8 @@ def preprocessing(code_postal, commune, adresse):
         adresse(str): Address with number and street name.
 
     Returns:
-        (:obj:`tuple`)
-        (code_postal (int): The postal code,
-         commune (str): The city name normalized,
-         numero (int): The street number,
-         voie (str): The street name)
+        tuple: the postal code (int), the normalized city name (str), the street number (int), the normalized street
+        name (str) and the type of street (str).
 
     """
     # Try to convert postal code to int.
@@ -57,32 +54,9 @@ def position(code_postal=None, commune=None, adresse=None):
         adresse (str): Address with number and street name.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': {
-                'code' (str): The code of the departement
-            },
-            'postal': {
-                'code' (int): The postal code
-            },
-            'commune': {
-                'nom' (str): The city name,
-                'code_insee' (str): The code_insee of the city
-            },
-            'voie': {
-                'nom' (str): The street name,
-            },
-            'localisation': {
-                'numero' (str): The street number,
-            },
-            'longitude' (float): Longitude coordinate,
-            'latitude' (float): Latitude coordinate,
-            'quality' (int): The quality of the result
-        }
-
-    Example:
-        >>> from geocoder.geocoding import search
-        >>> search.position('91120', 'Palaiseau', '12, Bd des Maréchaux')
+        dict: the keys are ``departement`` (``code``), ``postal`` (``code``), ``commune`` (``nom``, ``code_insee``),
+        ``voie`` (``nom``), ``localisation`` (``numero``), ``longitude`` and ``latitude`` (floats) and ``quality``
+        (int, see the documentation of the package).
 
     """
     query.setup()
@@ -153,32 +127,9 @@ def reverse(position):
             order.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': {
-                'code' (str): The code of the departement
-            },
-            'postal': {
-                'code' (int): The postal code
-            },
-            'commune': {
-                'nom' (str): The city name,
-                'code_insee' (str): The code_insee of the city
-            },
-            'voie': {
-                'nom' (str): The street name,
-            },
-            'localisation': {
-                'numero' (str): The street number,
-            },
-            'longitude' (float): Longitude coordinate,
-            'latitude' (float): Latitude coordinate,
-            'quality' (int): The quality of the result
-        }
-
-    Example:
-        >>> from geocoder.geocoding import search
-        >>> search.reverse((2.21, 48))
+        dict: the keys are ``departement`` (``code``), ``postal`` (``code``), ``commune`` (``nom``, ``code_insee``),
+        ``voie`` (``nom``), ``localisation`` (``numero``), ``longitude`` and ``latitude`` (floats) and ``quality``
+        (int, see the documentation of the package).
 
     """
     query.setup()

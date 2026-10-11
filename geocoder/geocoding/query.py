@@ -67,9 +67,7 @@ def select(table, column, start, end, element):
         element (str or int): The element to search for.
 
     Returns:
-        (:obj:`tuple`)
-        (pos (int): the position of the record in the table,
-         found (bool): true if the search was succeeded)
+        tuple: the position of the record in the table (int) and whether the search succeeded (bool).
 
     """
     # Binary search
@@ -84,28 +82,13 @@ def heuristics(table, column, narrow, wide, element):
     Args:
         table (str): The name of the numpy array.
         column (str): The field to consider.
-        narrow (:obj:`tuple`): Tuple of length 3 with setting for the narrow
-            search.
-            first element (int): The bottom limit index to look in the table in
-                the narrow search.
-            second element (int): The top limit index to look in the table in
-                the narrow search.
-            third element (float): The threshold for the similarity score in
-                the narrow search.
-        wide (:obj:`tuple`): Tuple of length 3 with setting for the wide
-            search (when the narrow is not successful).
-            first element (int): The bottom limit index to look in the table in
-                the wide search.
-            second element (int): The top limit index to look in the table in
-                the wide search.
-            third element (float): The threshold for the similarity score in
-                the wide search.
+        narrow (tuple): Settings of the narrow search: the bottom and top limit indices to look in the table, and the
+            threshold for the similarity score.
+        wide (tuple): Same settings for the wide search, used when the narrow search is not successful.
         element (str): The element to search for.
 
     Returns:
-        (:obj:`tuple`)
-        (element_id (int): the position of the record in the table,
-         found (bool): true if the search was succeeded)
+        tuple: the position of the record in the table (int) and whether the search succeeded (bool).
 
     """
     # Similarity function
@@ -426,9 +409,8 @@ def nearest_point_from(position):
             in this order, in degrees.
 
     Returns:
-        (:obj:`tuple`)
-        (localisation_id (int): Index of the nearest address in the localisation table,
-         dist (float): The distance in meters between the position and that address)
+        tuple: the index of the nearest address in the localisation table (int) and its distance to the position in
+        meters (float).
 
     """
     localisation = data['localisation']

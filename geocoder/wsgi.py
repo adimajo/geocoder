@@ -36,10 +36,10 @@ def runserver(options):
     host, port = options.pop('host'), options.pop('port')
     if platform.uname().system.lower() == 'linux':
         # preload so that the memory-mapped database is shared by all workers
-        options.update({"bind": f"{host}:{port}", "preload_app": True})
+        options.update({"bind": f"{host}:{port}", "preload_app": True, "control_socket_disable": True})
         StandaloneApplication(app, options).run()
     else:  # pragma: no cover
-        app.run(host=host, port=int(port), debug=env_bool("FLASK_DEBUG", False))  # nosec B104
+        app.run(host=host, port=int(port), debug=env_bool("FLASK_DEBUG", False))
 
 
 if __name__ == '__main__':  # pragma: no cover

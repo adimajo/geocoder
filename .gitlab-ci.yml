@@ -1,6 +1,9 @@
+# NOTE: migrated from pipenv/bump2version/setup.py to uv/pyproject.toml together with the GitHub Actions workflows
+# (.github/workflows). It could not be run from here (it needs the internal runners, Artifactory, Sonar...): check
+# the first pipeline after merging.
 .common_python: &common_python
   image:
-    name: ${DOCKER_REGISTRY}python:3.8.16-alpine3.17
+    name: ${DOCKER_REGISTRY}python:3.12-alpine
 
 .ci_tools: &ci_tools
   image:
@@ -12,9 +15,8 @@ variables:
   LOGURU_LEVEL: "INFO"
   WORKON_HOME: "$CI_PROJECT_DIR/.cache/venvs"
   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-  PIPENV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pipenv"
-  PIPENV_PIPFILE: "$CI_PROJECT_DIR/Pipfile"
-  BASE_IMAGE: "python:3.8.16-alpine3.17"
+  UV_CACHE_DIR: "$CI_PROJECT_DIR/.cache/uv"
+  BASE_IMAGE: "python:3.12-slim"  # the Dockerfile needs a Debian based image (useradd)
 
 .common_tag: &common_tag
   tags:
@@ -41,7 +43,7 @@ variables:
   cache:
     paths:
       - .cache/pip
-      - .cache/pipenv
+      - .cache/uv
       - .cache/venvs
     policy: pull-push
 
@@ -49,7 +51,7 @@ variables:
   cache:
     paths:
       - .cache/pip
-      - .cache/pipenv
+      - .cache/uv
       - .cache/venvs
     policy: pull
 
@@ -85,8 +87,6 @@ generate_tag:
   artifacts:
     paths:
       - build.env
-      - Pipfile.lock
-      - Pipfile
   stage: versionning
   <<: *global_cache
   <<: *common_python
@@ -94,12 +94,7 @@ generate_tag:
   only:
    - master
   script:
-    - apk --update add --no-cache git openblas-dev linux-headers build-base libffi-dev
-    - pip install "pipenv<=2023.5.19"
-    - sed -i 's|${PYPI_REMOTE}|'${PYPI_REMOTE}'|g' Pipfile
-    - pipenv install --categories "packages api"
-    - LOGURU_LEVEL="ERROR" pipenv run python -c 'import geocoder; print(geocoder.__version__)'  # otherwise next line doesn't error
-    - echo export APPLICATION_TAG_VERSION=`LOGURU_LEVEL="ERROR" pipenv run python -c 'import geocoder; print(geocoder.__version__)'` >> build.env
+    - echo export APPLICATION_TAG_VERSION=`sed -n 's/^__version__ = "\(.*\)"/\1/p' geocoder/__init__.py` >> build.env
 
 test:
   coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
@@ -114,26 +109,22 @@ test:
   <<: *common_tag
   script:
     - . ./build.env
-    - apk --update add --no-cache git openblas-dev linux-headers build-base libffi-dev
-    - pip install "pipenv<=2023.5.19"
-    - rm Pipfile.lock  # weird
-    - pipenv install --categories "packages api dev-packages"
-    - PYTHONPATH=. pipenv run python geocoder/geocoding/__main__.py download
-    - PYTHONPATH=. pipenv run python geocoder/geocoding/__main__.py decompress
-    - PYTHONPATH=. pipenv run python geocoder/geocoding/__main__.py index
-    - PYTHONPATH=. pipenv run python geocoder/geocoding/__main__.py reverse
-    - ls -al geocoder/geocoding/database/
-    - pipenv run coverage run --source geocoder/ -m pytest
-    - pipenv run coverage report
-    - pipenv run coverage xml
-    - pipenv run bump2version --parse "^(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)$" --current-version $APPLICATION_TAG_VERSION patch geocoder/__init__.py --allow-dirty
-    - APPLICATION_TAG_VERSION=`pipenv run python -c 'import geocoder; print(geocoder.__version__)'`
+    - apk --update add --no-cache git
+    - pip install uv
+    - uv sync --frozen --all-extras
+    - uv run coverage run -m pytest
+    - uv run pytest -m integration  # downloads the BAN of the département 01 (DEBUG=true)
+    - uv run coverage report
+    - uv run coverage xml
+    # patch version bump
+    - APPLICATION_TAG_VERSION=`python3 -c "import re; m = re.search(r'^__version__ = \"(\d+)\.(\d+)\.(\d+)\"', open('geocoder/__init__.py').read(), re.M); print('%s.%s.%d' % (m[1], m[2], int(m[3]) + 1))"`
+    - sed -i "s/^__version__ = .*/__version__ = \"$APPLICATION_TAG_VERSION\"/" geocoder/__init__.py
     - 'echo GENERATED TAG : $APPLICATION_TAG_VERSION'
-    - echo export APPLICATION_TAG_VERSION=`pipenv run python -c 'import geocoder; print(geocoder.__version__)'` > build.env
+    - echo export APPLICATION_TAG_VERSION=$APPLICATION_TAG_VERSION > build.env
     - git config --global http.sslverify false
     - git config --global user.name "$GITLAB_USER_NAME"
     - git config --global user.email "$GITLAB_USER_EMAIL"
-    - git add geocoder/__init__.py  # otherwise Pipfile is also committed!
+    - git add geocoder/__init__.py
     - git commit -m "[ci-skip] Bumping to version $APPLICATION_TAG_VERSION"
     - GITLAB_REPO=`echo $GITLAB_DOCS_REPO | sed -r 's/_docs.git/.git/'`
     - echo $GITLAB_REPO
@@ -146,7 +137,8 @@ test:
     changes:
       - .gitlab-ci.yml
       - geocoder/**/*
-      - Pipfile
+      - pyproject.toml
+      - uv.lock
       - tests/**/*
 
 security:
@@ -156,8 +148,8 @@ security:
   <<: *common_tag
   script:
     # - apk --update add --no-cache git openblas-dev linux-headers build-base libffi-dev
-    - pip install "pipenv<=2023.5.19"
-    - pipenv run bandit -r geocoder
+    - pip install uv
+    - uv run --frozen --only-group dev bandit -q -c pyproject.toml -r geocoder
   only:
     refs:
       - branches
@@ -181,7 +173,7 @@ quality_check:
     - if [ ! -z $GITLAB_SRV_ACCOUNT ]; then keytool -import -alias mycert -file cacreditagricoleserver.crt -storetype jks -trustcacerts -noprompt -keypass keypass -keystore cacerts -storepass test@123 ; fi
     - if [ ! -z $GITLAB_SRV_ACCOUNT ]; then export SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=cacerts" ; fi
     # - -Dsonar.organization=${DOCKER_CI_REGISTRY_USER} ${DOCKER_CI_REGISTRY_USER}_${CI_PROJECT_NAME}
-    - sonar-scanner -Dsonar.exclusions=tests/**,docs/**,coverage.xml,setup.py,geocoder/geocoding/__main__.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.qualitygate.wait=true -Dsonar.projectKey=$SONAR_KEY -Dsonar.projectVersion=$APPLICATION_TAG_VERSION
+    - sonar-scanner -Dsonar.exclusions=tests/**,docs/**,coverage.xml,geocoder/geocoding/__main__.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.qualitygate.wait=true -Dsonar.projectKey=$SONAR_KEY -Dsonar.projectVersion=$APPLICATION_TAG_VERSION
   only:
    - master
 
@@ -194,12 +186,8 @@ pages:
   <<: *common_tag
   script:
     - . ./build.env
-    - apk --update add --no-cache make
-    - pip install "pipenv<=2023.5.19"
-    - cd docs
-    - pipenv run make clean
-    - pipenv run make html
-    - cd ..
+    - pip install uv
+    - uv run --frozen --extra api --group docs sphinx-build -W -b html docs/source docs/build/html
     - mv docs/build/html public
   artifacts:
     paths:
@@ -219,11 +207,10 @@ document_cagip:
   <<: *common_tag
   script:
     - . ./build.env
-    - apk --update add --no-cache git openblas-dev linux-headers build-base libffi-dev make git
-    - pip install "pipenv<=2023.5.19"
+    - apk --update add --no-cache git
+    - pip install uv
+    - uv run --frozen --extra api --group docs sphinx-build -W -b html docs/source docs/build/html
     - cd docs
-    - pipenv run make clean
-    - pipenv run make html
     - git config --global http.sslverify false
     - git config --global user.name "$GITLAB_USER_NAME"
     - git config --global user.email "$GITLAB_USER_EMAIL"
@@ -249,8 +236,8 @@ build geocoder:
       changes:
         - .gitlab-ci.yml
         - geocoder/**/*
-        - Pipfile
-        - setup.py
+        - pyproject.toml
+        - uv.lock
         - Dockerfile
         - tests/**/*  # this is needed since tests possibly bump versions
   <<: *common_tag
@@ -272,7 +259,7 @@ build geocoder:
     - wget -qO - ${PKI}/cacreditagricoleserver.crt >> /kaniko/ssl/certs/additional-ca-cert-bundle.crt
     - echo $EMAIL
     - echo $APPLICATION_TAG_VERSION
-    - /kaniko/executor --context . --dockerfile Dockerfile ${KANIKOPROXYBUILDARGS} --build-arg EMAIL=${EMAIL} --build-arg DOCKER_REGISTRY=${DOCKER_REGISTRY} --build-arg BASE_IMAGE=${BASE_IMAGE} --build-arg APPLICATION_TAG_VERSION=${APPLICATION_TAG_VERSION} --destination ${ARTI_SCRATCH_REGISTRY}.${ARTI_REGISTRY}/${ARTI_REPO}:${APPLICATION_TAG_VERSION}
+    - /kaniko/executor --context . --dockerfile Dockerfile ${KANIKOPROXYBUILDARGS} --build-arg EMAIL=${EMAIL} --build-arg DOCKER_REGISTRY=${DOCKER_REGISTRY} --build-arg BASE_IMAGE=${BASE_IMAGE} --build-arg UV_IMAGE=${UV_IMAGE:-ghcr.io/astral-sh/uv:0.9} --build-arg VERSION=${APPLICATION_TAG_VERSION} --destination ${ARTI_SCRATCH_REGISTRY}.${ARTI_REGISTRY}/${ARTI_REPO}:${APPLICATION_TAG_VERSION}
   timeout: 2h
 
 build_and_deploy_gitlab_registry:
@@ -340,11 +327,9 @@ deploy_dev_package:
   <<: *common_tag
   <<: *common_python
   script:
-    - apk --update add --no-cache git openblas-dev linux-headers build-base libffi-dev
-    - pip install "pipenv<=2023.5.19"
-    - pipenv run pipenv-setup sync --pipfile
-    - pipenv run python3 setup.py sdist bdist_wheel
-    - python3 setup.py sdist bdist_wheel
+    - apk --update add --no-cache git
+    - pip install uv
+    - uv build
     - wget -qO - ${PKI}/cacreditagricoleserver.crt >> cacreditagricoleserver.crt
     - wget -qO - ${PKI}/rca_credit_agricole_group.crt >> rca_credit_agricole_group.crt
     - cat cacreditagricoleserver.crt rca_credit_agricole_group.crt > credit_agricole_bundle.crt
@@ -352,9 +337,9 @@ deploy_dev_package:
 #    - export REQUESTS_CA_BUNDLE="cacreditagricoleserver.crt"
 #    - export TWINE_CERT="cacreditagricoleserver.crt"
 #    - openssl x509 -in cacreditagricoleserver.crt -out cacreditagricoleserver.pem
-    - echo "${ARTI_REGISTRY}/artifactory/api/pypi/${ARTI_PYPI_SCRATCH_REGISTRY}" >> .pypirc
-    - pipenv run pip install twine  # if cache has been wiped
-    - pipenv run twine upload --cert credit_agricole_bundle.crt --config-file .pypirc --repository arti dist/*
+    - |-
+        printf '[distutils]\nindex-servers =\n    arti\n\n[arti]\nrepository: https://%s/artifactory/api/pypi/%s\n' "${ARTI_REGISTRY}" "${ARTI_PYPI_SCRATCH_REGISTRY}" > .pypirc
+    - uv run --with twine twine upload --cert credit_agricole_bundle.crt --config-file .pypirc --repository arti dist/*
   only:
    - master
 

@@ -46,9 +46,8 @@ def search(element, indices, values, sorted=True):
         sorted (bool, optional): True if values are sorted, false otherwise.
 
     Returns:
-        (:obj:`tuple` of :obj:`int):
-        (int: The index of the selected index in the indices list,
-         int: The index of the selected value in the values list)
+        tuple: the index of the selected index in the indices list and the index of the selected value in the
+        values list, as two integers.
 
     """
     # If values is a sorted list, we only need the limits of that list
