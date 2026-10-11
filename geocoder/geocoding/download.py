@@ -7,6 +7,8 @@ Environment variables:
 
 * :code:`SSL_VERIFICATION` (default :code:`true`): set to :code:`false` to disable TLS verification (not recommended);
   a custom CA bundle can be given with the standard :code:`REQUESTS_CA_BUNDLE`
+* :code:`GEOCODER_DEPARTEMENTS`: comma separated list of the départements to use (e.g. :code:`75,92,2A`), all of
+  France by default (:code:`01` only when :code:`DEBUG=true`)
 * :code:`GEOCODER_DOWNLOAD_WORKERS` (default 4): number of parallel downloads
 """
 import gzip
@@ -49,7 +51,9 @@ if LOCAL_DB:
     server_content_file_name = os.path.join(content_folder_path, server_content_file_name)
     local_content_file_name = os.path.join(content_folder_path, local_content_file_name)
 
-if DEBUG:
+if os.environ.get("GEOCODER_DEPARTEMENTS"):
+    dpt_list = [dpt.strip().upper() for dpt in os.environ["GEOCODER_DEPARTEMENTS"].split(",") if dpt.strip()]
+elif DEBUG:
     dpt_list = ["01"]
 else:  # pragma: no cover
     dpt_list = ["01", "02", "03", "04", "05", "06", "07", "08", "09",

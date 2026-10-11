@@ -301,6 +301,31 @@ def select_voie(commune_id, voie, voie_type):
     return voie_id if found else None
 
 
+def select_voie_in_postal(postal_id, voie):
+    """Select the record on voie table with field normalise equal to voie, in any commune of a postal code.
+
+    This is for searches that give a postal code shared by several communes but no (usable) commune name.
+
+    Args:
+        postal_id (int): The index of the postal code.
+        voie (str): The normalized street name.
+
+    Returns:
+        voie_id (int): The index of the record in the first commune (in alphabetical order) that has such a
+            street, None otherwise.
+
+    """
+    if postal_id is None or voie is None:
+        return None
+    ref_element = data['postal'][postal_id]
+    for commune_id in range(ref_element['start'], ref_element['end']):
+        commune = data['commune'][commune_id]
+        voie_id, found = select('voie', 'normalise', commune['start'], commune['end'], voie)
+        if found:
+            return voie_id
+    return None
+
+
 def complete_voie_selection(code_postal, commune, voie):
     """Select record on voie table with field normalise most similar to voie.
 

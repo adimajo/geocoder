@@ -27,7 +27,7 @@ for r in rows:
     numero, rep, voie, cp, commune = r[2], r[3], r[4], r[5], r[7]
     adresse = f"{numero}{rep} {voie}".strip()
     kind = random.choice(["exact", "typo_voie", "typo_commune", "no_commune", "no_cp", "no_numero", "voie_only"])
-    c = {"code_postal": cp, "commune": commune, "adresse": adresse}
+    c = {"code_postal": cp, "commune": commune, "adresse": adresse, "truth": [float(r[12]), float(r[13])]}
     if kind == "typo_voie":
         c["adresse"] = f"{numero} {typo(voie)}"
     elif kind == "typo_commune":
@@ -40,6 +40,7 @@ for r in rows:
         c["adresse"] = voie
     elif kind == "voie_only":
         c["code_postal"], c["commune"] = None, None
+    c["kind"] = kind
     cases.append(c)
 
 points = [(float(r[12]) + random.uniform(-1e-4, 1e-4), float(r[13]) + random.uniform(-1e-4, 1e-4))

@@ -3,2002 +3,4002 @@
 {
 "code_postal": "01630",
 "commune": "Saint-Jean-de-Gonville",
-"adresse": "Route de Choudans"
+"adresse": "Route de Choudans",
+"truth": [
+5.941643,
+46.212057
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01440",
 "commune": "Viriat",
-"adresse": "192 Route de Bourg"
+"adresse": "192 Route de Bourg",
+"truth": [
+5.219521,
+46.250643
+],
+"kind": "exact"
 },
 {
 "code_postal": "01240",
 "commune": "Lent",
-"adresse": "10 Rue du Developpement"
+"adresse": "10 Rue du Developpement",
+"truth": [
+5.191152,
+46.118814
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Mézériat",
-"adresse": "1387a Route des 3 Rivieres"
+"adresse": "1387a Route des 3 Rivieres",
+"truth": [
+5.064708,
+46.240052
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01120",
 "commune": "Montluel",
-"adresse": "Cours Condé"
+"adresse": "Cours Condé",
+"truth": [
+5.058919,
+45.85142
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01190",
 "commune": "Saint-Bénigne",
-"adresse": "Route des Martollets"
+"adresse": "Route des Martollets",
+"truth": [
+4.948924,
+46.442855
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Sainte-Julie",
-"adresse": "2267 Route de la Plaine"
+"adresse": "2267 Route de la Plaine",
+"truth": [
+5.280177,
+45.869284
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01240",
 "commune": "Sait-Paul-de-Varax",
-"adresse": "19 Impasse des Naturelles"
+"adresse": "19 Impasse des Naturelles",
+"truth": [
+5.130908,
+46.098555
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1031 Rue de la Mairie"
+"adresse": "1031 Rue de la Mairie",
+"truth": [
+5.618786,
+45.649074
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "65 Chemin du Refuge"
+"adresse": "65 Chemin du Refuge",
+"truth": [
+5.52876,
+46.082082
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01480",
 "commune": "Villeneuve",
-"adresse": "1 Allée des atalpas"
+"adresse": "1 Allée des atalpas",
+"truth": [
+4.838725,
+46.022328
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01700",
 "commune": "Saint-Maurice-de-Beynost",
-"adresse": "10 Chemin des Botes"
+"adresse": "10 Chemin des Botes",
+"truth": [
+4.986199,
+45.830827
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01460",
 "commune": "Montréal-la-Cluse",
-"adresse": "22 Aveue de Bresse"
+"adresse": "22 Aveue de Bresse",
+"truth": [
+5.573511,
+46.1718
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01250",
 "commune": "Montagnat",
-"adresse": "2694 Route du Revermont"
+"adresse": "2694 Route du Revermont",
+"truth": [
+5.294648,
+46.166836
+],
+"kind": "exact"
 },
 {
 "code_postal": "01440",
 "commune": "Viriat",
-"adresse": "1317 Rue de Majornas"
+"adresse": "1317 Rue de Majornas",
+"truth": [
+5.217873,
+46.226098
+],
+"kind": "exact"
 },
 {
 "code_postal": "01100",
 "commune": "Oyonnax",
-"adresse": "12 Rue Alphonse Bauin"
+"adresse": "12 Rue Alphonse Bauin",
+"truth": [
+5.658207,
+46.264039
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Briord",
-"adresse": "4 Rue d’Aillon"
+"adresse": "4 Rue d’Aillon",
+"truth": [
+5.484095,
+45.778132
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "18 Route de Perouges"
+"adresse": "18 Route de Perouges",
+"truth": [
+5.072141,
+45.92925
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "4 Chemin de Saint Jean"
+"adresse": "4 Chemin de Saint Jean",
+"truth": [
+5.790707,
+46.075661
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01130",
 "commune": "Le Poizat-Lalleyriat",
-"adresse": "2491 Route de Geneve"
+"adresse": "2491 Route de Geneve",
+"truth": [
+5.708895,
+46.165726
+],
+"kind": "exact"
 },
 {
 "code_postal": "01500",
 "commune": null,
-"adresse": "7 Place du Champ de Mars"
+"adresse": "7 Place du Champ de Mars",
+"truth": [
+5.357409,
+45.958944
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01160",
 "commune": null,
-"adresse": "162 Route de la Dombes"
+"adresse": "162 Route de la Dombes",
+"truth": [
+5.288048,
+46.003915
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01300",
 "commune": "Brégnier-Cordon",
-"adresse": "Rue du Vieux Port"
+"adresse": "Rue du Vieux Port",
+"truth": [
+5.634894,
+45.618493
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Douvres",
-"adresse": "294 Route d'Ambérieu"
+"adresse": "294 Route d'Ambérieu",
+"truth": [
+5.36994,
+45.988967
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01130",
 "commune": "Le Poizat-Lalleyriat",
-"adresse": "233 Le Souey"
+"adresse": "233 Le Souey",
+"truth": [
+5.664411,
+46.141479
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01750",
 "commune": "Replonges",
-"adresse": "Rue Janin"
+"adresse": "Rue Janin",
+"truth": [
+4.87271,
+46.304998
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01460",
 "commune": null,
-"adresse": "5 Lotissement Le Domaine de la Crozette"
+"adresse": "5 Lotissement Le Domaine de la Crozette",
+"truth": [
+5.52562,
+46.182818
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01170",
 "commune": null,
-"adresse": "661 Rue Francois Estier"
+"adresse": "661 Rue Francois Estier",
+"truth": [
+6.040713,
+46.311296
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01150",
 "commune": null,
-"adresse": "167 Impasse de la Taurelle"
+"adresse": "167 Impasse de la Taurelle",
+"truth": [
+5.29523,
+45.892132
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01700",
 "commune": "Saint-Maurice-de-Beynost",
-"adresse": "57 Roue de Genève"
+"adresse": "57 Roue de Genève",
+"truth": [
+4.983133,
+45.830834
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01170",
 "commune": "Chevry",
-"adresse": "Rue Equinox"
+"adresse": "Rue Equinox",
+"truth": [
+6.044711,
+46.282196
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01160",
 "commune": "Saint-Martin-du-Mont",
-"adresse": "Route du Pied de la Cote"
+"adresse": "Route du Pied de la Cote",
+"truth": [
+5.322416,
+46.103674
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01340",
 "commune": "Bresse Vallons",
-"adresse": "736 Route des Perthuisettes"
+"adresse": "736 Route des Perthuisettes",
+"truth": [
+5.175013,
+46.309522
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "7 Impasse Lacroix"
+"adresse": "7 Impasse Lacroix",
+"truth": [
+5.294905,
+46.437432
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "265 Chemin de la Verpillère"
+"adresse": "265 Chemin de la Verpillère",
+"truth": [
+4.889454,
+46.355905
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "221bis Rue de la Ruaz"
+"adresse": "221bis Rue de la Ruaz",
+"truth": [
+5.352179,
+45.929777
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01360",
 "commune": "Béligneux",
-"adresse": "24 Lotissement le Bois Carre"
+"adresse": "24 Lotissement le Bois Carre",
+"truth": [
+5.121152,
+45.852146
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "669 Chemin du Foulon"
+"adresse": "669 Chemin du Foulon",
+"truth": [
+4.781326,
+45.964676
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01390",
 "commune": null,
-"adresse": "145 Rue Georges Charpak"
+"adresse": "145 Rue Georges Charpak",
+"truth": [
+4.881025,
+45.904094
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01990",
 "commune": "Saint-Trivier-sur-Moignans",
-"adresse": "63 impass du champ Cropet"
+"adresse": "63 impass du champ Cropet",
+"truth": [
+4.908835,
+46.061101
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "109 Rue du Tilleul"
+"adresse": "109 Rue du Tilleul",
+"truth": [
+4.759083,
+45.986337
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01170",
 "commune": "Crozet",
-"adresse": "Route de Villeneuve"
+"adresse": "Route de Villeneuve",
+"truth": [
+6.009439,
+46.273053
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Parcieux",
-"adresse": "767 Chemin du Dessous"
+"adresse": "767 Chemin du Dessous",
+"truth": [
+4.81293,
+45.915439
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01630",
 "commune": null,
-"adresse": "70 Chemin du Foyer"
+"adresse": "70 Chemin du Foyer",
+"truth": [
+5.991575,
+46.262821
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01600",
 "commune": "Trévoux",
-"adresse": "410 Rue des Magnolias Grandiflora"
+"adresse": "410 Rue des Magnolias Grandiflora",
+"truth": [
+4.795105,
+45.934729
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Montmerle-sur-Saône",
-"adresse": "703 Rue de Chatillon"
+"adresse": "703 Rue de Chatillon",
+"truth": [
+4.764538,
+46.085843
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01250",
 "commune": "Jasseron",
-"adresse": "17 Passge de la Gare"
+"adresse": "17 Passge de la Gare",
+"truth": [
+5.322785,
+46.212095
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01990",
 "commune": null,
-"adresse": "377 route de Villars"
+"adresse": "377 route de Villars",
+"truth": [
+4.900979,
+46.067985
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01250",
 "commune": "Montagnat",
-"adresse": "152 Lotissement les Boutons d'r"
+"adresse": "152 Lotissement les Boutons d'r",
+"truth": [
+5.27652,
+46.162622
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01390",
 "commune": null,
-"adresse": "50 Lotissement les Coquelicots"
+"adresse": "50 Lotissement les Coquelicots",
+"truth": [
+4.983845,
+45.947859
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01170",
 "commune": "Chevry",
-"adresse": "Route des 2 Journans"
+"adresse": "Route des 2 Journans",
+"truth": [
+6.06366,
+46.280568
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Le Poizat-Lalleyriat",
-"adresse": "72 Rue sur la Vignette"
+"adresse": "72 Rue sur la Vignette",
+"truth": [
+5.684058,
+46.146322
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Béréziat",
-"adresse": "1076 Route de la Chassagnette"
+"adresse": "1076 Route de la Chassagnette",
+"truth": [
+5.037569,
+46.378499
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Courmangoux",
-"adresse": "205 Rue du 16 Avril 1944"
+"adresse": "205 Rue du 16 Avril 1944",
+"truth": [
+5.368797,
+46.338959
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01280",
 "commune": "Prévessin-Moës",
-"adresse": "194 Chemin de la Roselière"
+"adresse": "194 Chemin de la Roselière",
+"truth": [
+6.083824,
+46.249098
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01310",
 "commune": null,
-"adresse": "143 Chemin de l’Effondras"
+"adresse": "143 Chemin de l’Effondras",
+"truth": [
+5.042991,
+46.256788
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": "Culoz-Béon",
-"adresse": "116 rue des Ecoles"
+"adresse": "116 rue des Ecoles",
+"truth": [
+5.782074,
+45.850238
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "9 Rue des Abattoirs"
+"adresse": "9 Rue des Abattoirs",
+"truth": [
+5.620009,
+46.141842
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01300",
 "commune": "Magnieu",
-"adresse": "Route de Musin"
+"adresse": "Route de Musin",
+"truth": [
+5.719596,
+45.775283
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Savigneux",
-"adresse": "1606 Route de Rancé"
+"adresse": "1606 Route de Rancé",
+"truth": [
+4.850664,
+45.986752
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01190",
 "commune": null,
-"adresse": "272 Route de Montrevel"
+"adresse": "272 Route de Montrevel",
+"truth": [
+4.949747,
+46.426339
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "170 Chemin des Covettes"
+"adresse": "170 Chemin des Covettes",
+"truth": [
+5.038344,
+46.248467
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Prévessin-Moëns",
-"adresse": "168 Rue du Chat Perché"
+"adresse": "168 Rue du Chat Perché",
+"truth": [
+6.081504,
+46.252351
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01300",
 "commune": null,
-"adresse": "10 Rue Georges Girerd"
+"adresse": "10 Rue Georges Girerd",
+"truth": [
+5.685544,
+45.760444
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01200",
 "commune": "Chézery-Forens",
-"adresse": "489 impasse du ceux"
+"adresse": "489 impasse du ceux",
+"truth": [
+5.84345,
+46.174389
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "156 Rue des Alluets"
+"adresse": "156 Rue des Alluets",
+"truth": [
+5.203969,
+45.778464
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01460",
 "commune": null,
-"adresse": "1 Impasse Comblon"
+"adresse": "1 Impasse Comblon",
+"truth": [
+5.572735,
+46.180553
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01340",
 "commune": null,
-"adresse": "231 Route des Orcieres"
+"adresse": "231 Route des Orcieres",
+"truth": [
+5.151824,
+46.356385
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01120",
 "commune": "Thil",
-"adresse": "334 Rue du Canal"
+"adresse": "334 Rue du Canal",
+"truth": [
+5.023646,
+45.811323
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "270c Chemin de Betheneins"
+"adresse": "270c Chemin de Betheneins",
+"truth": [
+4.795456,
+46.093996
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01430",
 "commune": "Vieu-d'Izenave",
-"adresse": "108 Rue des Ecoes"
+"adresse": "108 Rue des Ecoes",
+"truth": [
+5.542318,
+46.091664
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01170",
 "commune": "Gex",
-"adresse": "8 Rue des Abattoirs"
+"adresse": "8 Rue des Abattoirs",
+"truth": [
+6.056151,
+46.332601
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "12 Rue de Champ Novaz"
+"adresse": "12 Rue de Champ Novaz",
+"truth": [
+5.972767,
+46.180125
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "191 Rue du Bugey"
+"adresse": "191 Rue du Bugey",
+"truth": [
+5.205623,
+45.774564
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Serrières-sur-Ain",
-"adresse": "225 Chemin des Entreponts"
+"adresse": "225 Chemin des Entreponts",
+"truth": [
+5.43667,
+46.136685
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01160",
 "commune": null,
-"adresse": "120 Route d’Echelette"
+"adresse": "120 Route d’Echelette",
+"truth": [
+5.374919,
+46.072832
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01170",
 "commune": "Gex",
-"adresse": "impasse des fayards"
+"adresse": "impasse des fayards",
+"truth": [
+6.060506,
+46.321101
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01400",
 "commune": "Neuville-les-Dames",
-"adresse": "148 Alleede Machard"
+"adresse": "148 Alleede Machard",
+"truth": [
+5.005255,
+46.16419
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01500",
 "commune": null,
-"adresse": "4 Route de Ternant"
+"adresse": "4 Route de Ternant",
+"truth": [
+5.338512,
+45.939506
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01240",
 "commune": "La Chapelle-du-Châtelard",
-"adresse": "3 Rue du Pré"
+"adresse": "3 Rue du Pré",
+"truth": [
+5.023271,
+46.071461
+],
+"kind": "exact"
 },
 {
 "code_postal": "01360",
 "commune": "Béligneux",
-"adresse": "Rue du Professeur Robert Hugonot"
+"adresse": "Rue du Professeur Robert Hugonot",
+"truth": [
+5.125837,
+45.852493
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01240",
 "commune": "Saint-Anré-le-Bouchoux",
-"adresse": "200 Impasse des Frenes"
+"adresse": "200 Impasse des Frenes",
+"truth": [
+5.075204,
+46.117658
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01570",
 "commune": "Maniat",
-"adresse": "248 Rue du Platet"
+"adresse": "248 Rue du Platet",
+"truth": [
+4.912851,
+46.364432
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01190",
 "commune": "Saint-Béngne",
-"adresse": "12 Impasse des Bonnots"
+"adresse": "12 Impasse des Bonnots",
+"truth": [
+4.951073,
+46.448918
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01800",
 "commune": "Meximieux",
-"adresse": "3 Rue de Franche Comte"
+"adresse": "3 Rue de Franche Comte",
+"truth": [
+5.198972,
+45.915397
+],
+"kind": "exact"
 },
 {
 "code_postal": "01851",
 "commune": "Marboz",
-"adresse": "1190 Roue de la Croze"
+"adresse": "1190 Roue de la Croze",
+"truth": [
+5.237562,
+46.328338
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01000",
 "commune": "Bourg-en-Bresse",
-"adresse": "110 mail de la coférence de rio"
+"adresse": "110 mail de la coférence de rio",
+"truth": [
+5.249767,
+46.20735
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01110",
 "commune": "Champdor-Corcelles",
-"adresse": "Rue de Lachat"
+"adresse": "Rue de Lachat",
+"truth": [
+5.596248,
+46.021053
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01170",
 "commune": "Crozet",
-"adresse": "35 Impassedes Asters"
+"adresse": "35 Impassedes Asters",
+"truth": [
+6.024789,
+46.282381
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01460",
 "commune": "Montréal-la-Cluse",
-"adresse": "74 Avenue des NARIX"
+"adresse": "74 Avenue des NARIX",
+"truth": [
+5.582932,
+46.190565
+],
+"kind": "exact"
 },
 {
 "code_postal": "01600",
 "commune": null,
-"adresse": "25bis Chemin de la Bruyere"
+"adresse": "25bis Chemin de la Bruyere",
+"truth": [
+4.732624,
+45.945877
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01100",
 "commune": null,
-"adresse": "32 Rue de Forchet"
+"adresse": "32 Rue de Forchet",
+"truth": [
+5.683978,
+46.286871
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01800",
 "commune": "Saint-Maurice-de-Gurdans",
-"adresse": "1a Impasse de Fort Janot"
+"adresse": "1a Impasse de Fort Janot",
+"truth": [
+5.181233,
+45.814078
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01600",
 "commune": null,
-"adresse": "235 Rue des Alouettes"
+"adresse": "235 Rue des Alouettes",
+"truth": [
+4.779412,
+45.943252
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01800",
 "commune": null,
-"adresse": "622 Chemin de la Bergerie"
+"adresse": "622 Chemin de la Bergerie",
+"truth": [
+5.214291,
+45.836977
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01600",
 "commune": "Reyrieux",
-"adresse": "95 Rue des Oiseaux"
+"adresse": "95 Rue des Oiseaux",
+"truth": [
+4.805753,
+45.938332
+],
+"kind": "exact"
 },
 {
 "code_postal": "01160",
 "commune": "Priay",
-"adresse": "352 Montee de Bellgarde"
+"adresse": "352 Montee de Bellgarde",
+"truth": [
+5.295469,
+46.012433
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01300",
 "commune": null,
-"adresse": "5 Rue de la Poste"
+"adresse": "5 Rue de la Poste",
+"truth": [
+5.626025,
+45.641525
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "2 Chemin sous la Combe"
+"adresse": "2 Chemin sous la Combe",
+"truth": [
+5.51591,
+45.929168
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Chaveyriat",
-"adresse": "47 Route de Colignat"
+"adresse": "47 Route de Colignat",
+"truth": [
+5.061699,
+46.199576
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01150",
 "commune": "Chazey-sur-Ain",
-"adresse": "Rue Principale"
+"adresse": "Rue Principale",
+"truth": [
+5.26484,
+45.881686
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01200",
 "commune": "Valserhône",
-"adresse": "644 Route de Vouvray"
+"adresse": "644 Route de Vouvray",
+"truth": [
+5.814705,
+46.109411
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "8 Rue de Thoire"
+"adresse": "8 Rue de Thoire",
+"truth": [
+5.553725,
+46.261653
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "34 Rue du Bosquet"
+"adresse": "34 Rue du Bosquet",
+"truth": [
+5.366858,
+45.954441
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Sainte-Euphémie",
-"adresse": "380 Route de Miserieux"
+"adresse": "380 Route de Miserieux",
+"truth": [
+4.801297,
+45.970591
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01300",
 "commune": null,
-"adresse": "725 Route de Saint Champ"
+"adresse": "725 Route de Saint Champ",
+"truth": [
+5.731093,
+45.784568
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01500",
 "commune": null,
-"adresse": "10 Chemin de la Grosse Pierre"
+"adresse": "10 Chemin de la Grosse Pierre",
+"truth": [
+5.375629,
+45.993498
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01630",
 "commune": "Saint-Jean-de-Gonville",
-"adresse": "78 Rue Saint Jean"
+"adresse": "78 Rue Saint Jean",
+"truth": [
+5.952658,
+46.212521
+],
+"kind": "exact"
 },
 {
 "code_postal": "01480",
 "commune": "Jassas-Riottier",
-"adresse": "207 Rue Pasteur"
+"adresse": "207 Rue Pasteur",
+"truth": [
+4.761823,
+45.981083
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "7bis rue philibert le beau"
+"adresse": "7bis rue philibert le beau",
+"truth": [
+5.235917,
+46.199674
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01750",
 "commune": null,
-"adresse": "116 Rue de Pain Blanc"
+"adresse": "116 Rue de Pain Blanc",
+"truth": [
+4.8831,
+46.302067
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "7 Impasse du Tronchay"
+"adresse": "7 Impasse du Tronchay",
+"truth": [
+5.05492,
+46.356197
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "15 Avenue Paul Painlevé"
+"adresse": "15 Avenue Paul Painlevé",
+"truth": [
+5.34383,
+45.957638
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01851",
 "commune": null,
-"adresse": "165a Chemin des Jarois"
+"adresse": "165a Chemin des Jarois",
+"truth": [
+5.238021,
+46.315289
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": "Pizay",
-"adresse": "18 Impasse des Grandes Rayes"
+"adresse": "18 Impasse des Grandes Rayes",
+"truth": [
+5.094296,
+45.891733
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01640",
 "commune": "Saint-Jean-le-Vieux",
-"adresse": "Grande Rue"
+"adresse": "Grande Rue",
+"truth": [
+5.389512,
+46.029178
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01140",
 "commune": "Illiat",
-"adresse": "Route des maisons brûlées"
+"adresse": "Route des maisons brûlées",
+"truth": [
+4.875116,
+46.183002
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Oyonnax",
-"adresse": "13 Rue Andre Besillon"
+"adresse": "13 Rue Andre Besillon",
+"truth": [
+5.651904,
+46.262523
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "20 Rue des Oiseaux"
+"adresse": "20 Rue des Oiseaux",
+"truth": [
+4.806379,
+45.937954
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Coligny",
-"adresse": "110 Chemin des Pres de Charmoux"
+"adresse": "110 Chemin des Pres de Charmoux",
+"truth": [
+5.341815,
+46.390278
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01250",
 "commune": "Pouillat",
-"adresse": "504 Route du Champ Feuri"
+"adresse": "504 Route du Champ Feuri",
+"truth": [
+5.429119,
+46.322821
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01400",
 "commune": "L'Abergement-Clémenciat",
-"adresse": "128 Rue ds 5 Chemins"
+"adresse": "128 Rue ds 5 Chemins",
+"truth": [
+4.921896,
+46.151897
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01340",
 "commune": null,
-"adresse": "85 Rue Fontanelle"
+"adresse": "85 Rue Fontanelle",
+"truth": [
+5.17585,
+46.368603
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01480",
 "commune": null,
-"adresse": "1 Allée des Lauriers"
+"adresse": "1 Allée des Lauriers",
+"truth": [
+4.819955,
+45.994551
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01800",
 "commune": "Villieu-Loyes-Mollon",
-"adresse": "433 Grande Rue"
+"adresse": "433 Grande Rue",
+"truth": [
+5.245628,
+45.946041
+],
+"kind": "exact"
 },
 {
 "code_postal": "01630",
 "commune": null,
-"adresse": "251 Chemin du Vieux Nant"
+"adresse": "251 Chemin du Vieux Nant",
+"truth": [
+5.953526,
+46.210446
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01320",
 "commune": "Crans",
-"adresse": "94 Chemin de Sainte Catherine"
+"adresse": "94 Chemin de Sainte Catherine",
+"truth": [
+5.183098,
+45.969037
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01100",
 "commune": "Groissiat",
-"adresse": "Rue du Praillon"
+"adresse": "Rue du Praillon",
+"truth": [
+5.619129,
+46.226358
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01700",
 "commune": "Miribel",
-"adresse": "Montée Neuve"
+"adresse": "Montée Neuve",
+"truth": [
+4.946427,
+45.828769
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "55 Rue des Aulnes"
+"adresse": "55 Rue des Aulnes",
+"truth": [
+5.984331,
+46.249975
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01700",
 "commune": null,
-"adresse": "17 Impasse de la Treille"
+"adresse": "17 Impasse de la Treille",
+"truth": [
+4.95637,
+45.824777
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01990",
 "commune": "Saint-Trivier-sur-Moignans",
-"adresse": "impasse du champ du Bourg"
+"adresse": "impasse du champ du Bourg",
+"truth": [
+4.878117,
+46.047323
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01240",
 "commune": "Saint-Paul-de-Varax",
-"adresse": "24 Rue Simoe Veil"
+"adresse": "24 Rue Simoe Veil",
+"truth": [
+5.127274,
+46.093972
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01380",
 "commune": "Bâgé-Dommartin",
-"adresse": "345 Route du Crridor"
+"adresse": "345 Route du Crridor",
+"truth": [
+4.937455,
+46.319642
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Sermoyer",
-"adresse": "253 Chemin des Charmes"
+"adresse": "253 Chemin des Charmes",
+"truth": [
+4.983926,
+46.504612
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01600",
 "commune": "Saint-Didier-de-Formans",
-"adresse": "1599 Chemin de Roncheveux"
+"adresse": "1599 Chemin de Roncheveux",
+"truth": [
+4.789026,
+45.948661
+],
+"kind": "exact"
 },
 {
 "code_postal": "01340",
 "commune": null,
-"adresse": "774 Chemin des Bruelles"
+"adresse": "774 Chemin des Bruelles",
+"truth": [
+5.085859,
+46.297623
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": "Valserhône",
-"adresse": "795 Rue Antoine Favre"
+"adresse": "795 Rue Antoine Favre",
+"truth": [
+5.819986,
+46.118343
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Prévessin-Moëns",
-"adresse": "151 Rue de Chantepie"
+"adresse": "151 Rue de Chantepie",
+"truth": [
+6.067813,
+46.25612
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01570",
 "commune": "Manziat",
-"adresse": "Route d’Asnières"
+"adresse": "Route d’Asnières",
+"truth": [
+4.905555,
+46.360828
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01190",
 "commune": "Boz",
-"adresse": "312 Route des Loyons"
+"adresse": "312 Route des Loyons",
+"truth": [
+4.912637,
+46.403311
+],
+"kind": "exact"
 },
 {
 "code_postal": "01160",
 "commune": "Neuville-sur-Ain",
-"adresse": "1 Rue de la Reverdère"
+"adresse": "1 Rue de la Reverdère",
+"truth": [
+5.37813,
+46.083553
+],
+"kind": "exact"
 },
 {
 "code_postal": "01100",
 "commune": "Oyonnax",
-"adresse": "Impasse Paul Golliat"
+"adresse": "Impasse Paul Golliat",
+"truth": [
+5.657697,
+46.271341
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01130",
 "commune": null,
-"adresse": "133 Rue du Grand Golet"
+"adresse": "133 Rue du Grand Golet",
+"truth": [
+5.774593,
+46.227442
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01420",
 "commune": "Chanay",
-"adresse": "6 Chemin du Balmy"
+"adresse": "6 Chemin du Balmy",
+"truth": [
+5.792002,
+45.997895
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01270",
 "commune": null,
-"adresse": "35b Che des Marcs"
+"adresse": "35b Che des Marcs",
+"truth": [
+5.303787,
+46.38355
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01000",
 "commune": "Bourg-en-Bresse",
-"adresse": "16 re lazare carnot"
+"adresse": "16 re lazare carnot",
+"truth": [
+5.230475,
+46.20029
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01700",
 "commune": "Beynst",
-"adresse": "73 Chemin Vert"
+"adresse": "73 Chemin Vert",
+"truth": [
+4.985532,
+45.836205
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01140",
 "commune": "Saint-Éienne-sur-Chalaronne",
-"adresse": "43 Impasse Pre du Bourg"
+"adresse": "43 Impasse Pre du Bourg",
+"truth": [
+4.872089,
+46.149041
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01800",
 "commune": null,
-"adresse": "3 Rue Constantin"
+"adresse": "3 Rue Constantin",
+"truth": [
+5.196426,
+45.905139
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01120",
 "commune": "Monluel",
-"adresse": "71 Grande Rue"
+"adresse": "71 Grande Rue",
+"truth": [
+5.058135,
+45.851888
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1051 Route de Grand Corent"
+"adresse": "1051 Route de Grand Corent",
+"truth": [
+5.426555,
+46.228373
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01160",
 "commune": null,
-"adresse": "52 Rue Saint Vincent"
+"adresse": "52 Rue Saint Vincent",
+"truth": [
+5.32956,
+46.076155
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01440",
 "commune": "Virit",
-"adresse": "46a Rue Prosper Convert"
+"adresse": "46a Rue Prosper Convert",
+"truth": [
+5.217585,
+46.25217
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01470",
 "commune": "Motagnieu",
-"adresse": "555 Route de Serrieres"
+"adresse": "555 Route de Serrieres",
+"truth": [
+5.45795,
+45.798782
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01800",
 "commune": null,
-"adresse": "160 Rue de la Mairie"
+"adresse": "160 Rue de la Mairie",
+"truth": [
+5.071771,
+45.931042
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01500",
 "commune": "Ambérieu-en-Bugey",
-"adresse": "11 Rue des Mouettes"
+"adresse": "11 Rue des Mouettes",
+"truth": [
+5.332411,
+45.962184
+],
+"kind": "exact"
 },
 {
 "code_postal": "01630",
 "commune": "Sergy",
-"adresse": "Route de Thoiry"
+"adresse": "Route de Thoiry",
+"truth": [
+5.999115,
+46.252298
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Thoiry",
-"adresse": "132 Rue de Pompe Magnin"
+"adresse": "132 Rue de Pompe Magnin",
+"truth": [
+5.978679,
+46.236082
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01200",
 "commune": "Montanges",
-"adresse": "84 Rue des Rys"
+"adresse": "84 Rue des Rys",
+"truth": [
+5.798425,
+46.161586
+],
+"kind": "exact"
 },
 {
 "code_postal": "01960",
 "commune": "Sevas",
-"adresse": "189 Rue des Platanes"
+"adresse": "189 Rue des Platanes",
+"truth": [
+5.169124,
+46.128824
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01430",
 "commune": "Vieu-d'Izenave",
-"adresse": "Rue des Platières"
+"adresse": "Rue des Platières",
+"truth": [
+5.528352,
+46.084549
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01570",
 "commune": "Feillens",
-"adresse": "142 Route des Beys"
+"adresse": "142 Route des Beys",
+"truth": [
+4.8824,
+46.342082
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "103c Chemin de Riambochon"
+"adresse": "103c Chemin de Riambochon",
+"truth": [
+6.015196,
+46.247255
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01700",
 "commune": "Miribel",
-"adresse": "Rue Victor Hugo"
+"adresse": "Rue Victor Hugo",
+"truth": [
+4.966781,
+45.83068
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01290",
 "commune": "Laiz",
-"adresse": "58 Route des Combes"
+"adresse": "58 Route des Combes",
+"truth": [
+4.894122,
+46.252497
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "106a Route de la Ferrand"
+"adresse": "106a Route de la Ferrand",
+"truth": [
+4.940094,
+46.340533
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01310",
 "commune": "Montracol",
-"adresse": "3556 Route de Trevoux"
+"adresse": "3556 Route de Trevoux",
+"truth": [
+5.095617,
+46.183805
+],
+"kind": "exact"
 },
 {
 "code_postal": "01500",
 "commune": "Saint-Denis-en-Bugey",
-"adresse": "4 Chemn Gambetta"
+"adresse": "4 Chemn Gambetta",
+"truth": [
+5.324535,
+45.95137
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "138 Avenue Saint-Exupéry"
+"adresse": "138 Avenue Saint-Exupéry",
+"truth": [
+5.805978,
+46.124609
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01480",
 "commune": "Messimy-sur-Saône",
-"adresse": "1067 Route d'Ars"
+"adresse": "1067 Route d'Ars",
+"truth": [
+4.774918,
+46.043982
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Valserhône",
-"adresse": "1 Rue de l'Avenir"
+"adresse": "1 Rue de l'Avenir",
+"truth": [
+5.816554,
+46.103067
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01350",
 "commune": "Ceyzérieu",
-"adresse": "293 Rue es Carmes"
+"adresse": "293 Rue es Carmes",
+"truth": [
+5.723366,
+45.833709
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01960",
 "commune": "Péronnas",
-"adresse": "782 Rue de la Chartruse"
+"adresse": "782 Rue de la Chartruse",
+"truth": [
+5.224599,
+46.181618
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01430",
 "commune": "Saint-Martin-du-Frêne",
-"adresse": "Chemin de la Mine"
+"adresse": "Chemin de la Mine",
+"truth": [
+5.580304,
+46.142908
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01160",
 "commune": "Saint-Martin-du-Mont",
-"adresse": "225 Chemin des Sources"
+"adresse": "225 Chemin des Sources",
+"truth": [
+5.321459,
+46.083717
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Bourg-en-Bresse",
-"adresse": "1 avenue d'alsace lorraine"
+"adresse": "1 avenue d'alsace lorraine",
+"truth": [
+5.225407,
+46.204759
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01350",
 "commune": "Culoz-Béon",
-"adresse": "66 rue des coles"
+"adresse": "66 rue des coles",
+"truth": [
+5.782068,
+45.849867
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01640",
 "commune": "Boyeux-Saint-Jérôme",
-"adresse": "Montée du Courtelas"
+"adresse": "Montée du Courtelas",
+"truth": [
+5.456458,
+46.030321
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01250",
 "commune": "Ceyzérit",
-"adresse": "5 Rue Jayr"
+"adresse": "5 Rue Jayr",
+"truth": [
+5.32259,
+46.178279
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01300",
 "commune": "Beley",
-"adresse": "16 Lotissement le Clos de la Rodette"
+"adresse": "16 Lotissement le Clos de la Rodette",
+"truth": [
+5.688925,
+45.748565
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Tossiat",
-"adresse": "1045 Chemin des Teppes"
+"adresse": "1045 Chemin des Teppes",
+"truth": [
+5.305752,
+46.136682
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Saint-Just",
-"adresse": "59d Chemin de Rosepommier"
+"adresse": "59d Chemin de Rosepommier",
+"truth": [
+5.27919,
+46.191728
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01710",
 "commune": "Thoiry",
-"adresse": "Rue du Quart"
+"adresse": "Rue du Quart",
+"truth": [
+5.975073,
+46.240203
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01260",
 "commune": "Champagne-en-Valromey",
-"adresse": "Grande Rue"
+"adresse": "Grande Rue",
+"truth": [
+5.678376,
+45.904802
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01130",
 "commune": "Échallon",
-"adresse": "1468 Route du Haut-jura"
+"adresse": "1468 Route du Haut-jura",
+"truth": [
+5.737835,
+46.220362
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "85 Rue du Sablon"
+"adresse": "85 Rue du Sablon",
+"truth": [
+5.217711,
+45.848581
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "62 Rue de Lyon"
+"adresse": "62 Rue de Lyon",
+"truth": [
+5.18921,
+45.901219
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01190",
 "commune": "Ozan",
-"adresse": "33 Impase Bois Amis"
+"adresse": "33 Impase Bois Amis",
+"truth": [
+4.913655,
+46.385616
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01960",
 "commune": "Péronnas",
-"adresse": "47 Rue de la Chartreuse"
+"adresse": "47 Rue de la Chartreuse",
+"truth": [
+5.222393,
+46.179594
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Billiat",
-"adresse": "7 Rue Saint Michel"
+"adresse": "7 Rue Saint Michel",
+"truth": [
+5.78506,
+46.076464
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01190",
 "commune": "Saint-Bénigne",
-"adresse": "483 Route de Chamerande"
+"adresse": "483 Route de Chamerande",
+"truth": [
+4.949228,
+46.460726
+],
+"kind": "exact"
 },
 {
 "code_postal": "01300",
 "commune": "Brégnier-Crdon",
-"adresse": "410 Chemin de la Plaine"
+"adresse": "410 Chemin de la Plaine",
+"truth": [
+5.620367,
+45.640963
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01300",
 "commune": "Parves et Nattages",
-"adresse": "Route du Rhône"
+"adresse": "Route du Rhône",
+"truth": [
+5.763271,
+45.720918
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01290",
 "commune": null,
-"adresse": "600 Route des Villards"
+"adresse": "600 Route des Villards",
+"truth": [
+4.887572,
+46.2418
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01300",
 "commune": null,
-"adresse": "687 Route de Lechaud"
+"adresse": "687 Route de Lechaud",
+"truth": [
+5.696185,
+45.766934
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01800",
 "commune": "Meximieux",
-"adresse": "Rue des Vignes"
+"adresse": "Rue des Vignes",
+"truth": [
+5.208153,
+45.910035
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01150",
 "commune": "Sault-Brénaz",
-"adresse": "7 Ru des Mariniers"
+"adresse": "7 Ru des Mariniers",
+"truth": [
+5.408503,
+45.854788
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Biziat",
-"adresse": "1 Lotissement le Grand Chêne"
+"adresse": "1 Lotissement le Grand Chêne",
+"truth": [
+4.927106,
+46.227675
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01160",
 "commune": "Saint-Martin-du-Mont",
-"adresse": "Allee du Clos de la Fontaine"
+"adresse": "Allee du Clos de la Fontaine",
+"truth": [
+5.307206,
+46.093334
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1 Chemin de Bret"
+"adresse": "1 Chemin de Bret",
+"truth": [
+5.384213,
+46.302583
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01540",
 "commune": "Vonnas",
-"adresse": "Route des Communes"
+"adresse": "Route des Communes",
+"truth": [
+5.005686,
+46.199152
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01700",
 "commune": "Saint-Maurice-de-Beynost",
-"adresse": "24 Rue e la Faitenière"
+"adresse": "24 Rue e la Faitenière",
+"truth": [
+4.977551,
+45.835027
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01390",
 "commune": "Mionnay",
-"adresse": "Chemin des Platières"
+"adresse": "Chemin des Platières",
+"truth": [
+4.959553,
+45.903048
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "656 Les Rives du Rhone"
+"adresse": "656 Les Rives du Rhone",
+"truth": [
+5.966123,
+46.149717
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01350",
 "commune": "Ceyzériu",
-"adresse": "321 Route de Vongnes"
+"adresse": "321 Route de Vongnes",
+"truth": [
+5.724556,
+45.829341
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01380",
 "commune": "Bâgé-Dommartin",
-"adresse": "Route de Montrevel"
+"adresse": "Route de Montrevel",
+"truth": [
+4.957821,
+46.312222
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Artemare",
-"adresse": "11 Rue de Champeze"
+"adresse": "11 Rue de Champeze",
+"truth": [
+5.702042,
+45.872443
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "413 Chemin des Vernes"
+"adresse": "413 Chemin des Vernes",
+"truth": [
+5.019278,
+46.170659
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01630",
 "commune": "Challex",
-"adresse": "146 Chemin du Vignoble"
+"adresse": "146 Chemin du Vignoble",
+"truth": [
+5.966686,
+46.178333
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "60 Rue des Pholiotes"
+"adresse": "60 Rue des Pholiotes",
+"truth": [
+5.980811,
+46.244299
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Prévessin-Moëns",
-"adresse": "44 Chemin des Crêts"
+"adresse": "44 Chemin des Crêts",
+"truth": [
+6.067044,
+46.281335
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1040 impasse du creux"
+"adresse": "1040 impasse du creux",
+"truth": [
+5.844568,
+46.171225
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01330",
 "commune": "Ambérieux-en-Dombes",
-"adresse": "54 Lotissement le Parc du Chateau"
+"adresse": "54 Lotissement le Parc du Chateau",
+"truth": [
+4.900525,
+45.999393
+],
+"kind": "exact"
 },
 {
 "code_postal": "01400",
 "commune": "Châtillon-sur-Chalronne",
-"adresse": "12 Place des Droits de l’Homme"
+"adresse": "12 Place des Droits de l’Homme",
+"truth": [
+4.960444,
+46.124307
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01570",
 "commune": null,
-"adresse": "85b Rue Vieille"
+"adresse": "85b Rue Vieille",
+"truth": [
+4.915479,
+46.361968
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01260",
 "commune": "Valromey-sur-Séran",
-"adresse": "Rue d'Antioche"
+"adresse": "Rue d'Antioche",
+"truth": [
+5.690217,
+45.880588
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01800",
 "commune": "Jyeux",
-"adresse": "1351 Chemin du Bois"
+"adresse": "1351 Chemin du Bois",
+"truth": [
+5.124218,
+45.95817
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Boz",
-"adresse": "162 Rue de Montrillon"
+"adresse": "162 Rue de Montrillon",
+"truth": [
+4.909239,
+46.403913
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01380",
 "commune": "Bâgé-Dommartin",
-"adresse": "Route de Bereziat"
+"adresse": "Route de Bereziat",
+"truth": [
+4.99294,
+46.338841
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01390",
 "commune": "Rancé",
-"adresse": "131 Chemin du Crêt"
+"adresse": "131 Chemin du Crêt",
+"truth": [
+4.846818,
+45.964045
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01960",
 "commune": "Péronnas",
-"adresse": "1043 Chemin des Carronnières"
+"adresse": "1043 Chemin des Carronnières",
+"truth": [
+5.22621,
+46.180488
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "14 Rue de la Vie Vieille"
+"adresse": "14 Rue de la Vie Vieille",
+"truth": [
+5.771945,
+46.057919
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01340",
 "commune": null,
-"adresse": "52 Résidence le Pré"
+"adresse": "52 Résidence le Pré",
+"truth": [
+5.118587,
+46.336166
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "51 Rue Briand Stresemann"
+"adresse": "51 Rue Briand Stresemann",
+"truth": [
+5.980364,
+46.238955
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01710",
 "commune": null,
-"adresse": "238 Rue du Quart"
+"adresse": "238 Rue du Quart",
+"truth": [
+5.975319,
+46.238043
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01170",
 "commune": "Gex",
-"adresse": "101 Rue du Commerce"
+"adresse": "101 Rue du Commerce",
+"truth": [
+6.05732,
+46.332752
+],
+"kind": "exact"
 },
 {
 "code_postal": "01140",
 "commune": null,
-"adresse": "10 Place des Dombes"
+"adresse": "10 Place des Dombes",
+"truth": [
+4.803777,
+46.172797
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01370",
 "commune": "Val-Revermot",
-"adresse": "293 Route de Saint Etienne du Bois"
+"adresse": "293 Route de Saint Etienne du Bois",
+"truth": [
+5.362884,
+46.272911
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "4016 Route du Souget"
+"adresse": "4016 Route du Souget",
+"truth": [
+5.253342,
+46.442349
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01750",
 "commune": null,
-"adresse": "65 Rue Mogen"
+"adresse": "65 Rue Mogen",
+"truth": [
+4.873822,
+46.310626
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01140",
 "commune": "Thoissey",
-"adresse": "Rue des Roses"
+"adresse": "Rue des Roses",
+"truth": [
+4.805387,
+46.174742
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01340",
 "commune": "Saint-Sulpice",
-"adresse": "789 Chemin e Lange"
+"adresse": "789 Chemin e Lange",
+"truth": [
+5.045995,
+46.326569
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01630",
 "commune": "Péron",
-"adresse": "358 Chemin du Moard"
+"adresse": "358 Chemin du Moard",
+"truth": [
+5.949779,
+46.196256
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Serrières-de-Briord",
-"adresse": "28 Rue du Pont"
+"adresse": "28 Rue du Pont",
+"truth": [
+5.455783,
+45.804744
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01470",
 "commune": "Serrières-de-Briord",
-"adresse": "Rue du Dauphiné"
+"adresse": "Rue du Dauphiné",
+"truth": [
+5.447474,
+45.807953
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01390",
 "commune": "Mionny",
-"adresse": "135 Rue Principale"
+"adresse": "135 Rue Principale",
+"truth": [
+4.929439,
+45.895279
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "2 Impasse de la Gravière"
+"adresse": "2 Impasse de la Gravière",
+"truth": [
+4.810582,
+46.029593
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Saint-Genis-Pouilly",
-"adresse": "74 Rue Victor Hugo"
+"adresse": "74 Rue Victor Hugo",
+"truth": [
+6.031282,
+46.250144
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "7 Rue Pivarel"
+"adresse": "7 Rue Pivarel",
+"truth": [
+5.188292,
+45.902895
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01210",
 "commune": null,
-"adresse": "61 Impasse des Genévriers"
+"adresse": "61 Impasse des Genévriers",
+"truth": [
+6.101016,
+46.308253
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01560",
 "commune": null,
-"adresse": "496 Route de Bourg"
+"adresse": "496 Route de Bourg",
+"truth": [
+5.084535,
+46.454729
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01470",
 "commune": null,
-"adresse": "518 Route des Ecoles"
+"adresse": "518 Route des Ecoles",
+"truth": [
+5.458634,
+45.782696
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "25 impasse des pâquerettes"
+"adresse": "25 impasse des pâquerettes",
+"truth": [
+6.058333,
+46.323253
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01340",
 "commune": "Malafretaz",
-"adresse": "Route de Condamnaz"
+"adresse": "Route de Condamnaz",
+"truth": [
+5.153529,
+46.332619
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Oyonnax",
-"adresse": "21 Rue de la Fontaine"
+"adresse": "21 Rue de la Fontaine",
+"truth": [
+5.625433,
+46.290711
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01170",
 "commune": "Gex",
-"adresse": "169 impasse des blés"
+"adresse": "169 impasse des blés",
+"truth": [
+6.089863,
+46.322719
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01700",
 "commune": "Miibel",
-"adresse": "6 Rue du Pont de l’Ile"
+"adresse": "6 Rue du Pont de l’Ile",
+"truth": [
+4.947156,
+45.82073
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "17 Impasse des Sauvages"
+"adresse": "17 Impasse des Sauvages",
+"truth": [
+4.911247,
+46.361292
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01240",
 "commune": "La Chapelle-du-Châtelard",
-"adresse": "2 Rue du Lieutenant Christian de Bellescize"
+"adresse": "2 Rue du Lieutenant Christian de Bellescize",
+"truth": [
+5.023145,
+46.070094
+],
+"kind": "exact"
 },
 {
 "code_postal": "01500",
 "commune": "Saint-Denis-en-ugey",
-"adresse": "4bis Rue des Rochettes"
+"adresse": "4bis Rue des Rochettes",
+"truth": [
+5.330596,
+45.946448
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01260",
 "commune": "Haut Valromey",
-"adresse": "4 Rue du Col de Rchemond"
+"adresse": "4 Rue du Col de Rchemond",
+"truth": [
+5.69593,
+45.998548
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Bellignat",
-"adresse": "2bis Rue du Mont Olivet"
+"adresse": "2bis Rue du Mont Olivet",
+"truth": [
+5.631264,
+46.24434
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Gex",
-"adresse": "226 impasse des alpages"
+"adresse": "226 impasse des alpages",
+"truth": [
+6.058273,
+46.343148
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01220",
 "commune": "Sauverny",
-"adresse": "Chemin des Poncettes"
+"adresse": "Chemin des Poncettes",
+"truth": [
+6.11252,
+46.315433
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01500",
 "commune": null,
-"adresse": "31 Rue des Arènes"
+"adresse": "31 Rue des Arènes",
+"truth": [
+5.365224,
+45.953618
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01100",
 "commune": "Bllignat",
-"adresse": "27 Avenue d'Oyonnax"
+"adresse": "27 Avenue d'Oyonnax",
+"truth": [
+5.63608,
+46.245658
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01750",
 "commune": null,
-"adresse": "530 Quai Jean Baptiste Bouchacourt"
+"adresse": "530 Quai Jean Baptiste Bouchacourt",
+"truth": [
+4.841266,
+46.30963
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "207 Rue des Grives"
+"adresse": "207 Rue des Grives",
+"truth": [
+6.105654,
+46.308223
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01400",
 "commune": "Neuvile-les-Dames",
-"adresse": "372 Rue de la Bresse"
+"adresse": "372 Rue de la Bresse",
+"truth": [
+5.002646,
+46.165858
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01570",
 "commune": null,
-"adresse": "194 Chemin du Pré du By"
+"adresse": "194 Chemin du Pré du By",
+"truth": [
+4.902603,
+46.364366
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01500",
 "commune": "Saint-Denis-en-Bugey",
-"adresse": "2 Allée es Acacias"
+"adresse": "2 Allée es Acacias",
+"truth": [
+5.327464,
+45.953822
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "55 Chemin de la Colline"
+"adresse": "55 Chemin de la Colline",
+"truth": [
+5.083082,
+45.854101
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01470",
 "commune": "Serrières-d-Briord",
-"adresse": "32c Grande Rue"
+"adresse": "32c Grande Rue",
+"truth": [
+5.453106,
+45.808441
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01660",
 "commune": "Mézérat",
-"adresse": "57a Allee des Pensees"
+"adresse": "57a Allee des Pensees",
+"truth": [
+5.044391,
+46.242308
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01310",
 "commune": "Confrançon",
-"adresse": "Chemin des Grevillieres"
+"adresse": "Chemin des Grevillieres",
+"truth": [
+5.042099,
+46.266732
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01450",
 "commune": "Labale",
-"adresse": "54 Rue de la Mairie"
+"adresse": "54 Rue de la Mairie",
+"truth": [
+5.483382,
+46.091539
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01750",
 "commune": "Replonges",
-"adresse": "65 Impasse des Marchands"
+"adresse": "65 Impasse des Marchands",
+"truth": [
+4.877869,
+46.303244
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Bourg-en-Bresse",
-"adresse": "7 rue des graves"
+"adresse": "7 rue des graves",
+"truth": [
+5.230761,
+46.199145
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01090",
 "commune": "Guéreins",
-"adresse": "77 Ru des Vignes"
+"adresse": "77 Ru des Vignes",
+"truth": [
+4.782569,
+46.106859
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01500",
 "commune": "Ambérieu-en-Bugey",
-"adresse": "14 Rue Gustave Nolemaire"
+"adresse": "14 Rue Gustave Nolemaire",
+"truth": [
+5.350391,
+45.956054
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01260",
 "commune": null,
-"adresse": "289 Rue de la Boucle des Plans"
+"adresse": "289 Rue de la Boucle des Plans",
+"truth": [
+5.701705,
+46.036262
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": "Saint-Jean-sur-Veyle",
-"adresse": "613 Route de la Seigneurie"
+"adresse": "613 Route de la Seigneurie",
+"truth": [
+4.921356,
+46.266586
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1510 Chemin de la Chambière"
+"adresse": "1510 Chemin de la Chambière",
+"truth": [
+5.191712,
+46.219244
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01570",
 "commune": "Manziat",
-"adresse": "318 Route des Greffes"
+"adresse": "318 Route des Greffes",
+"truth": [
+4.905625,
+46.367538
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01190",
 "commune": "Saint-Étienne-sur-Reyssouze",
-"adresse": "route du bourg"
+"adresse": "route du bourg",
+"truth": [
+4.998484,
+46.414545
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01640",
 "commune": "Saint-Jean-le-Vieux",
-"adresse": "Allee des Harpilles"
+"adresse": "Allee des Harpilles",
+"truth": [
+5.389854,
+46.028033
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01750",
 "commune": null,
-"adresse": "13 Impasse Pussin"
+"adresse": "13 Impasse Pussin",
+"truth": [
+4.870979,
+46.300697
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01150",
 "commune": null,
-"adresse": "20 Impasse du Muguet"
+"adresse": "20 Impasse du Muguet",
+"truth": [
+5.295765,
+45.922772
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "29 Impasse des Hortensias"
+"adresse": "29 Impasse des Hortensias",
+"truth": [
+5.342159,
+45.898161
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01300",
 "commune": "Murs-et-Gélignieux",
-"adresse": "6 Impasse du Rhône"
+"adresse": "6 Impasse du Rhône",
+"truth": [
+5.663928,
+45.640439
+],
+"kind": "exact"
 },
 {
 "code_postal": "01240",
 "commune": "Dompierre-sur-Veyle",
-"adresse": "30 Impasse des Bleuets"
+"adresse": "30 Impasse des Bleuets",
+"truth": [
+5.208359,
+46.06901
+],
+"kind": "exact"
 },
 {
 "code_postal": "01100",
 "commune": "Oynnax",
-"adresse": "97 Rue Castellion"
+"adresse": "97 Rue Castellion",
+"truth": [
+5.642695,
+46.244228
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01570",
 "commune": null,
-"adresse": "23 Rue des Vignes"
+"adresse": "23 Rue des Vignes",
+"truth": [
+4.903416,
+46.357088
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01480",
 "commune": "Ars-sur-Formans",
-"adresse": "Allée des Oliviers"
+"adresse": "Allée des Oliviers",
+"truth": [
+4.826411,
+45.997011
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01800",
 "commune": "Meximieux",
-"adresse": "15 Rue Budin"
+"adresse": "15 Rue Budin",
+"truth": [
+5.199201,
+45.913451
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01370",
 "commune": "Val-Revermont",
-"adresse": "Rue du Vieux Village"
+"adresse": "Rue du Vieux Village",
+"truth": [
+5.386358,
+46.295848
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Saint-Maurice-de-Gourdans",
-"adresse": "2 Chemin du Bois Dalphin"
+"adresse": "2 Chemin du Bois Dalphin",
+"truth": [
+5.195702,
+45.824805
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01640",
 "commune": "Boyeux-Saint-Jérme",
-"adresse": "355 Rue du Four"
+"adresse": "355 Rue du Four",
+"truth": [
+5.455186,
+46.026813
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Léaz",
-"adresse": "4 Lotissement le Saint Amand"
+"adresse": "4 Lotissement le Saint Amand",
+"truth": [
+5.884225,
+46.097434
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Trévoux",
-"adresse": "3 Boulevard des Combattants"
+"adresse": "3 Boulevard des Combattants",
+"truth": [
+4.779467,
+45.940381
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01500",
 "commune": "Ambérie-en-Bugey",
-"adresse": "50ter Rue Marcel et Ida Démia"
+"adresse": "50ter Rue Marcel et Ida Démia",
+"truth": [
+5.358006,
+45.952542
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01480",
 "commune": "Fareins",
-"adresse": "Route de la Dombes"
+"adresse": "Route de la Dombes",
+"truth": [
+4.767942,
+46.018634
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Saint-Denis-en-Bugey",
-"adresse": "28 Rue Docteur Charcot"
+"adresse": "28 Rue Docteur Charcot",
+"truth": [
+5.330809,
+45.952504
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01851",
 "commune": "Maroz",
-"adresse": "310 Route de la Croze"
+"adresse": "310 Route de la Croze",
+"truth": [
+5.247347,
+46.332925
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01280",
 "commune": "Prévessin-Moëns",
-"adresse": "Chemin des Poussins"
+"adresse": "Chemin des Poussins",
+"truth": [
+6.086096,
+46.253452
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01000",
 "commune": null,
-"adresse": "29 rue des acacias"
+"adresse": "29 rue des acacias",
+"truth": [
+5.238484,
+46.217671
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01000",
 "commune": "Bourgen-Bresse",
-"adresse": "58 allée renardel"
+"adresse": "58 allée renardel",
+"truth": [
+5.250499,
+46.214619
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01500",
 "commune": "Ambéieu-en-Bugey",
-"adresse": "8 Chemin de la Vèze"
+"adresse": "8 Chemin de la Vèze",
+"truth": [
+5.381013,
+45.941812
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01630",
 "commune": "Saint-Jean-de-Gonville",
-"adresse": "1 Rue de la Charriere"
+"adresse": "1 Rue de la Charriere",
+"truth": [
+5.950898,
+46.212967
+],
+"kind": "exact"
 },
 {
 "code_postal": "01150",
 "commune": "Sault-Brénaz",
-"adresse": "Rue de Chaillon"
+"adresse": "Rue de Chaillon",
+"truth": [
+5.409564,
+45.854887
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01800",
 "commune": "Rignieux-le-Franc",
-"adresse": "140 Chemindu Gaillot"
+"adresse": "140 Chemindu Gaillot",
+"truth": [
+5.18103,
+45.945933
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01330",
 "commune": "Villars-les-Dombes",
-"adresse": "272 Allée de Montessuis"
+"adresse": "272 Allée de Montessuis",
+"truth": [
+5.036958,
+46.002047
+],
+"kind": "exact"
 },
 {
 "code_postal": "01300",
 "commune": "Contrevoz",
-"adresse": "Rue du Mont Blanc"
+"adresse": "Rue du Mont Blanc",
+"truth": [
+5.63185,
+45.805099
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Reyssouze",
-"adresse": "263 Grande Rue"
+"adresse": "263 Grande Rue",
+"truth": [
+4.922744,
+46.439388
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "5 place de la commune"
+"adresse": "5 place de la commune",
+"truth": [
+5.22971,
+46.19976
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01370",
 "commune": "Saint-Étienne-du-Bois",
-"adresse": "Chemin de Montaplan"
+"adresse": "Chemin de Montaplan",
+"truth": [
+5.286695,
+46.278873
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01160",
 "commune": "Varambon",
-"adresse": "88 Rue e l'Eglise"
+"adresse": "88 Rue e l'Eglise",
+"truth": [
+5.316414,
+46.040947
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01220",
 "commune": "Grilly",
-"adresse": "286 Route de Pitgny"
+"adresse": "286 Route de Pitgny",
+"truth": [
+6.09473,
+46.331914
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01370",
 "commune": null,
-"adresse": "402 Route de la Grange d’Offre"
+"adresse": "402 Route de la Grange d’Offre",
+"truth": [
+5.360474,
+46.329692
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01210",
 "commune": "Versonex",
-"adresse": "250 Rue du Stade"
+"adresse": "250 Rue du Stade",
+"truth": [
+6.10509,
+46.293906
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Bresse Vallons",
-"adresse": "51 Chemin de Balvay"
+"adresse": "51 Chemin de Balvay",
+"truth": [
+5.195632,
+46.311506
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "14 Rue du Maquis"
+"adresse": "14 Rue du Maquis",
+"truth": [
+5.606852,
+46.154234
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Meximieux",
-"adresse": "12 Rue René Hyvert"
+"adresse": "12 Rue René Hyvert",
+"truth": [
+5.19277,
+45.909074
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Sainte-Julie",
-"adresse": "80 Chemin du Golet"
+"adresse": "80 Chemin du Golet",
+"truth": [
+5.280307,
+45.89134
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01350",
 "commune": "Cuoz-Béon",
-"adresse": "4 Rue de la Charrière"
+"adresse": "4 Rue de la Charrière",
+"truth": [
+5.749586,
+45.855894
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "5 Lotissement d'Avrissieu le Haut"
+"adresse": "5 Lotissement d'Avrissieu le Haut",
+"truth": [
+5.726321,
+45.829068
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01990",
 "commune": "Relevant",
-"adresse": "336 Route de l Riviere"
+"adresse": "336 Route de l Riviere",
+"truth": [
+4.952499,
+46.090954
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01170",
 "commune": "Mijoux",
-"adresse": "1530 Chemin du Crzat d'Amont"
+"adresse": "1530 Chemin du Crzat d'Amont",
+"truth": [
+6.003514,
+46.351572
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01280",
 "commune": "Prévessin-Moëns",
-"adresse": "216 Promenade e la Gotaz"
+"adresse": "216 Promenade e la Gotaz",
+"truth": [
+6.074131,
+46.257172
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01310",
 "commune": "Polliat",
-"adresse": "230 Rue de la Passerelle"
+"adresse": "230 Rue de la Passerelle",
+"truth": [
+5.133774,
+46.246501
+],
+"kind": "exact"
 },
 {
 "code_postal": "01250",
 "commune": "Ceyzériat",
-"adresse": "Route des Soudanieres"
+"adresse": "Route des Soudanieres",
+"truth": [
+5.318189,
+46.190979
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Viriat",
-"adresse": "72a Impasse des Tulipes"
+"adresse": "72a Impasse des Tulipes",
+"truth": [
+5.210166,
+46.21515
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01300",
 "commune": "Peyrieu",
-"adresse": "352 Rue d Surjoux"
+"adresse": "352 Rue d Surjoux",
+"truth": [
+5.679517,
+45.681989
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01800",
 "commune": "Faramans",
-"adresse": "920 Route du Gailland"
+"adresse": "920 Route du Gailland",
+"truth": [
+5.116853,
+45.911179
+],
+"kind": "exact"
 },
 {
 "code_postal": "01250",
 "commune": "Ceyzériat",
-"adresse": "732 Route de Tréconnas"
+"adresse": "732 Route de Tréconnas",
+"truth": [
+5.317315,
+46.187629
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Meximieux",
-"adresse": "26 Rue les Galamieres"
+"adresse": "26 Rue les Galamieres",
+"truth": [
+5.187045,
+45.910079
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01090",
 "commune": "Lurcy",
-"adresse": "199 Chemin Neuf"
+"adresse": "199 Chemin Neuf",
+"truth": [
+4.780652,
+46.060945
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01250",
 "commune": "Ramasse",
-"adresse": "Route des Vallieres"
+"adresse": "Route des Vallieres",
+"truth": [
+5.362179,
+46.191886
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01640",
 "commune": "Saint-Jean-le-Vieux",
-"adresse": "15 Cour Nicd"
+"adresse": "15 Cour Nicd",
+"truth": [
+5.381939,
+46.028958
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01150",
 "commune": "Chazey-sur-Ain",
-"adresse": "163 Rue du Gros Noyer"
+"adresse": "163 Rue du Gros Noyer",
+"truth": [
+5.276408,
+45.903777
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "254 Chemin de la Pralet"
+"adresse": "254 Chemin de la Pralet",
+"truth": [
+6.093927,
+46.299166
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01200",
 "commune": "Valserhône",
-"adresse": "29 Avenue Maréchal Leclerc"
+"adresse": "29 Avenue Maréchal Leclerc",
+"truth": [
+5.811023,
+46.117804
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Montluel",
-"adresse": "41 Rue Puits Pirollet"
+"adresse": "41 Rue Puits Pirollet",
+"truth": [
+5.054058,
+45.85072
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01100",
 "commune": "Oyonax",
-"adresse": "36 Chemin de la Fruitière"
+"adresse": "36 Chemin de la Fruitière",
+"truth": [
+5.624836,
+46.290281
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01360",
 "commune": null,
-"adresse": "203 Rue du Professeur Robert Hugonot"
+"adresse": "203 Rue du Professeur Robert Hugonot",
+"truth": [
+5.124972,
+45.852724
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01120",
 "commune": null,
-"adresse": "4bis Rue de Genève"
+"adresse": "4bis Rue de Genève",
+"truth": [
+5.062927,
+45.851304
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01110",
 "commune": "Platea d'Hauteville",
-"adresse": "80 Rue de Tré la Croix"
+"adresse": "80 Rue de Tré la Croix",
+"truth": [
+5.60822,
+45.975828
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01090",
 "commune": "Montmerle-sur-Saône",
-"adresse": "247 Avenue des Mésanges"
+"adresse": "247 Avenue des Mésanges",
+"truth": [
+4.766149,
+46.082975
+],
+"kind": "exact"
 },
 {
 "code_postal": "01120",
 "commune": "Montuel",
-"adresse": "121 Chemin de la Ville Haute"
+"adresse": "121 Chemin de la Ville Haute",
+"truth": [
+5.054221,
+45.853072
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01440",
 "commune": "Viriat",
-"adresse": "255 Rue Prosper Convert"
+"adresse": "255 Rue Prosper Convert",
+"truth": [
+5.21578,
+46.253626
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1259 Rue de Genève"
+"adresse": "1259 Rue de Genève",
+"truth": [
+6.100896,
+46.266209
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01990",
 "commune": "Chaneins",
-"adresse": "2 Zone d’Activite Actiparc sud"
+"adresse": "2 Zone d’Activite Actiparc sud",
+"truth": [
+4.848811,
+46.098262
+],
+"kind": "exact"
 },
 {
 "code_postal": "01570",
 "commune": null,
-"adresse": "675 Chemin des Condamines"
+"adresse": "675 Chemin des Condamines",
+"truth": [
+4.907422,
+46.324323
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01290",
 "commune": null,
-"adresse": "323 Route des Villards"
+"adresse": "323 Route des Villards",
+"truth": [
+4.890607,
+46.243187
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01190",
 "commune": "Sermoyer",
-"adresse": "34 Route de Cuisery"
+"adresse": "34 Route de Cuisery",
+"truth": [
+4.980396,
+46.500046
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Laiz",
-"adresse": "48 Impasse des Curtelets"
+"adresse": "48 Impasse des Curtelets",
+"truth": [
+4.889626,
+46.247278
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01120",
 "commune": "Dagneux",
-"adresse": "Chemin des Arenes"
+"adresse": "Chemin des Arenes",
+"truth": [
+5.080829,
+45.85389
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01110",
 "commune": "Champdor-Corcelles",
-"adresse": "Lotissement de la Sauge"
+"adresse": "Lotissement de la Sauge",
+"truth": [
+5.594507,
+46.013884
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01570",
 "commune": "Feillens",
-"adresse": "95 Le Moulin Neuf"
+"adresse": "95 Le Moulin Neuf",
+"truth": [
+4.887311,
+46.326952
+],
+"kind": "exact"
 },
 {
 "code_postal": "01200",
 "commune": "Villes",
-"adresse": "28 Ruedu Lavoir"
+"adresse": "28 Ruedu Lavoir",
+"truth": [
+5.784036,
+46.086626
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "2226 route de béréziat"
+"adresse": "2226 route de béréziat",
+"truth": [
+5.01361,
+46.394712
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Malafretaz",
-"adresse": "330 Route de la Pétillière"
+"adresse": "330 Route de la Pétillière",
+"truth": [
+5.137535,
+46.329834
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01120",
 "commune": "Pizay",
-"adresse": "40 Rue du Grillet"
+"adresse": "40 Rue du Grillet",
+"truth": [
+5.090377,
+45.888132
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01570",
 "commune": "Manziat",
-"adresse": "122 Rue des Barbéries"
+"adresse": "122 Rue des Barbéries",
+"truth": [
+4.904507,
+46.356213
+],
+"kind": "exact"
 },
 {
 "code_postal": "01170",
 "commune": "Vesancy",
-"adresse": "8 Rote de Divonne"
+"adresse": "8 Rote de Divonne",
+"truth": [
+6.090835,
+46.34832
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": "Saint-Jean-de-Niost",
-"adresse": "51 Chemin de Paraviset"
+"adresse": "51 Chemin de Paraviset",
+"truth": [
+5.220364,
+45.83785
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "121 rue brichemer"
+"adresse": "121 rue brichemer",
+"truth": [
+5.251589,
+46.212558
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01220",
 "commune": null,
-"adresse": "210 Rue de Plan"
+"adresse": "210 Rue de Plan",
+"truth": [
+6.136062,
+46.360688
+],
+"kind": "no_commune"
 },
 {
 "code_postal": null,
 "commune": "Gex",
-"adresse": "306bis Rue Leone de Joinville"
+"adresse": "306bis Rue Leone de Joinville",
+"truth": [
+6.054083,
+46.333381
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": "Bourg-en-Bresse",
-"adresse": "21 rue aristide briand"
+"adresse": "21 rue aristide briand",
+"truth": [
+5.222807,
+46.211124
+],
+"kind": "no_cp"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "68 Chemin de la Petite Prairie"
+"adresse": "68 Chemin de la Petite Prairie",
+"truth": [
+6.043344,
+46.261135
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": "Chaveyriat",
-"adresse": "3516 Route de Vonnas"
+"adresse": "3516 Route de Vonnas",
+"truth": [
+5.023125,
+46.215098
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01960",
 "commune": "Péronnas",
-"adresse": "63 Allée des GrangesNeuves"
+"adresse": "63 Allée des GrangesNeuves",
+"truth": [
+5.23206,
+46.17852
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01600",
 "commune": null,
-"adresse": "653 Route de Reyrieux"
+"adresse": "653 Route de Reyrieux",
+"truth": [
+4.824391,
+45.906441
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01600",
 "commune": null,
-"adresse": "13 Boulevard des Combattants"
+"adresse": "13 Boulevard des Combattants",
+"truth": [
+4.780593,
+45.940293
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01000",
 "commune": null,
-"adresse": "5a rue des créts"
+"adresse": "5a rue des créts",
+"truth": [
+5.224187,
+46.214452
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01330",
 "commune": "Ambérieux-en-Dmbes",
-"adresse": "69 La Ruelle"
+"adresse": "69 La Ruelle",
+"truth": [
+4.903404,
+45.998154
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01100",
 "commune": "Oyonnx",
-"adresse": "22 Ancien Chemin Royal"
+"adresse": "22 Ancien Chemin Royal",
+"truth": [
+5.645658,
+46.266892
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": null,
 "commune": "Courtes",
-"adresse": "128 Route de la Blanchere"
+"adresse": "128 Route de la Blanchere",
+"truth": [
+5.101381,
+46.467153
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01000",
 "commune": "Bourg-en-Bresse",
-"adresse": "19 rue de savoie"
+"adresse": "19 rue de savoie",
+"truth": [
+5.276786,
+46.196387
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": "Sergy",
-"adresse": "349 Chemin du Pontenay"
+"adresse": "349 Chemin du Pontenay",
+"truth": [
+6.006817,
+46.247196
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01570",
 "commune": "Feillens",
-"adresse": "Route des Combes"
+"adresse": "Route des Combes",
+"truth": [
+4.888622,
+46.342115
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01170",
 "commune": "Gex",
-"adresse": "922 Rue de Rogeland"
+"adresse": "922 Rue de Rogeland",
+"truth": [
+6.052454,
+46.345128
+],
+"kind": "exact"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "269 Chemin de Roncheveux"
+"adresse": "269 Chemin de Roncheveux",
+"truth": [
+4.787796,
+45.960202
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01250",
 "commune": "Hautecourt-Romanèche",
-"adresse": "66 Route de Neville"
+"adresse": "66 Route de Neville",
+"truth": [
+5.416752,
+46.158853
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01290",
 "commune": "Grièges",
-"adresse": "642 Rue d Corcelles"
+"adresse": "642 Rue d Corcelles",
+"truth": [
+4.856062,
+46.240023
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01170",
 "commune": "Cessy",
-"adresse": "Impasse les Fontanettes"
+"adresse": "Impasse les Fontanettes",
+"truth": [
+6.082514,
+46.318479
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01210",
 "commune": "Ferney-Voltaire",
-"adresse": "238 Chemin de la Planche Brûlée"
+"adresse": "238 Chemin de la Planche Brûlée",
+"truth": [
+6.10011,
+46.253672
+],
+"kind": "exact"
 },
 {
 "code_postal": "01260",
 "commune": "Champagne-en-Valromey",
-"adresse": "179 Rue de l Fontaine"
+"adresse": "179 Rue de l Fontaine",
+"truth": [
+5.706247,
+45.93565
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01580",
 "commune": "Izernore",
-"adresse": "23 Impasse des Margueites"
+"adresse": "23 Impasse des Margueites",
+"truth": [
+5.550725,
+46.217902
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01370",
 "commune": "Saint-Étienne-du-Bois",
-"adresse": "295 Chemin la Croisee des 3 Routes"
+"adresse": "295 Chemin la Croisee des 3 Routes",
+"truth": [
+5.301377,
+46.269415
+],
+"kind": "exact"
 },
 {
 "code_postal": "01600",
 "commune": "Parcieux",
-"adresse": "12 Cos de la Belle Cordière"
+"adresse": "12 Cos de la Belle Cordière",
+"truth": [
+4.824989,
+45.918133
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01300",
 "commune": null,
-"adresse": "45 Rue de Champtel"
+"adresse": "45 Rue de Champtel",
+"truth": [
+5.683535,
+45.705987
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01410",
 "commune": null,
-"adresse": "103 rue de la caserne"
+"adresse": "103 rue de la caserne",
+"truth": [
+5.880152,
+46.237621
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01450",
 "commune": "Poncin",
-"adresse": "Avenue du Parc"
+"adresse": "Avenue du Parc",
+"truth": [
+5.406291,
+46.085541
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Hautecourt-Romanèche",
-"adresse": "1025 Route de Neuville"
+"adresse": "1025 Route de Neuville",
+"truth": [
+5.419234,
+46.151342
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01320",
 "commune": null,
-"adresse": "20 Lotissement le Parc des Ormes"
+"adresse": "20 Lotissement le Parc des Ormes",
+"truth": [
+5.162506,
+45.99736
+],
+"kind": "no_commune"
 },
 {
 "code_postal": "01640",
 "commune": "L'bergement-de-Varey",
-"adresse": "24 Chemin du Verger"
+"adresse": "24 Chemin du Verger",
+"truth": [
+5.424835,
+46.015902
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01110",
 "commune": "Plateau d'Hauteville",
-"adresse": "180 Rue du Doceur Delannoy"
+"adresse": "180 Rue du Doceur Delannoy",
+"truth": [
+5.606934,
+45.972064
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": "01640",
 "commune": "Jujurieux",
-"adresse": "Place du Four"
+"adresse": "Place du Four",
+"truth": [
+5.388658,
+46.053095
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01130",
 "commune": "Nanta",
-"adresse": "6bis Rue des Abattoirs"
+"adresse": "6bis Rue des Abattoirs",
+"truth": [
+5.619442,
+46.142056
+],
+"kind": "typo_commune"
 },
 {
 "code_postal": "01000",
 "commune": "Bourg-en-Bresse",
-"adresse": "6 avenue de bad kreuznach"
+"adresse": "6 avenue de bad kreuznach",
+"truth": [
+5.240485,
+46.211853
+],
+"kind": "exact"
 },
 {
 "code_postal": "01480",
 "commune": "Frans",
-"adresse": "Chemin des Caillates"
+"adresse": "Chemin des Caillates",
+"truth": [
+4.775614,
+45.996354
+],
+"kind": "no_numero"
 },
 {
 "code_postal": "01300",
 "commune": "Belley",
-"adresse": "3 Grand Rue"
+"adresse": "3 Grand Rue",
+"truth": [
+5.686853,
+45.760354
+],
+"kind": "typo_voie"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "1 place de la basilique"
+"adresse": "1 place de la basilique",
+"truth": [
+5.222418,
+46.198887
+],
+"kind": "voie_only"
 },
 {
 "code_postal": null,
 "commune": null,
-"adresse": "306 Route de Saint Jean"
+"adresse": "306 Route de Saint Jean",
+"truth": [
+5.000938,
+46.384459
+],
+"kind": "voie_only"
 },
 {
 "code_postal": "01400",
 "commune": "Neuville-les-Dames",
-"adresse": "Rue du Cani"
+"adresse": "Rue du Cani",
+"truth": [
+5.003478,
+46.16299
+],
+"kind": "no_numero"
 },
 {
 "code_postal": null,
 "commune": "Valserhône",
-"adresse": "50 Rue de la Pierre"
+"adresse": "50 Rue de la Pierre",
+"truth": [
+5.826735,
+46.115409
+],
+"kind": "no_cp"
 },
 {
 "code_postal": "01460",
 "commune": "Port",
-"adresse": "Rue du 11 Novembre"
+"adresse": "Rue du 11 Novembre",
+"truth": [
+5.572557,
+46.163596
+],
+"kind": "no_numero"
 }
 ],
 "near": [

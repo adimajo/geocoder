@@ -101,6 +101,9 @@ def position(code_postal=None, commune=None, adresse=None):
 
     # Try to find street.
     voie_id = query.select_voie(commune_id, voie, voie_type)
+    if voie_id is None and commune_id is None:
+        # a postal code shared by several communes and no commune: look for the street in all of them
+        voie_id = query.select_voie_in_postal(postal_id, voie)
     if voie_id is None:
         voie_id = query.complete_voie_selection(code_postal, commune, voie)
 
