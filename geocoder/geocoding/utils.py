@@ -8,6 +8,8 @@ Attributes:
 """
 import os
 
+import numpy as np
+
 SCALE = 7
 
 
@@ -82,9 +84,16 @@ def binary_search(element, values, start, end, get_index):
 def most_similar(indices, values, similarity):
     """Find the value with greatest score of similarity.
     """
+    # read all the candidates at once: element by element access of a memory-mapped column is slow
+    if isinstance(indices, range) and indices.step == 1:
+        candidates = values[indices.start:indices.stop]
+    else:
+        candidates = values[np.fromiter(indices, dtype=np.int64)]
+    candidates = np.asarray(candidates).tolist()
+
     max_result = None, None, None
-    for (rang, index) in enumerate(indices):
-        score = similarity(values[index])
+    for (rang, (index, value)) in enumerate(zip(indices, candidates)):
+        score = similarity(value)
         max_score = max_result[0]
         if score == 1:
             return score, rang, index

@@ -54,7 +54,8 @@ def test_matches_brute_force(points, grid, seed):
         found, found_distance = spatial.nearest(lon, lat, *grid, qlon, qlat)
         assert found_distance == pytest.approx(expected_distance, rel=1e-9, abs=1e-6), (qlon, qlat)
         if found != expected:  # tie
-            assert spatial.haversine(lon[found] / SCALE, lat[found] / SCALE, qlon, qlat) == pytest.approx(expected_distance)
+            found_at = spatial.haversine(lon[found] / SCALE, lat[found] / SCALE, qlon, qlat)
+            assert found_at == pytest.approx(expected_distance)
 
 
 def test_single_point():
