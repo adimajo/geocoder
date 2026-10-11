@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Type of the elements in each table of the database.
 
 The database is formed by numpy arrays and the type of the elements of each one

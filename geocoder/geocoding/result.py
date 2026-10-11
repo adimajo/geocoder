@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Creation of the output for the search methods.
 
 Attributes:

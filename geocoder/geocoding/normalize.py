@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Normalization methods the database and the input of the search.
 
 Attributes:

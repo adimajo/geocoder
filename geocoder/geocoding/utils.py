@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Useful methods.
 
 This module defines some useful methods for the application.
@@ -7,7 +6,17 @@ Attributes:
     SCALE (int): The scale conversion of float to int.
 
 """
+import os
+
 SCALE = 7
+
+
+def env_bool(name, default=False):
+    """Read a boolean environment variable (1/true/t/yes/y/on, case insensitive)."""
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in ('1', 'true', 't', 'yes', 'y', 'on')
 
 
 def degree_to_int(degree):

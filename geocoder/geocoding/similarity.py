@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """String similarity methods.
 
 This module defines the class used for computing the score of similarity
@@ -8,7 +7,7 @@ needed.
 """
 
 
-class Similarity():
+class Similarity:
     """Class defining the string similarity methods using uni and bigrams.
 
     One object of this class will have a set of uni and bigrams of a string s

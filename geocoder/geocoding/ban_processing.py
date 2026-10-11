@@ -14,9 +14,9 @@ process decompressed files into a database
     update_voie
     update_localisation
 """
+import os
 from typing import Literal
 
-# -*- coding: utf-8 -*-
 import numpy as np
 from loguru import logger
 from sortedcontainers import SortedDict, SortedSet
@@ -175,45 +175,43 @@ def get_attributes(fields, lieu: Literal["adresses", "lieux-dits"] = "adresses")
             voie_normalise, voie_nom, numero, repetition, lon, lat)
 
 
-def update(dpt_nom: str, csv_file_path, processed_files: dict):
+def update(dpt_nom: str, csv_file_paths, processed_files: dict):
     """
-    Update processed_files iteratively for each file
+    Update processed_files with all the files of one département
+
+    The "adresses" and the "lieux-dits" files of a département must be merged before being indexed: otherwise a
+    postal code appears twice in the database and a search restricted to that postal code only looks into one of the
+    two sets of streets.
 
     :param str dpt_nom: departement
-    :param os.Path csv_file_path: path to CSV file to read and update processed_files
+    :param csv_file_paths: path(s) to the CSV file(s) to read and add to processed_files
     :param dict processed_files: databases
     """
+    if isinstance(csv_file_paths, (str, os.PathLike)):
+        csv_file_paths = [csv_file_paths]
     postal_dict = SortedDict()
 
-    with open(csv_file_path, 'r', encoding='UTF-8') as f:
-        try:  # some lieux-dits might be empty
-            next(f)
-        except StopIteration:  # pragma: no cover
-            logger.debug(f"{csv_file_path} was empty")
-            return
-        for line in f:
-            attributes = get_attributes(line.strip().split(';'),
-                                        "lieux-dits" if "lieux-dits" in csv_file_path else "adresses")
-            if attributes is None:
-                logger.debug("Failed to parse line")
+    for csv_file_path in sorted(csv_file_paths):
+        lieu = "lieux-dits" if "lieux-dits" in os.path.basename(csv_file_path) else "adresses"
+        with open(csv_file_path, 'r', encoding='UTF-8') as f:
+            try:  # some lieux-dits might be empty
+                next(f)
+            except StopIteration:  # pragma: no cover
+                logger.debug(f"{csv_file_path} was empty")
                 continue
-            postal_key = attributes[:1]
-            commune_key = attributes[1:4]
-            voie_key = attributes[4:6]
-            localisation = attributes[6:]
+            for line in f:
+                attributes = get_attributes(line.strip().split(';'), lieu)
+                if attributes is None:
+                    logger.debug("Failed to parse line")
+                    continue
+                postal_key = attributes[:1]
+                commune_key = attributes[1:4]
+                voie_key = attributes[4:6]
+                localisation = attributes[6:]
 
-            if postal_key not in postal_dict:
-                postal_dict[postal_key] = SortedDict()
-
-            commune_dict = postal_dict[postal_key]
-            if commune_key not in commune_dict:
-                commune_dict[commune_key] = SortedDict()
-
-            voie_dict = commune_dict[commune_key]
-            if voie_key not in voie_dict:
-                voie_dict[voie_key] = SortedSet()
-
-            voie_dict[voie_key].add(localisation)
+                commune_dict = postal_dict.setdefault(postal_key, SortedDict())
+                voie_dict = commune_dict.setdefault(commune_key, SortedDict())
+                voie_dict.setdefault(voie_key, SortedSet()).add(localisation)
 
     update_departement(dpt_nom, processed_files, postal_dict)
 

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Update the raw data used as the main source of information.
 
 """
@@ -8,21 +7,21 @@ import os
 import shutil
 
 import requests
+from botocore.errorfactory import ClientError
 from loguru import logger
 from tqdm import tqdm
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
-from botocore.errorfactory import ClientError
 
 from geocoder.geocoding import DEBUG, LOCAL_DB, s3
-from geocoder.geocoding.datapaths import here, database
+from geocoder.geocoding.datapaths import data_dir, database
 
 SSL_VERIFICATION = os.environ.get("SSL_VERIFICATION", False)
 
 if not SSL_VERIFICATION:
     disable_warnings(InsecureRequestWarning)
 
-raw_data_folder_path = os.path.join(here, 'raw')
+raw_data_folder_path = os.path.join(data_dir, 'raw')
 ban_url = 'https://adresse.data.gouv.fr/data/ban/adresses-odbl/latest/csv/{}'
 ban_dpt_gz_file_name = ['adresses-{}.csv.gz', 'lieux-dits-{}-beta.csv.gz']
 ban_dpt_file_name = [filegz[:-3] for filegz in ban_dpt_gz_file_name]
@@ -32,7 +31,7 @@ server_content_file_name = 'server_content_v2.txt'
 local_content_file_name = 'local_content_v2.txt'
 
 if LOCAL_DB:
-    content_folder_path = os.path.join(here, content_folder_path)
+    content_folder_path = os.path.join(data_dir, content_folder_path)
     server_content_file_name = os.path.join(content_folder_path, server_content_file_name)
     local_content_file_name = os.path.join(content_folder_path, local_content_file_name)
 
@@ -80,9 +79,9 @@ def update_ban_file(url, file_name):
         file_name (os.Path): name of the file to write
     """
     try:
-        msg = 'Unable to join BAN address website ({}).'.format(url)
+        msg = f'Unable to join BAN address website ({url}).'
         r = requests.get(url, verify=SSL_VERIFICATION)  # nosec
-        msg += ' Status error code: {}'.format(r.status_code)
+        msg += f' Status error code: {r.status_code}'
         if r.status_code != 200:  # pragma: no cover
             raise ConnectionError(msg)
     except (requests.exceptions.ConnectionError, requests.exceptions.SSLError, requests.exceptions.HTTPError):
@@ -147,7 +146,7 @@ def _download_ban_dpt_file(ban_dpt_file_name):
                                 verify=SSL_VERIFICATION)
 
         if not response.ok:  # pragma: no cover
-            logger.info('Download {} unsuccessful: bad response'.format(ban_dpt_file_name))
+            logger.info(f'Download {ban_dpt_file_name} unsuccessful: bad response')
             return False
 
         done, total_size = 0, int(response.headers.get('content-length'))
@@ -156,7 +155,7 @@ def _download_ban_dpt_file(ban_dpt_file_name):
             done += len(block)
 
     if done != total_size:  # pragma: no cover
-        logger.error('Download {} unsuccessful: incomplete'.format(ban_dpt_file_name))
+        logger.error(f'Download {ban_dpt_file_name} unsuccessful: incomplete')
         return False
 
     if not LOCAL_DB:
@@ -191,7 +190,7 @@ def _update_ban_files():
         for ban_dpt_gz_file_name_type in ban_dpt_gz_file_name:
             downloading_ban_dpt_gz_file_name = ban_dpt_gz_file_name_type.format(dpt)
             if not _download_ban_dpt_file(downloading_ban_dpt_gz_file_name):
-                logger.error('Impossible to download {}'.format(downloading_ban_dpt_gz_file_name))
+                logger.error(f'Impossible to download {downloading_ban_dpt_gz_file_name}')
 
     return True
 
@@ -243,13 +242,13 @@ def decompress():
         for ban_dpt_gz_file_name_type in ban_dpt_gz_file_name:
             dpt_gz_file_path = os.path.join(raw_data_folder_path, ban_dpt_gz_file_name_type.format(dpt))
             if not os.path.isfile(dpt_gz_file_path):  # pragma: no cover
-                logger.error('Decompression unsuccessful: nonexistent file {}'.format(dpt_gz_file_path))
+                logger.error(f'Decompression unsuccessful: nonexistent file {dpt_gz_file_path}')
                 count += 1
 
             else:  # Decompress each file within gzip
                 with gzip.open(dpt_gz_file_path, 'rb') as f_in:
                     dpt_file_path = os.path.join(raw_data_folder_path, ban_dpt_gz_file_name_type.format(dpt)[:-3])
-                    logger.info('Extracting file {}'.format(ban_dpt_gz_file_name_type.format(dpt)[:-3]))
+                    logger.info(f'Extracting file {ban_dpt_gz_file_name_type.format(dpt)[:-3]}')
                     with open(dpt_file_path, 'wb') as f_out:
                         shutil.copyfileobj(f_in, f_out)
 
@@ -267,7 +266,7 @@ def _remove_file(file_path):
     Args:
         file_path (os.Path): path to file to be deleted
     """
-    logger.info('Deleting file {}'.format(file_path))
+    logger.info(f'Deleting file {file_path}')
     try:
         os.remove(file_path)
     except Exception:  # nosec

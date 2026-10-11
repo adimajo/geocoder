@@ -8,13 +8,9 @@ geocoder modules and API
     geocoding
     wsgi
 """
-from loguru import logger
-from geocoder.geocoding import search, query
+from geocoder.geocoding import search
 
 __version__ = "2.1.23"
 
 find = search.position
 near = search.reverse
-
-logger.info('Loading geocoding data')
-query.setup()

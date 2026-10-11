@@ -7,17 +7,13 @@ defines all routes
     geocode_file
 """
 import json
-from datetime import datetime
 
-import pandas as pd
-from Geocoding_utils import ADDRESS, POSTAL_CODE, CITY
-from flask import jsonify
-from flask import render_template, make_response
-from flask import request
+from flask import current_app, jsonify, make_response, render_template, request
 from flask_restx import Namespace, Resource
 
 from geocoder import __version__
 from geocoder.api.Geocoder import Geocoder
+from geocoder.columns import ADDRESS, CITY, POSTAL_CODE
 
 QUALITY = {'1': 'Successful',
            '2': 'Precise number was not found',
@@ -42,7 +38,8 @@ class Home(Resource):
     """
     def get(self):
         headers = {'Content-Type': 'text/html'}
-        return make_response(render_template("index.html", version=__version__), 200, headers)
+        return make_response(render_template("index.html", version=__version__,
+                                                tile_url=current_app.config["GEOCODER_TILE_URL"]), 200, headers)
 
 
 @api_rest.route("/version")
@@ -53,15 +50,13 @@ class Version(Resource):
     Methods
     -------
     get:
-        get method for Version resource: outputs the current version of the stresspent
+        get method for Version resource: outputs the current version of the geocoder
 
     """
-    @api_rest.doc(responses={200: 'Version of the stresspent API'})
+    @api_rest.doc(responses={200: 'Version of the geocoder API'})
     @api_rest.doc(responses={500: 'All other server errors'})
     def get(self):
-        response = jsonify(version=__version__)
-        response.status_code = 200
-        return response
+        return jsonify(version=__version__)
 
 
 @api_rest.route("/use")
@@ -83,36 +78,54 @@ class Use(Resource):
 def get_jsoned_geocoded_data(geocoder):
     output_json = {
         'uuid': geocoder.uuid,
-        'geocoded_time': datetime.strftime(geocoder.get_geocoded_date_time(), '%Y-%m-%d %H:%M:%S.%f%z'),
+        'geocoded_time': geocoder.get_geocoded_date_time().strftime('%Y-%m-%d %H:%M:%S.%f%z')
+        if geocoder.geocoded else None,
         'api_version': __version__,
         'quality': QUALITY,
     }
     if geocoder.geocoded:
-        output_json['data'] = geocoder.get_geocoded_data().to_dict('records')
-    elif geocoder.has_errors():
-        output_json['errors'] = geocoder.get_errors()
+        output_json['data'] = geocoder.get_geocoded_data()
     else:
-        output_json['errors'] = 'Data not geocoded !'
+        output_json['errors'] = geocoder.get_errors() or 'Data not geocoded !'
     return output_json
+
+
+def _error(status, message):
+    response = jsonify(errors=[message], api_version=__version__)
+    response.status_code = status
+    return response
+
+
+def _geocode(records):
+    geocoder = Geocoder(records)
+    geocoder.geocode()
+    response = jsonify(get_jsoned_geocoded_data(geocoder))
+    if not geocoder.geocoded:
+        response.status_code = 400
+    return response
 
 
 @api_rest.route("/geocode/<address>/<postal_code>/<city>", methods=["GET"])
 class GeocodeOne(Resource):
+    @api_rest.doc(responses={200: 'Geocoded address', 400: 'Invalid input'})
     def get(self, address, postal_code, city):
-        geocoder = Geocoder(pd.DataFrame(data={ADDRESS: address, POSTAL_CODE: postal_code, CITY: city}, index=[0]))
-        geocoder.geocode()
-        return jsonify(get_jsoned_geocoded_data(geocoder))
+        return _geocode([{ADDRESS: address, POSTAL_CODE: postal_code, CITY: city}])
 
 
 @api_rest.route("/geocode_file", methods=["POST"])
 class GeocodeFile(Resource):
+    @api_rest.doc(responses={200: 'Geocoded addresses', 400: 'Invalid input', 413: 'Too many rows or body too large'})
     def post(self):
-        json_as_str = request.get_json(force=True)
-        try:
-            data = json.loads(json_as_str)
-        except (json.JSONDecodeError, TypeError):
-            data = json.loads(json.dumps(json_as_str))
-        data_to_geocode = pd.json_normalize(data)
-        geocoder = Geocoder(data_to_geocode)
-        geocoder.geocode()
-        return jsonify(get_jsoned_geocoded_data(geocoder))
+        payload = request.get_json(force=True, silent=True)
+        if isinstance(payload, str):  # legacy clients send a JSON document encoded as a JSON string
+            try:
+                payload = json.loads(payload)
+            except json.JSONDecodeError:
+                payload = None
+        if not isinstance(payload, list):
+            return _error(400, "The body must be a JSON list of objects "
+                               '[{"address": "...", "postal_code": "...", "city": "..."}].')
+        max_rows = current_app.config["GEOCODER_MAX_ROWS"]
+        if len(payload) > max_rows:
+            return _error(413, f"Too many rows: at most {max_rows} addresses per request.")
+        return _geocode(payload)

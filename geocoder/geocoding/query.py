@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Interface to query for data.
 
 This module defines the query methods for each table in the database.
@@ -17,7 +16,7 @@ import kdquery
 import numpy as np
 from loguru import logger
 
-from geocoder.geocoding import distance, utils, s3, LOCAL_DB
+from geocoder.geocoding import LOCAL_DB, distance, s3, utils
 from geocoder.geocoding.datapaths import paths
 from geocoder.geocoding.datatypes import dtypes
 from geocoder.geocoding.similarity import Similarity
@@ -26,18 +25,36 @@ data = {}
 limits = {}
 
 
+_warned = False
+
+
 def setup():
-    """Initialize the module level variables.
+    """Initialize the module level variables (memory-mapped tables) the first time they are needed.
     """
-    if not data or not limits:
-        for table in paths:
-            if not LOCAL_DB:
-                s3.download_file('geocoder', f"database/{table}.dat", paths[table])
-            if os.path.isfile(paths[table]):
-                data[table] = np.memmap(paths[table], dtypes[table])
-                limits[table] = (0, len(data[table]))
-            else:
-                logger.info(f"Missing database {table}; geocoder will likely error")
+    global _warned
+    if data and limits:
+        return
+    missing = []
+    for table in paths:
+        if not LOCAL_DB:
+            s3.download_file('geocoder', f"database/{table}.dat", paths[table])
+        if os.path.isfile(paths[table]):
+            data[table] = np.memmap(paths[table], dtypes[table])
+            limits[table] = (0, len(data[table]))
+        else:
+            missing.append(table)
+    if missing and not _warned:
+        _warned = True
+        logger.warning(f"Missing database table(s) {missing}: run `geocoder update` first; geocoder will likely error")
+
+
+def reset():
+    """Forget the loaded tables (they are loaded again on next use), e.g. after rebuilding the database.
+    """
+    global _warned
+    data.clear()
+    limits.clear()
+    _warned = False
 
 
 def select(table, column, start, end, element):
@@ -264,10 +281,11 @@ def select_voie(commune_id, voie, voie_type):
     if not found:
         start_type, end_type = voie_id - 1, voie_id
         if voie_type is not None:
-            while data['voie']['normalise'][start_type].startswith(voie_type):
+            # stay within the streets of the commune
+            while start_type >= start and data['voie']['normalise'][start_type].startswith(voie_type):
                 start_type -= 1
             start_type += 1
-            while data['voie']['normalise'][end_type].startswith(voie_type):
+            while end_type < end and data['voie']['normalise'][end_type].startswith(voie_type):
                 end_type += 1
 
         if end_type - start_type > 1:

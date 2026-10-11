@@ -1,16 +1,15 @@
 """
 A simple wsgi server
 """
-import os
 import platform
-from abc import ABC
 
 from geocoder.api.provider import app
+from geocoder.geocoding.utils import env_bool
 
 if platform.uname().system.lower() == 'linux':
     import gunicorn.app.base
 
-    class StandaloneApplication(gunicorn.app.base.BaseApplication, ABC):
+    class StandaloneApplication(gunicorn.app.base.BaseApplication):
 
         def __init__(self, app, options=None):
             self.options = options or {}
@@ -28,18 +27,20 @@ if platform.uname().system.lower() == 'linux':
 
 
 def runserver(options):
+    """
+    Serves the app: gunicorn on Linux, the Flask development server elsewhere
+
+    The Flask debugger (remote code execution when exposed) is only enabled with :code:`FLASK_DEBUG=1`.
+    """
+    options = dict(options)
+    host, port = options.pop('host'), options.pop('port')
     if platform.uname().system.lower() == 'linux':
-        bind = f"{options.pop('host')}:{options.pop('port')}"
-        options.update({"bind": bind})
+        # preload so that the memory-mapped database is shared by all workers
+        options.update({"bind": f"{host}:{port}", "preload_app": True})
         StandaloneApplication(app, options).run()
-    else:
-        app.run(host=options["host"],  # nosec
-                port=options["port"],  # nosec
-                debug=os.environ.get("DEBUG", True))  # nosec
+    else:  # pragma: no cover
+        app.run(host=host, port=int(port), debug=env_bool("FLASK_DEBUG", False))  # nosec B104
 
 
 if __name__ == '__main__':  # pragma: no cover
-    app.config['SECRET_KEY'] = "to_debug"  # nosec
-    app.run(host='0.0.0.0',  # nosec
-            port="8001",  # nosec
-            debug=os.environ.get("DEBUG", True))  # nosec
+    app.run(host='127.0.0.1', port=8001, debug=env_bool("FLASK_DEBUG", False))

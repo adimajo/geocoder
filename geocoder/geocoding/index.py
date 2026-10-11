@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Processing of raw data.
 
 This module creates an intermediary database in csv format. The goal of this
@@ -9,14 +8,14 @@ files using tools from the package numpy.
 
 import os
 import shutil
-from collections import deque, defaultdict
+from collections import defaultdict, deque
 
 import numpy as np
 from loguru import logger
 from tqdm import tqdm
 
-from geocoder.geocoding import ban_processing, LOCAL_DB, s3
-from geocoder.geocoding.datapaths import paths, database
+from geocoder.geocoding import LOCAL_DB, ban_processing, s3
+from geocoder.geocoding.datapaths import database, paths
 from geocoder.geocoding.datatypes import dtypes
 from geocoder.geocoding.download import raw_data_folder_path
 
@@ -59,10 +58,8 @@ def process_files():
     departements.sort()
 
     for departement in tqdm(departements, desc="Process files"):
-        for file in ban_files[departement]:
-            logger.debug(f"Département : {departement}")
-            logger.debug(f"Fichier : {file}")
-            ban_processing.update(departement, file, processed_files)
+        logger.debug(f"Département : {departement}")
+        ban_processing.update(departement, ban_files[departement], processed_files)
 
     return True
 
@@ -74,7 +71,7 @@ def create_database():
         except PermissionError as e:  # pragma: no cover
             logger.error('Windows sucks, remove database folder manually and proceed.')
             raise e
-    os.mkdir(database)
+    os.makedirs(database)
 
     if not processed_files:  # pragma: no cover
         return False

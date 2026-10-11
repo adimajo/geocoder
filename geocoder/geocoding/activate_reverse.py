@@ -14,7 +14,7 @@ from tqdm import tqdm
 from geocoder.geocoding.datapaths import paths
 from geocoder.geocoding.datatypes import dtypes
 from geocoder.geocoding.index import create_dat_file
-from geocoder.geocoding.utils import pre_order, degree_to_int
+from geocoder.geocoding.utils import degree_to_int, pre_order
 
 
 def node_to_tuple(node):
