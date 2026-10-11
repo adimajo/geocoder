@@ -134,6 +134,14 @@ def position(code_postal=None, commune=None, adresse=None):
     return result.get_output(status, quality)
 
 
+def _valid_position(position):
+    try:
+        lon, lat = (float(coordinate) for coordinate in position)
+    except (TypeError, ValueError):
+        return False
+    return -180 <= lon <= 180 and -90 <= lat <= 90  # False for NaN
+
+
 def reverse(position):
     """Finds the nearest address in France to a given position over the Earth.
 
@@ -171,10 +179,7 @@ def reverse(position):
 
     """
     query.setup()
-    if position is None:
+    if not _valid_position(position):
         return result.get_output(None, 6)
-    node_id, dist = query.nearest_point_from(position)
-
-    # Get the reference id for the address.
-    localisation_id = query.data['kdtree']['ref_id'][node_id]
+    localisation_id, dist = query.nearest_point_from(position)
     return result.get_output(('localisation', localisation_id), 1)

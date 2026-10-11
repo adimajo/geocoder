@@ -26,7 +26,6 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
 ]
 dependencies = [
-    "kdquery",
     "loguru",
     "numpy>=1.24",
     "requests>=2.31",

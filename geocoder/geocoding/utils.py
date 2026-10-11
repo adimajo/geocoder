@@ -33,31 +33,6 @@ def int_to_degree(integer):
     return float(i / (10 ** SCALE))
 
 
-def pre_order(size):
-    """List in pre order of integers ranging from 0 to size in a balanced
-    binary tree.
-    """
-    interval_list = [None] * size
-    interval_list[0] = (0, size)
-    tail = 1
-
-    for head in range(size):
-        start, end = interval_list[head]
-        mid = (start + end) // 2
-
-        if mid > start:
-            interval_list[tail] = (start, mid)
-            tail += 1
-
-        if mid + 1 < end:
-            interval_list[tail] = (mid + 1, end)
-            tail += 1
-
-        interval_list[head] = mid
-
-    return interval_list
-
-
 def search(element, indices, values, sorted=True):
     """Search element in a list of values.
 

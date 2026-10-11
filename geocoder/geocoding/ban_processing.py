@@ -193,7 +193,7 @@ def update(dpt_nom: str, csv_file_paths, processed_files: dict):
 
     for csv_file_path in sorted(csv_file_paths):
         lieu = "lieux-dits" if "lieux-dits" in os.path.basename(csv_file_path) else "adresses"
-        with open(csv_file_path, 'r', encoding='UTF-8') as f:
+        with open(csv_file_path, encoding='UTF-8') as f:
             try:  # some lieux-dits might be empty
                 next(f)
             except StopIteration:  # pragma: no cover

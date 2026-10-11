@@ -1,24 +1,38 @@
 """Update the raw data used as the main source of information.
 
+The BAN (Base Adresse Nationale) files are downloaded for every département, in parallel, and either kept locally
+(default) or mirrored on S3 (:code:`LOCAL_DB=false`).
+
+Environment variables:
+
+* :code:`SSL_VERIFICATION` (default :code:`true`): set to :code:`false` to disable TLS verification (not recommended);
+  a custom CA bundle can be given with the standard :code:`REQUESTS_CA_BUNDLE`
+* :code:`GEOCODER_DOWNLOAD_WORKERS` (default 4): number of parallel downloads
 """
 import gzip
 import hashlib
 import os
 import shutil
+from concurrent.futures import ThreadPoolExecutor
 
 import requests
-from botocore.errorfactory import ClientError
 from loguru import logger
+from requests.adapters import HTTPAdapter
 from tqdm import tqdm
 from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
+from urllib3.util.retry import Retry
 
 from geocoder.geocoding import DEBUG, LOCAL_DB, s3
 from geocoder.geocoding.datapaths import data_dir, database
+from geocoder.geocoding.utils import env_bool
 
-SSL_VERIFICATION = os.environ.get("SSL_VERIFICATION", False)
+SSL_VERIFICATION = env_bool("SSL_VERIFICATION", True)
+TIMEOUT = (10, 120)  # connect, read (seconds)
+DOWNLOAD_WORKERS = int(os.environ.get("GEOCODER_DOWNLOAD_WORKERS", 4))
 
-if not SSL_VERIFICATION:
+if not SSL_VERIFICATION:  # pragma: no cover
+    logger.warning("TLS verification is disabled (SSL_VERIFICATION=false)")
     disable_warnings(InsecureRequestWarning)
 
 raw_data_folder_path = os.path.join(data_dir, 'raw')
@@ -51,47 +65,56 @@ else:  # pragma: no cover
                 "971", "972", "973", "974", "975", "976", "977", "978", "984", "986", "987", "988", "989"]
 
 
+def _session():
+    """requests session with connection pooling and retries on transient errors"""
+    session = requests.Session()
+    retry = Retry(total=5, backoff_factor=1, status_forcelist=(429, 500, 502, 503, 504), allowed_methods=("GET",))
+    adapter = HTTPAdapter(max_retries=retry, pool_maxsize=max(DOWNLOAD_WORKERS, 1))
+    session.mount("https://", adapter)
+    session.mount("http://", adapter)
+    session.verify = SSL_VERIFICATION or False  # an explicit CA bundle can be given with REQUESTS_CA_BUNDLE
+    return session
+
+
 def _md5(fname):
     """
-    Calculates md5 hash of file
+    Calculates md5 hash of file (only used to detect whether the BAN listing changed, not for security)
 
     Args:
         fname: file path
     """
-    md5_hash = hashlib.md5()  # nosec
+    md5_hash = hashlib.md5(usedforsecurity=False)
     if LOCAL_DB:
         with open(fname, "rb") as f:
-            for chunk in iter(lambda: f.read(4096), b""):
+            for chunk in iter(lambda: f.read(65536), b""):
                 md5_hash.update(chunk)
     else:
         f = s3.get_object(Bucket="geocoder", Key=f"content/{fname}")['Body']
-        for chunk in iter(lambda: f.read(4096), b""):
+        for chunk in iter(lambda: f.read(65536), b""):
             md5_hash.update(chunk)
     return md5_hash.hexdigest()
 
 
 def update_ban_file(url, file_name):
     """
-    Check which files are present
+    Download a (small) file and store it locally or on S3
 
     Args:
         url (str): URL of BAN database
         file_name (os.Path): name of the file to write
     """
     try:
-        msg = f'Unable to join BAN address website ({url}).'
-        r = requests.get(url, verify=SSL_VERIFICATION)  # nosec
-        msg += f' Status error code: {r.status_code}'
-        if r.status_code != 200:  # pragma: no cover
-            raise ConnectionError(msg)
-    except (requests.exceptions.ConnectionError, requests.exceptions.SSLError, requests.exceptions.HTTPError):
-        raise ConnectionError(msg)  # pragma: no cover
+        r = _session().get(url, timeout=TIMEOUT)
+    except requests.exceptions.RequestException as e:  # pragma: no cover
+        raise ConnectionError(f'Unable to join BAN address website ({url}): {e}') from e
+    if r.status_code != 200:  # pragma: no cover
+        raise ConnectionError(f'Unable to join BAN address website ({url}). Status error code: {r.status_code}')
 
     if LOCAL_DB:
-        with open(file_name, 'w') as file:
-            file.write(r.text)
+        with open(file_name, 'wb') as file:
+            file.write(r.content)
     else:
-        s3.put_object(Body=r.text, Bucket="geocoder", Key=f"content/{file_name}")
+        s3.put_object(Body=r.content, Bucket="geocoder", Key=f"content/{file_name}")
 
 
 def update_local_content_file():
@@ -115,7 +138,7 @@ def need_to_download():
     elif not LOCAL_DB:
         try:
             s3.head_object(Bucket='geocoder', Key=f"content/{local_content_file_name}")
-        except ClientError:
+        except s3.exceptions.ClientError:
             return True
     logger.debug("Local content file exists")
     update_server_content_file()
@@ -132,66 +155,86 @@ def need_to_download():
         return True
 
 
-def _download_ban_dpt_file(ban_dpt_file_name):
+def _download_ban_dpt_file(ban_dpt_file_name, session=None):
     """
-    Downloads a single file from BAN
+    Downloads a single file from BAN (to a temporary name first, so that a partial file is never mistaken for a
+    complete one)
 
     Args:
         ban_dpt_file_name (str): name of file to download
 
     :rtype: bool
     """
-    with open(os.path.join(raw_data_folder_path, ban_dpt_file_name), 'wb') as ban_dpt_file:
-        response = requests.get(ban_url.format(ban_dpt_file_name), stream=True,  # nosec
-                                verify=SSL_VERIFICATION)
-
-        if not response.ok:  # pragma: no cover
-            logger.info(f'Download {ban_dpt_file_name} unsuccessful: bad response')
+    session = session or _session()
+    path = os.path.join(raw_data_folder_path, ban_dpt_file_name)
+    tmp_path = path + ".part"
+    try:
+        with session.get(ban_url.format(ban_dpt_file_name), stream=True, timeout=TIMEOUT) as response:
+            if not response.ok:  # pragma: no cover
+                logger.error(f'Download {ban_dpt_file_name} unsuccessful: HTTP {response.status_code}')
+                return False
+            expected = response.headers.get('content-length')
+            done = 0
+            with open(tmp_path, 'wb') as ban_dpt_file:
+                for block in response.iter_content(65536):
+                    ban_dpt_file.write(block)
+                    done += len(block)
+        if expected is not None and done != int(expected):  # pragma: no cover
+            logger.error(f'Download {ban_dpt_file_name} unsuccessful: incomplete')
             return False
-
-        done, total_size = 0, int(response.headers.get('content-length'))
-        for block in response.iter_content(4096):
-            ban_dpt_file.write(block)
-            done += len(block)
-
-    if done != total_size:  # pragma: no cover
-        logger.error(f'Download {ban_dpt_file_name} unsuccessful: incomplete')
+        os.replace(tmp_path, path)
+    except requests.exceptions.RequestException as e:  # pragma: no cover
+        logger.error(f'Download {ban_dpt_file_name} unsuccessful: {e}')
         return False
+    finally:
+        if os.path.exists(tmp_path):  # pragma: no cover
+            os.remove(tmp_path)
 
     if not LOCAL_DB:
-        with open(os.path.join(raw_data_folder_path, ban_dpt_file_name), 'rb') as ban_dpt_file:
+        with open(path, 'rb') as ban_dpt_file:
             s3.upload_fileobj(Fileobj=ban_dpt_file,
                               Bucket='geocoder',
                               Key=f"raw/{ban_dpt_file_name}")
     return True
 
 
+def _s3_keys(prefix):
+    """All the keys under a prefix (the listing is paginated)"""
+    paginator = s3.get_paginator('list_objects_v2')
+    for page in paginator.paginate(Bucket='geocoder', Prefix=prefix):
+        for obj in page.get('Contents', []):
+            yield obj['Key']
+
+
 def _update_ban_files():
     """
     Downloads everything
+
+    The local content file (which records which BAN version we have) is only written once every file has been
+    downloaded: an interrupted or partial download is retried on the next run.
     """
     logger.info('A new version of BAN base is available.')
-    update_local_content_file()
 
-    if LOCAL_DB and os.path.exists(raw_data_folder_path):
-        shutil.rmtree(raw_data_folder_path)
     if LOCAL_DB:
-        os.mkdir(raw_data_folder_path)
+        if os.path.exists(raw_data_folder_path):
+            shutil.rmtree(raw_data_folder_path)
+        os.makedirs(raw_data_folder_path)
     else:
-        bucket_list_result_set = s3.list_objects_v2(Bucket='geocoder',
-                                                    Prefix="content/",
-                                                    Delimiter='/')['Contents']
-        for obj in bucket_list_result_set:
-            if obj['Key'] == 'content/':
-                continue
-            s3.delete_object(Bucket="geocoder", Key=obj["Key"])
+        for key in _s3_keys("raw/"):
+            s3.delete_object(Bucket="geocoder", Key=key)
+        os.makedirs(raw_data_folder_path, exist_ok=True)
 
-    for dpt in tqdm(dpt_list, desc="Download raw data"):
-        for ban_dpt_gz_file_name_type in ban_dpt_gz_file_name:
-            downloading_ban_dpt_gz_file_name = ban_dpt_gz_file_name_type.format(dpt)
-            if not _download_ban_dpt_file(downloading_ban_dpt_gz_file_name):
-                logger.error(f'Impossible to download {downloading_ban_dpt_gz_file_name}')
+    file_names = [name.format(dpt) for dpt in dpt_list for name in ban_dpt_gz_file_name]
+    session = _session()
+    with ThreadPoolExecutor(max_workers=max(DOWNLOAD_WORKERS, 1)) as pool:
+        results = list(tqdm(pool.map(lambda name: _download_ban_dpt_file(name, session), file_names),
+                            total=len(file_names), desc="Download raw data"))
 
+    failed = [name for name, ok in zip(file_names, results) if not ok]
+    if failed:
+        raise RuntimeError("Could not download: " + ", ".join(failed))
+
+    update_local_content_file()
     return True
 
 
@@ -202,8 +245,8 @@ def check_ban_version():
     Returns: whether a download has been performed
     :rtype: bool
     """
-    if LOCAL_DB and not os.path.exists(content_folder_path):
-        os.mkdir(content_folder_path)
+    if LOCAL_DB:
+        os.makedirs(content_folder_path, exist_ok=True)
 
     if not need_to_download():
         return False
@@ -216,15 +259,25 @@ def _eventually_download_files_locally():
     """
     if not LOCAL_DB and not os.path.exists(raw_data_folder_path):
         # retrieve from S3
-        os.mkdir(raw_data_folder_path)
-        bucket_list_result_set = s3.list_objects_v2(Bucket='geocoder',
-                                                    Prefix="raw/",
-                                                    Delimiter='/')['Contents']
-        for obj in bucket_list_result_set:
-            filename = obj['Key'].replace('raw/', "")
-            if filename is None or filename == "" or not filename.endswith(".gz"):
+        os.makedirs(raw_data_folder_path)
+        for key in _s3_keys("raw/"):
+            filename = key.replace('raw/', "")
+            if not filename.endswith(".gz"):
                 continue
-            s3.download_file('geocoder', obj['Key'], os.path.join(raw_data_folder_path, filename))
+            s3.download_file('geocoder', key, os.path.join(raw_data_folder_path, filename))
+
+
+def _decompress_one(gz_file_name):
+    """Decompress one archive, remove it, return whether it worked"""
+    dpt_gz_file_path = os.path.join(raw_data_folder_path, gz_file_name)
+    if not os.path.isfile(dpt_gz_file_path):  # pragma: no cover
+        logger.error(f'Decompression unsuccessful: nonexistent file {dpt_gz_file_path}')
+        return False
+    logger.info(f'Extracting file {gz_file_name[:-3]}')
+    with gzip.open(dpt_gz_file_path, 'rb') as f_in, open(dpt_gz_file_path[:-3], 'wb') as f_out:
+        shutil.copyfileobj(f_in, f_out, 1024 * 1024)
+    _remove_file(dpt_gz_file_path)
+    return True
 
 
 def decompress():
@@ -236,27 +289,10 @@ def decompress():
     """
     _eventually_download_files_locally()
 
-    count = 0
-    for dpt in dpt_list:
-        # Certifies the existence of the subdirectory.
-        for ban_dpt_gz_file_name_type in ban_dpt_gz_file_name:
-            dpt_gz_file_path = os.path.join(raw_data_folder_path, ban_dpt_gz_file_name_type.format(dpt))
-            if not os.path.isfile(dpt_gz_file_path):  # pragma: no cover
-                logger.error(f'Decompression unsuccessful: nonexistent file {dpt_gz_file_path}')
-                count += 1
-
-            else:  # Decompress each file within gzip
-                with gzip.open(dpt_gz_file_path, 'rb') as f_in:
-                    dpt_file_path = os.path.join(raw_data_folder_path, ban_dpt_gz_file_name_type.format(dpt)[:-3])
-                    logger.info(f'Extracting file {ban_dpt_gz_file_name_type.format(dpt)[:-3]}')
-                    with open(dpt_file_path, 'wb') as f_out:
-                        shutil.copyfileobj(f_in, f_out)
-
-                _remove_file(dpt_gz_file_path)
-
-    if count:  # pragma: no cover
-        return False
-    return True
+    file_names = [name.format(dpt) for dpt in dpt_list for name in ban_dpt_gz_file_name]
+    with ThreadPoolExecutor(max_workers=max(os.cpu_count() or 1, 1)) as pool:  # zlib releases the GIL
+        results = list(pool.map(_decompress_one, file_names))
+    return all(results)
 
 
 def _remove_file(file_path):
@@ -269,7 +305,7 @@ def _remove_file(file_path):
     logger.info(f'Deleting file {file_path}')
     try:
         os.remove(file_path)
-    except Exception:  # nosec
+    except OSError:  # pragma: no cover
         pass
 
 
@@ -280,10 +316,5 @@ def remove_downloaded_raw_ban_files():
     Returns: whether removing was successful
     :rtype: bool
     """
-    for dpt in dpt_list:
-        for ban_dpt_gz_file_name_type in ban_dpt_gz_file_name:
-            _remove_file(os.path.join(raw_data_folder_path, ban_dpt_gz_file_name_type.format(dpt)))
-        for ban_dpt_file_name_type in ban_dpt_file_name:
-            _remove_file(os.path.join(raw_data_folder_path, ban_dpt_file_name_type.format(dpt)))
-    shutil.rmtree(raw_data_folder_path)
+    shutil.rmtree(raw_data_folder_path, ignore_errors=True)
     return True

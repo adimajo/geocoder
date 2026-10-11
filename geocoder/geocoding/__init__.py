@@ -9,7 +9,6 @@ original geocoding module
     ban_processing
     datapaths
     datatypes
-    distance
     download
     index
     normalize
@@ -17,6 +16,7 @@ original geocoding module
     result
     search
     similarity
+    spatial
     utils
 """
 import os

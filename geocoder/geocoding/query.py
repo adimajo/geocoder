@@ -12,11 +12,10 @@ Attributes:
 """
 import os
 
-import kdquery
 import numpy as np
 from loguru import logger
 
-from geocoder.geocoding import LOCAL_DB, distance, s3, utils
+from geocoder.geocoding import LOCAL_DB, s3, spatial, utils
 from geocoder.geocoding.datapaths import paths
 from geocoder.geocoding.datatypes import dtypes
 from geocoder.geocoding.similarity import Similarity
@@ -394,59 +393,20 @@ def select_localisation(voie_id, numero):
     return localisation_id if found else None
 
 
-def get_properties(node_id):
-    """Auxiliary method to the nearest_point method from kdquery package.
+def nearest_point_from(position):
+    """Find the nearest address to a given position.
 
     Args:
-        node_id (int): Index of a node in the internal representation of the
-            kd-tree using a numpy array.
+        position (:obj:`tuple` of float): Longitude and latitude of the position
+            in this order, in degrees.
 
     Returns:
         (:obj:`tuple`)
-        (point (:obj:`tuple` of float): Longitude and latitude of the node,
-            region (:ob:`list` of :obj:`list` of float): The region of the Earth`s
-            surface that the node belongs to,
-         dimension (int): The dimension of the surface divided by this node,
-         active (bool): True if the node will be consider in the computation of
-            the nearest point,
-         left (int): Index to left child,
-         right (int): Index to right child)
-    """
-    table_node = data['kdtree'][node_id]
-
-    limit_left = utils.int_to_degree(table_node['limit_left'])
-    limit_right = utils.int_to_degree(table_node['limit_left'])
-    limit_bottom = utils.int_to_degree(table_node['limit_bottom'])
-    limit_top = utils.int_to_degree(table_node['limit_top'])
-
-    # The region of the space defined by the node
-    region = [[limit_left, limit_right], [limit_bottom, limit_top]]
-
-    # The position of the point in the space
-    point = (utils.int_to_degree(table_node['longitude']),
-             utils.int_to_degree(table_node['latitude']))
-
-    # The dimension divided by this node
-    dimension = table_node['dimension']
-
-    # Indices to left and right children
-    left = table_node['left'] if table_node['left'] != -1 else None
-    right = table_node['right'] if table_node['right'] != -1 else None
-
-    return point, region, dimension, True, left, right
-
-
-def nearest_point_from(query):
-    """Find the nearest node in the internal kd-tree to a given query.
-
-    Args:
-        query (:obj:`tuple` of float): Longitude and latitude of the position
-            in this order.
-
-    Returns:
-        (:obj:`tuple`)
-        (node_id (int): Index of the nearest node in the internal kd-tree,
-         dist (float): The distance between the query and the nearest node)
+        (localisation_id (int): Index of the nearest address in the localisation table,
+         dist (float): The distance in meters between the position and that address)
 
     """
-    return kdquery.nearest_point(query, 0, get_properties, distance.spherical)
+    localisation = data['localisation']
+    return spatial.nearest(localisation['longitude'], localisation['latitude'],
+                           data['grid_cells'], data['grid_offsets'], data['grid_order'],
+                           position[0], position[1])

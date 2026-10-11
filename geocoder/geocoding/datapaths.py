@@ -19,6 +19,6 @@ data_dir = os.path.abspath(os.environ.get("GEOCODER_DATA_DIR") or here)
 database = os.path.join(data_dir, 'database')
 
 tables = ['departement', 'postal', 'commune', 'voie', 'localisation',
-          'commune_index', 'postal_index', 'voie_index', 'kdtree']
+          'commune_index', 'postal_index', 'voie_index', 'grid_cells', 'grid_offsets', 'grid_order']
 
 paths = {table: os.path.join(database, table + '.dat') for table in tables}
