@@ -1,0 +1,4 @@
+id;id_fantoir;numero;rep;nom_voie;code_postal;code_insee;nom_commune;code_insee_ancienne_commune;nom_ancienne_commune;x;y;lon;lat;type_position;alias;nom_ld;libelle_acheminement;nom_afnor;source_position;source_nom_voie;certification_commune;cad_parcelles
+75115_8244_00001;75115_0001;1;;Rue Saint-Charles;75015;75115;Paris;;;0;0;2.286;48.848;entrée;;;PARIS;RUE SAINT-CHARLES;commune;commune;1;
+75115_8244_00003;75115_0001;3;;Rue Saint-Charles;75015;75115;Paris;;;0;0;2.2856;48.8477;entrée;;;PARIS;RUE SAINT-CHARLES;commune;commune;1;
+75115_5190_00010;75115_0001;10;;Rue de la Convention;75015;75115;Paris;;;0;0;2.281;48.841;entrée;;;PARIS;RUE DE LA CONVENTION;commune;commune;1;

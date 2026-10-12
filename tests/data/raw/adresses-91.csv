@@ -1,0 +1,15 @@
+id;id_fantoir;numero;rep;nom_voie;code_postal;code_insee;nom_commune;code_insee_ancienne_commune;nom_ancienne_commune;x;y;lon;lat;type_position;alias;nom_ld;libelle_acheminement;nom_afnor;source_position;source_nom_voie;certification_commune;cad_parcelles
+91477_9893_00010;91477_0001;10;;Boulevard des Maréchaux;91120;91477;Palaiseau;;;0;0;2.2095;48.7101;entrée;;;PALAISEAU;BOULEVARD DES MARÉCHAUX;commune;commune;1;
+91477_9893_00012;91477_0001;12;;Boulevard des Maréchaux;91120;91477;Palaiseau;;;0;0;2.209934;48.709914;entrée;;;PALAISEAU;BOULEVARD DES MARÉCHAUX;commune;commune;1;
+91477_9893_00014;91477_0001;14;;Boulevard des Maréchaux;91120;91477;Palaiseau;;;0;0;2.2103;48.7097;entrée;;;PALAISEAU;BOULEVARD DES MARÉCHAUX;commune;commune;1;
+91477_8742_00001;91477_0001;1;;Rue Jacques Monod;91120;91477;Palaiseau;;;0;0;2.2134;48.7133;entrée;;;PALAISEAU;RUE JACQUES MONOD;commune;commune;1;
+91477_8742_00003bis;91477_0001;3;bis;Rue Jacques Monod;91120;91477;Palaiseau;;;0;0;2.2137;48.7135;entrée;;;PALAISEAU;RUE JACQUES MONOD;commune;commune;1;
+91477_5569_00005;91477_0001;5;;Rue de Paris;91120;91477;Palaiseau;;;0;0;2.246;48.717;entrée;;;PALAISEAU;RUE DE PARIS;commune;commune;1;
+91477_5569_00007;91477_0001;7;;Rue de Paris;91120;91477;Palaiseau;;;0;0;2.2463;48.7172;entrée;;;PALAISEAU;RUE DE PARIS;commune;commune;1;
+91471_5569_00001;91471_0001;1;;Rue de Paris;91400;91471;Orsay;;;0;0;2.186;48.699;entrée;;;ORSAY;RUE DE PARIS;commune;commune;1;
+91471_5569_00002;91471_0001;2;;Rue de Paris;91400;91471;Orsay;;;0;0;2.1863;48.6992;entrée;;;ORSAY;RUE DE PARIS;commune;commune;1;
+91471_5569_00003;91471_0001;3;;Rue de Paris;91400;91471;Orsay;;;0;0;2.1866;48.6994;entrée;;;ORSAY;RUE DE PARIS;commune;commune;1;
+91471_7978_00005;91471_0001;5;;Boulevard Dubreuil;91400;91471;Orsay;;;0;0;2.1875;48.7005;entrée;;;ORSAY;BOULEVARD DUBREUIL;commune;commune;1;
+91691_0001_00003;91691_0001;3;;Rue des Lilas;91120;91691;Villebon-sur-Yvette;;;0;0;2.259;48.693;entrée;;;VILLEBON-SUR-YVETTE;RUE DES LILAS;commune;commune;1;
+91691_0001_00005;91691_0001;5;;Rue des Lilas;91120;91691;Villebon-sur-Yvette;;;0;0;2.2593;48.6932;entrée;;;VILLEBON-SUR-YVETTE;RUE DES LILAS;commune;commune;1;
+91691_0002_00009;91691_0001;9;;Rue de Paris;91120;91691;Villebon-sur-Yvette;;;0;0;2.26;48.695;entrée;;;VILLEBON-SUR-YVETTE;RUE DE PARIS;commune;commune;1;

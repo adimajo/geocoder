@@ -23,3 +23,8 @@ coverage.xml
 docs/build/
 docs/source/_autosummary/
 geocoder/geocoding/content/
+
+# test fixtures
+!tests/data/
+!tests/data/raw/
+!tests/data/raw/*.csv
