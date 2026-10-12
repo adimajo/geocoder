@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Creation of the output for the search methods.
 
 Attributes:
@@ -30,14 +29,8 @@ def get_table_ids(status):
             second is the index of an element in this table.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': (int): The index of the departement.
-            'postal': (int): The index of the postal code.
-            'commune': (int): The index of the city.
-            'voie': (int): The index of the street.
-            'localisation': (int): The index of the street number.
-        }
+        dict: the index in each table (``departement``, ``postal``, ``commune``, ``voie``, ``localisation``) of the
+        elements referenced by the given one.
 
     """
     table_ids = {}
@@ -59,28 +52,9 @@ def get_output(status, quality):
         quality (int): The quality of the search result.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': {
-                'code' (str): The code of the departement
-            },
-            'postal': {
-                'code' (int): The postal code
-            },
-            'commune': {
-                'nom' (str): The city name,
-                'code_insee' (str): The code_insee of the city
-            },
-            'voie': {
-                'nom' (str): The street name,
-            },
-            'localisation': {
-                'numero' (str): The street number,
-            },
-            'longitude' (float): Longitude coordinate,
-            'latitude' (float): Latitude coordinate,
-            'quality' (int): The quality of the result
-        }
+        dict: the keys are ``departement`` (``code``), ``postal`` (``code``), ``commune`` (``nom``, ``code_insee``),
+        ``voie`` (``nom``), ``localisation`` (``numero``), ``longitude`` and ``latitude`` (floats) and ``quality``
+        (int, see the documentation of the package).
 
     """
     output = {}

@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 """Definition of the search methods.
 
 This module defines the logic of the two most relevant methods of this package:
 the position method and the reverse method.
 """
-from geocoder.geocoding import result, normalize, query
+from geocoder.geocoding import normalize, query, result
 
 
 def preprocessing(code_postal, commune, adresse):
@@ -19,11 +18,8 @@ def preprocessing(code_postal, commune, adresse):
         adresse(str): Address with number and street name.
 
     Returns:
-        (:obj:`tuple`)
-        (code_postal (int): The postal code,
-         commune (str): The city name normalized,
-         numero (int): The street number,
-         voie (str): The street name)
+        tuple: the postal code (int), the normalized city name (str), the street number (int), the normalized street
+        name (str) and the type of street (str).
 
     """
     # Try to convert postal code to int.
@@ -58,34 +54,13 @@ def position(code_postal=None, commune=None, adresse=None):
         adresse (str): Address with number and street name.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': {
-                'code' (str): The code of the departement
-            },
-            'postal': {
-                'code' (int): The postal code
-            },
-            'commune': {
-                'nom' (str): The city name,
-                'code_insee' (str): The code_insee of the city
-            },
-            'voie': {
-                'nom' (str): The street name,
-            },
-            'localisation': {
-                'numero' (str): The street number,
-            },
-            'longitude' (float): Longitude coordinate,
-            'latitude' (float): Latitude coordinate,
-            'quality' (int): The quality of the result
-        }
-
-    Example:
-        >>> from geocoder.geocoding import search
-        >>> search.position('91120', 'Palaiseau', '12, Bd des Maréchaux')
+        dict: the keys are ``departement`` (``code``), ``postal`` (``code``), ``commune`` (``nom``, ``code_insee``),
+        ``voie`` (``nom``), ``localisation`` (``numero``), ``longitude`` and ``latitude`` (floats) and ``quality``
+        (int, see the documentation of the package).
 
     """
+    query.setup()
+
     # Input preprocessing.
     code_postal, commune, numero, voie, voie_type = \
         preprocessing(code_postal, commune, adresse)
@@ -100,6 +75,9 @@ def position(code_postal=None, commune=None, adresse=None):
 
     # Try to find street.
     voie_id = query.select_voie(commune_id, voie, voie_type)
+    if voie_id is None and commune_id is None:
+        # a postal code shared by several communes and no commune: look for the street in all of them
+        voie_id = query.select_voie_in_postal(postal_id, voie)
     if voie_id is None:
         voie_id = query.complete_voie_selection(code_postal, commune, voie)
 
@@ -133,6 +111,14 @@ def position(code_postal=None, commune=None, adresse=None):
     return result.get_output(status, quality)
 
 
+def _valid_position(position):
+    try:
+        lon, lat = (float(coordinate) for coordinate in position)
+    except (TypeError, ValueError):
+        return False
+    return -180 <= lon <= 180 and -90 <= lat <= 90  # False for NaN
+
+
 def reverse(position):
     """Finds the nearest address in France to a given position over the Earth.
 
@@ -141,38 +127,13 @@ def reverse(position):
             order.
 
     Returns:
-        :obj:`dict`
-        {
-            'departement': {
-                'code' (str): The code of the departement
-            },
-            'postal': {
-                'code' (int): The postal code
-            },
-            'commune': {
-                'nom' (str): The city name,
-                'code_insee' (str): The code_insee of the city
-            },
-            'voie': {
-                'nom' (str): The street name,
-            },
-            'localisation': {
-                'numero' (str): The street number,
-            },
-            'longitude' (float): Longitude coordinate,
-            'latitude' (float): Latitude coordinate,
-            'quality' (int): The quality of the result
-        }
-
-    Example:
-        >>> from geocoder.geocoding import search
-        >>> search.reverse((2.21, 48))
+        dict: the keys are ``departement`` (``code``), ``postal`` (``code``), ``commune`` (``nom``, ``code_insee``),
+        ``voie`` (``nom``), ``localisation`` (``numero``), ``longitude`` and ``latitude`` (floats) and ``quality``
+        (int, see the documentation of the package).
 
     """
-    if position is None:
+    query.setup()
+    if not _valid_position(position):
         return result.get_output(None, 6)
-    node_id, dist = query.nearest_point_from(position)
-
-    # Get the reference id for the address.
-    localisation_id = query.data['kdtree']['ref_id'][node_id]
+    localisation_id, dist = query.nearest_point_from(position)
     return result.get_output(('localisation', localisation_id), 1)

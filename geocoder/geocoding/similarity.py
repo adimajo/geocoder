@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """String similarity methods.
 
 This module defines the class used for computing the score of similarity
@@ -8,7 +7,24 @@ needed.
 """
 
 
-class Similarity():
+from functools import lru_cache
+
+
+@lru_cache(maxsize=1 << 18)
+def grams(s):
+    """The sets of unigrams and bigrams of a string, and the score of their union.
+
+    The score of a set of strings is the sum of their lengths, hence the number of unigrams plus twice the number of
+    bigrams. Candidates are the same few thousand street names for most queries: caching saves most of the work.
+
+    :rtype: tuple
+    """
+    unigrams = frozenset(s)
+    bigrams = frozenset(s[i:i + 2] for i in range(len(s) - 1))
+    return unigrams, bigrams, len(unigrams) + 2 * len(bigrams)
+
+
+class Similarity:
     """Class defining the string similarity methods using uni and bigrams.
 
     One object of this class will have a set of uni and bigrams of a string s
@@ -29,30 +45,8 @@ class Similarity():
             s (str): The string to compute the 1 and 2 grams set.
 
         """
-        self.slice_set = set(list(s) + self.k_letters_list(s, 2))
-        self.slice_set_score = self.set_score(self.slice_set)
-
-    def k_letters_list(self, s, k):
-        """List of all the strings formed by k consecutive letters of s.
-
-        Divide a string s into a list of strings, where each string is formed
-        by k consecutive letters of s.
-
-        Args:
-            s (str): The string to divide.
-            k (int): The number of consecutive letters.
-
-        Returns:
-            (:obj:`list` of :obj:`str`): The list of strings with k consecutive
-                letters of s.
-
-        """
-        return [s[i:(i + k)] for i in range(0, len(s) - (k - 1))]
-
-    def set_score(self, words_set):
-        """Sum of the lentgh of all elements from a set of strings.
-        """
-        return sum([len(word) for word in words_set])
+        self.unigrams, self.bigrams, self.slice_set_score = grams(s)
+        self.slice_set = self.unigrams | self.bigrams
 
     def score(self, t):
         """String similarity score.
@@ -69,16 +63,12 @@ class Similarity():
                 as argument in the initialization of the class.
 
         """
-        # Union of the unigram and bigram of t
-        slice_set = set(list(t) + self.k_letters_list(t, 2))
-        slice_set_score = self.set_score(slice_set)
+        unigrams, bigrams, score = grams(t)
 
-        # The intersection between the slice_set of s and t.
-        intersection = slice_set & self.slice_set
-        intersection_score = self.set_score(intersection)
+        # The score of the intersection of the sets of t and s
+        intersection_score = len(unigrams & self.unigrams) + 2 * len(bigrams & self.bigrams)
 
-        union_score = slice_set_score + self.slice_set_score - \
-            intersection_score
+        union_score = score + self.slice_set_score - intersection_score
 
         # The union_score is zero only if both s and t are empty
         if union_score == 0:  # pragma: no cover

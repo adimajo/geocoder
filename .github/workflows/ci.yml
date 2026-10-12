@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - run: uv sync --frozen --all-extras
+      - run: uv run ruff check geocoder tests benchmarks
+      - name: Security checks (bandit)
+        run: uv run bandit -q -c pyproject.toml -r geocoder
+      - name: Known vulnerabilities in dependencies
+        run: uv run pip-audit --skip-editable
+
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: uv sync --frozen --all-extras
+      - name: Unit tests (tiny fixture database, no download)
+        run: uv run coverage run -m pytest
+      - run: uv run coverage report
+
+  integration:
+    # downloads the BAN of the département 01, builds the database and checks the accuracy
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - run: uv sync --frozen --all-extras
+      - run: uv run pytest -m integration
+
+  docker:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+      - uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: .
+          load: true
+          tags: geocoder:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Smoke test (département 01)
+        run: |
+          docker run -d --name geocoder -p 8000:8000 -e DEBUG=true --read-only --tmpfs /tmp -v geocoder-data:/data geocoder:ci
+          for i in $(seq 1 60); do
+            [ "$(docker inspect -f '{{.State.Health.Status}}' geocoder)" = healthy ] && break
+            sleep 5
+          done
+          docker logs geocoder
+          curl --fail --silent localhost:8000/version
+          curl --fail --silent -X POST -H 'Content-Type: application/json' \
+            -d '[{"address": "1 rue de la Paix", "postal_code": "01000", "city": "Bourg-en-Bresse"}]' \
+            localhost:8000/geocode_file

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Useful methods.
 
 This module defines some useful methods for the application.
@@ -7,7 +6,19 @@ Attributes:
     SCALE (int): The scale conversion of float to int.
 
 """
+import os
+
+import numpy as np
+
 SCALE = 7
+
+
+def env_bool(name, default=False):
+    """Read a boolean environment variable (1/true/t/yes/y/on, case insensitive)."""
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return value.strip().lower() in ('1', 'true', 't', 'yes', 'y', 'on')
 
 
 def degree_to_int(degree):
@@ -24,31 +35,6 @@ def int_to_degree(integer):
     return float(i / (10 ** SCALE))
 
 
-def pre_order(size):
-    """List in pre order of integers ranging from 0 to size in a balanced
-    binary tree.
-    """
-    interval_list = [None] * size
-    interval_list[0] = (0, size)
-    tail = 1
-
-    for head in range(size):
-        start, end = interval_list[head]
-        mid = (start + end) // 2
-
-        if mid > start:
-            interval_list[tail] = (start, mid)
-            tail += 1
-
-        if mid + 1 < end:
-            interval_list[tail] = (mid + 1, end)
-            tail += 1
-
-        interval_list[head] = mid
-
-    return interval_list
-
-
 def search(element, indices, values, sorted=True):
     """Search element in a list of values.
 
@@ -60,9 +46,8 @@ def search(element, indices, values, sorted=True):
         sorted (bool, optional): True if values are sorted, false otherwise.
 
     Returns:
-        (:obj:`tuple` of :obj:`int):
-        (int: The index of the selected index in the indices list,
-         int: The index of the selected value in the values list)
+        tuple: the index of the selected index in the indices list and the index of the selected value in the
+        values list, as two integers.
 
     """
     # If values is a sorted list, we only need the limits of that list
@@ -98,9 +83,16 @@ def binary_search(element, values, start, end, get_index):
 def most_similar(indices, values, similarity):
     """Find the value with greatest score of similarity.
     """
+    # read all the candidates at once: element by element access of a memory-mapped column is slow
+    if isinstance(indices, range) and indices.step == 1:
+        candidates = values[indices.start:indices.stop]
+    else:
+        candidates = values[np.fromiter(indices, dtype=np.int64)]
+    candidates = np.asarray(candidates).tolist()
+
     max_result = None, None, None
-    for (rang, index) in enumerate(indices):
-        score = similarity(values[index])
+    for (rang, (index, value)) in enumerate(zip(indices, candidates)):
+        score = similarity(value)
         max_score = max_result[0]
         if score == 1:
             return score, rang, index

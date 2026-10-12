@@ -1,0 +1,16 @@
+.git
+.github
+.venv
+.ruff_cache
+.pytest_cache
+__pycache__
+*.pyc
+benchmarks
+docs
+tests
+geocoder/geocoding/database
+geocoder/geocoding/raw
+geocoder/geocoding/content
+.coverage
+coverage.xml
+dist

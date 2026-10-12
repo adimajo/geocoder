@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Normalization methods the database and the input of the search.
 
 Attributes:
@@ -170,6 +169,6 @@ def mine(text):
     elif voie_type_index is None:
         voie_type_index = 0
 
-    voie = ' '.join(words[voie_type_index:])
+    voie = ''.join(words[voie_type_index:])  # as in the database, see uniform_adresse
     voie_type = words[voie_type_index]
     return numero, voie, voie_type

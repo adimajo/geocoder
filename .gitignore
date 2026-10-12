@@ -14,3 +14,17 @@ __pycache__/
 .idea/
 raw
 local_content.txt
+
+.venv/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+docs/build/
+docs/source/_autosummary/
+geocoder/geocoding/content/
+
+# test fixtures
+!tests/data/
+!tests/data/raw/
+!tests/data/raw/*.csv

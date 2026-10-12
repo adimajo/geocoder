@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Interface to query for data.
 
 This module defines the query methods for each table in the database.
@@ -13,11 +12,10 @@ Attributes:
 """
 import os
 
-import kdquery
 import numpy as np
 from loguru import logger
 
-from geocoder.geocoding import distance, utils, s3, LOCAL_DB
+from geocoder.geocoding import LOCAL_DB, s3, spatial, utils
 from geocoder.geocoding.datapaths import paths
 from geocoder.geocoding.datatypes import dtypes
 from geocoder.geocoding.similarity import Similarity
@@ -26,18 +24,36 @@ data = {}
 limits = {}
 
 
+_warned = False
+
+
 def setup():
-    """Initialize the module level variables.
+    """Initialize the module level variables (memory-mapped tables) the first time they are needed.
     """
-    if not data or not limits:
-        for table in paths:
-            if not LOCAL_DB:
-                s3.download_file('geocoder', f"database/{table}.dat", paths[table])
-            if os.path.isfile(paths[table]):
-                data[table] = np.memmap(paths[table], dtypes[table])
-                limits[table] = (0, len(data[table]))
-            else:
-                logger.info(f"Missing database {table}; geocoder will likely error")
+    global _warned
+    if data and limits:
+        return
+    missing = []
+    for table in paths:
+        if not LOCAL_DB:
+            s3.download_file('geocoder', f"database/{table}.dat", paths[table])
+        if os.path.isfile(paths[table]):
+            data[table] = np.memmap(paths[table], dtypes[table])
+            limits[table] = (0, len(data[table]))
+        else:
+            missing.append(table)
+    if missing and not _warned:
+        _warned = True
+        logger.warning(f"Missing database table(s) {missing}: run `geocoder update` first; geocoder will likely error")
+
+
+def reset():
+    """Forget the loaded tables (they are loaded again on next use), e.g. after rebuilding the database.
+    """
+    global _warned
+    data.clear()
+    limits.clear()
+    _warned = False
 
 
 def select(table, column, start, end, element):
@@ -51,9 +67,7 @@ def select(table, column, start, end, element):
         element (str or int): The element to search for.
 
     Returns:
-        (:obj:`tuple`)
-        (pos (int): the position of the record in the table,
-         found (bool): true if the search was succeeded)
+        tuple: the position of the record in the table (int) and whether the search succeeded (bool).
 
     """
     # Binary search
@@ -68,28 +82,13 @@ def heuristics(table, column, narrow, wide, element):
     Args:
         table (str): The name of the numpy array.
         column (str): The field to consider.
-        narrow (:obj:`tuple`): Tuple of length 3 with setting for the narrow
-            search.
-            first element (int): The bottom limit index to look in the table in
-                the narrow search.
-            second element (int): The top limit index to look in the table in
-                the narrow search.
-            third element (float): The threshold for the similarity score in
-                the narrow search.
-        wide (:obj:`tuple`): Tuple of length 3 with setting for the wide
-            search (when the narrow is not successful).
-            first element (int): The bottom limit index to look in the table in
-                the wide search.
-            second element (int): The top limit index to look in the table in
-                the wide search.
-            third element (float): The threshold for the similarity score in
-                the wide search.
+        narrow (tuple): Settings of the narrow search: the bottom and top limit indices to look in the table, and the
+            threshold for the similarity score.
+        wide (tuple): Same settings for the wide search, used when the narrow search is not successful.
         element (str): The element to search for.
 
     Returns:
-        (:obj:`tuple`)
-        (element_id (int): the position of the record in the table,
-         found (bool): true if the search was succeeded)
+        tuple: the position of the record in the table (int) and whether the search succeeded (bool).
 
     """
     # Similarity function
@@ -264,10 +263,11 @@ def select_voie(commune_id, voie, voie_type):
     if not found:
         start_type, end_type = voie_id - 1, voie_id
         if voie_type is not None:
-            while data['voie']['normalise'][start_type].startswith(voie_type):
+            # stay within the streets of the commune
+            while start_type >= start and data['voie']['normalise'][start_type].startswith(voie_type):
                 start_type -= 1
             start_type += 1
-            while data['voie']['normalise'][end_type].startswith(voie_type):
+            while end_type < end and data['voie']['normalise'][end_type].startswith(voie_type):
                 end_type += 1
 
         if end_type - start_type > 1:
@@ -282,6 +282,31 @@ def select_voie(commune_id, voie, voie_type):
         voie_id, found = heuristics('voie', 'normalise', narrow, wide, voie)
 
     return voie_id if found else None
+
+
+def select_voie_in_postal(postal_id, voie):
+    """Select the record on voie table with field normalise equal to voie, in any commune of a postal code.
+
+    This is for searches that give a postal code shared by several communes but no (usable) commune name.
+
+    Args:
+        postal_id (int): The index of the postal code.
+        voie (str): The normalized street name.
+
+    Returns:
+        voie_id (int): The index of the record in the first commune (in alphabetical order) that has such a
+            street, None otherwise.
+
+    """
+    if postal_id is None or voie is None:
+        return None
+    ref_element = data['postal'][postal_id]
+    for commune_id in range(ref_element['start'], ref_element['end']):
+        commune = data['commune'][commune_id]
+        voie_id, found = select('voie', 'normalise', commune['start'], commune['end'], voie)
+        if found:
+            return voie_id
+    return None
 
 
 def complete_voie_selection(code_postal, commune, voie):
@@ -376,59 +401,19 @@ def select_localisation(voie_id, numero):
     return localisation_id if found else None
 
 
-def get_properties(node_id):
-    """Auxiliary method to the nearest_point method from kdquery package.
+def nearest_point_from(position):
+    """Find the nearest address to a given position.
 
     Args:
-        node_id (int): Index of a node in the internal representation of the
-            kd-tree using a numpy array.
+        position (:obj:`tuple` of float): Longitude and latitude of the position
+            in this order, in degrees.
 
     Returns:
-        (:obj:`tuple`)
-        (point (:obj:`tuple` of float): Longitude and latitude of the node,
-            region (:ob:`list` of :obj:`list` of float): The region of the Earth`s
-            surface that the node belongs to,
-         dimension (int): The dimension of the surface divided by this node,
-         active (bool): True if the node will be consider in the computation of
-            the nearest point,
-         left (int): Index to left child,
-         right (int): Index to right child)
-    """
-    table_node = data['kdtree'][node_id]
-
-    limit_left = utils.int_to_degree(table_node['limit_left'])
-    limit_right = utils.int_to_degree(table_node['limit_left'])
-    limit_bottom = utils.int_to_degree(table_node['limit_bottom'])
-    limit_top = utils.int_to_degree(table_node['limit_top'])
-
-    # The region of the space defined by the node
-    region = [[limit_left, limit_right], [limit_bottom, limit_top]]
-
-    # The position of the point in the space
-    point = (utils.int_to_degree(table_node['longitude']),
-             utils.int_to_degree(table_node['latitude']))
-
-    # The dimension divided by this node
-    dimension = table_node['dimension']
-
-    # Indices to left and right children
-    left = table_node['left'] if table_node['left'] != -1 else None
-    right = table_node['right'] if table_node['right'] != -1 else None
-
-    return point, region, dimension, True, left, right
-
-
-def nearest_point_from(query):
-    """Find the nearest node in the internal kd-tree to a given query.
-
-    Args:
-        query (:obj:`tuple` of float): Longitude and latitude of the position
-            in this order.
-
-    Returns:
-        (:obj:`tuple`)
-        (node_id (int): Index of the nearest node in the internal kd-tree,
-         dist (float): The distance between the query and the nearest node)
+        tuple: the index of the nearest address in the localisation table (int) and its distance to the position in
+        meters (float).
 
     """
-    return kdquery.nearest_point(query, 0, get_properties, distance.spherical)
+    localisation = data['localisation']
+    return spatial.nearest(localisation['longitude'], localisation['latitude'],
+                           data['grid_cells'], data['grid_offsets'], data['grid_order'],
+                           position[0], position[1])

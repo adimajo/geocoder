@@ -14,14 +14,14 @@
 <ul>
     <li>In your browser:
         <ul>
-            <li>http://localhost:8088</li>
-            <li>http://localhost:8088/use</li>
-            <li>http://localhost:8088/geocode/&lt;address&gt;/&lt;postal_code&gt;/&lt;city&gt;</li>
+            <li>http://localhost:8000</li>
+            <li>http://localhost:8000/use</li>
+            <li>http://localhost:8000/geocode/&lt;address&gt;/&lt;postal_code&gt;/&lt;city&gt;</li>
         </ul>
     </li>
     <li>Example:
         <ul>
-            <li>http://localhost:8088/geocode/12, Bd des Maréchaux/91120/Palaiseau</li>
+            <li>http://localhost:8000/geocode/12, Bd des Maréchaux/91120/Palaiseau</li>
         </ul>
     </li>
 </ul>
@@ -32,7 +32,7 @@
             <li>curl --header "Content-Type: application/json" \<br/>
                 --request POST \<br/>
                 --data '[{"address": "", "postal_code": "", "city": ""}]' \<br/>
-                http://localhost:8088/geocode_file</li>
+                http://localhost:8000/geocode_file</li>
         </ul>
     </li>
     <li>Example:
@@ -40,7 +40,7 @@
             <li>curl --header "Content-Type: application/json" \<br/>
                 --request POST \<br/>
                 --data '[{"address": "12, Bd des Maréchaux", "postal_code": "91120", "city": "Palaiseau"}]' \<br/>
-                http://localhost:8088/geocode_file</li>
+                http://localhost:8000/geocode_file</li>
         </ul>
     </li>
 </ul>
@@ -53,8 +53,8 @@
 {
     "uuid": "ea65498a-9b76-11eb-88e2-0242ac110002",
     "api_version": "2.0.1",
-    "geocoded_time": "2021-04-12 10:07:40.592207",
-    "data": [{"cp": "91120", "lat": 48.7099138, "lon": 2.2099342, "quality": 1, "ville": "Palaiseau", "voie": "12, Bd des Maréchaux"}],
+    "geocoded_time": "2021-04-12 10:07:40.592207+0000",
+    "data": [{"address": "12, Bd des Maréchaux", "postal_code": "91120", "city": "Palaiseau", "lon": 2.2099342, "lat": 48.7099138, "quality": 1, "code_insee": "91477"}],
     "quality": {"1": "Successful",
                 "2": "Precise number was not found",
                 "3": "Precise number was not found and there was no number in the input",

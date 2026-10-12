@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Type of the elements in each table of the database.
 
 The database is formed by numpy arrays and the type of the elements of each one
@@ -15,8 +14,6 @@ Attributes:
         the voie table.
     localisation_dtype (str): The definition of the numpy dtype for the
         elements of the localisation table.
-    kdtree_dtype (str): The definition of the numpy dtype for the elements of
-        the kdtree table.
     dtypes (:obj:`dict` of :obj:`str`): A python dictionary to easily access
         the dtypes definitions.
 
@@ -66,19 +63,6 @@ localisation_dtype = np.dtype([
     ('ref_id', 'int32'),
 ])
 
-kdtree_dtype = np.dtype([
-    ('longitude', 'int32'),
-    ('latitude', 'int32'),
-    ('limit_left', 'int32'),
-    ('limit_right', 'int32'),
-    ('limit_bottom', 'int32'),
-    ('limit_top', 'int32'),
-    ('dimension', 'int8'),
-    ('left', 'int32'),
-    ('right', 'int32'),
-    ('ref_id', 'int32'),
-])
-
 dtypes = {
     'departement': departement_dtype,
     'postal': postal_dtype,
@@ -88,5 +72,7 @@ dtypes = {
     'commune_index': 'int32',
     'postal_index': 'int32',
     'voie_index': 'int32',
-    'kdtree': kdtree_dtype
+    'grid_cells': 'int32',
+    'grid_offsets': 'int32',
+    'grid_order': 'int32',
 }

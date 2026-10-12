@@ -1,68 +1,38 @@
-[![coverage report](https://gitlab.ca.cib/GIT/RCI/DA/geocoder/geocoder/badges/master/coverage.svg)](https://gitlab.ca.cib/GIT/RCI/DA/geocoder/geocoder/-/commits/master)
-[![pipeline status](https://gitlab.ca.cib/GIT/RCI/DA/geocoder/geocoder/badges/master/pipeline.svg)](https://gitlab.ca.cib/GIT/RCI/DA/geocoder/geocoder/-/commits/master)
-[![Python Flask app](https://github.com/adimajo/geocoder/actions/workflows/python-flask.yml/badge.svg?branch=master)](https://github.com/adimajo/geocoder/actions/workflows/python-flask.yml)
+[![CI](https://github.com/adimajo/geocoder/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/adimajo/geocoder/actions/workflows/ci.yml)
+[![Documentation](https://github.com/adimajo/geocoder/actions/workflows/docs.yml/badge.svg?branch=master)](https://adimajo.github.io/geocoder/)
 
 Geocoder
 ========
 
 Geocoder is an address search engine for France.
-Unlike other APIs, it uses a database provided by the 
-rench government
+Unlike other APIs, it uses a database provided by the French government
 (Base Adresse Nationale - BAN) as the main source of information and does
 not impose any limit to the number of queries. The purpose of the project
-is to supply the needs of french data scientists that rely on geocoded data.
+is to supply the needs of French data scientists that rely on geocoded data.
 
 Fork from [chrlryo/Geocoding](https://github.com/chrlryo/Geocoding) itself
 a fork from [DeVilhena-Paulo/Geocoding](https://github.com/DeVilhena-Paulo/Geocoding).
 
+Full documentation: https://adimajo.github.io/geocoder/
 
-Getting Started
+Getting started
 ===============
 
-Prerequisites
--------------
-
-* Python version 3 installed locally
-* Pipenv installed locally
-* Docker (for geocoding API use)
-
-Using API with Docker
----------------------
-
-Build the API server locally
+With Docker (REST API)
+----------------------
 
 ```shell
-docker build --build-arg app_port=8088 --progress=plain -t geocoding-api .
+docker run -d -p 8000:8000 -v geocoder-data:/data ghcr.io/adimajo/geocoder
 ```
 
-Docker requirements for building
+On the first start the container downloads the BAN and builds the database in the `/data` volume (about 2 GB on
+disk once built, 7 GB while building, estimated from a build of four large départements; keep the volume so that
+later starts only check whether the BAN changed). Add `-e GEOCODER_DEPARTEMENTS=75,92`
+to only serve some départements. The API listens on port 8000 once the database is ready:
 
-* Memory 12Gb
-* Disk image size 50Gb
-
-Use it
-
-```shell
-docker run -p 8000:8000 geocoding-api
-```
-The API is available through:
-
-* In your browser:
-
-  * http://localhost:8000
-  * http://localhost:8000/use
-  * http://localhost:8000/geocode/<address>/<postal_code>/<city>
-
-* With Curl:
-
-```shell
-curl --header "Content-Type: application/json" \
---request POST \
---data '[{"address": "...", "postal_code": "...", "city": "..."}, {"address": "...", "postal_code": "...", "city": "..."}]' \
-http://localhost:8000/geocode_file
-```
-
-Example:
+* In your browser: http://localhost:8000 (demo page), http://localhost:8000/doc (Swagger),
+  http://localhost:8000/geocode/12,%20Bd%20des%20Mar%C3%A9chaux/91120/Palaiseau
+* With curl:
 
 ```shell
 curl --header "Content-Type: application/json" \
@@ -71,41 +41,26 @@ curl --header "Content-Type: application/json" \
 http://localhost:8000/geocode_file
 ```
 
-Using Python package
---------------------
+The API has no authentication nor rate limiting: do not expose it to untrusted clients without a reverse proxy.
 
-The package can be installed via pip (only on Crédit Agricole's internal Artifactory repository):
+As a Python package
+-------------------
 
-```shell
-pip install geocoder
-```
-
-The package can also be installed from Github:
+> The name `geocoder` on PyPI belongs to an unrelated project: install this one from GitHub.
 
 ```shell
-pip install git+https://github.com/adimajo/geocoder.git
+pip install "geocoder[api] @ git+https://github.com/adimajo/geocoder.git"   # [api]: REST server, [s3]: S3 storage
 ```
 
-Before the first use, you need to download the BAN database and process its files to unlock the functionalities of the package. All of this can be done with the following command (the whole process should take 30 minutes)::
+Before the first use, download the BAN and build the database (`GEOCODER_DATA_DIR` chooses where it is stored,
+`GEOCODER_DEPARTEMENTS` which départements are used; all of France by default):
 
 ```shell
 geocoder update
 ```
 
-Alternatively, you can do it step by step with the following commands:
-
-```shell
-geocoder download
-geocoder decompress
-geocoder index
-geocoder remove_non_necessary_files
-```
-
-To unlock the reverse search, execute the following command:
-
-```shell
-geocoder reverse
-```
+or step by step: `geocoder download`, `decompress`, `index`, `reverse`. Serve the REST API with
+`geocoder runserver --host 127.0.0.1 --port 8000`.
 
 Usage
 =====
@@ -116,45 +71,26 @@ The search engine
 ```python
 import geocoder
 
-
 # -*- Complete search -*-
 output = geocoder.find('91120', 'Palaiseau', '12, Bd des Maréchaux')
 print(output['longitude'], output['latitude'])  # 2.2099342 48.7099138
-
-# -*- Incomplete search -*-
-output = geocoder.find('91120', None, '12, Bd des Maréchaux')
 print(output['quality'])  # 1 -> It means that the search was successful
 
-output = geocoder.find('91120', None, 'Bd des Maréchaux')
-print(output['quality'])  # 3 -> It means that the number was not found
-
-output = geocoder.find('91120', 'Palaiseau', None)
-print(output['quality'])  # 4 -> It means that the street was not found
-
-output = geocoder.find(None, 'Palaiseau', '12, Bd des Maréchaux')
-print(output['quality'])  # 1
-
-output = geocoder.find(None, None, '12, Bd des Maréchaux')
-print(output['postal']['code'])  # 35800
-print(output['commune']['nom'])  # DINARD
-print(output['voie']['nom'])  # BOULEVARD DES MARECHAUX
+# -*- Incomplete search -*-
+geocoder.find('91120', None, '12, Bd des Maréchaux')['quality']  # 1
+geocoder.find(None, 'Palaiseau', '12, Bd des Maréchaux')['quality']  # 1
+geocoder.find('91120', None, 'Bd des Maréchaux')['quality']  # 3 -> The number was not found
+geocoder.find('91120', 'Palaiseau', None)['quality']  # 4 -> The street was not found
+geocoder.find('91120')['quality']  # 5 -> The city was not found (the position is the one of the postal code)
 
 # -*- Search with typos -*-
 geocoder.find('91120', 'Palaiseau', '12, Bd des Maréchx')['quality']  # 1
 geocoder.find('91120', 'Palaiau', '12, Bd des Maréchx')['quality']  # 1
 geocoder.find('91189', 'Palaiseau', '12, Bd des Maréchx')['quality']  # 1
-geocoder.find('91189', None, '12, Bd des Maréchx')['quality']  # 1
 
 # -*- Flexible syntax -*-
-geocoder.find('91120', 'Palaiseau')['quality']  # 4
-geocoder.find(commune='Palaiseau')['quality']  # 4
-geocoder.find('91120')['quality']  # 5
-
-args = {
-    'code_postal': '91120',
-    'commune': 'Palaiseau',
-    'adresse': '12, Bd Marechaux'
-}
+geocoder.find(commune='Palaiseau')['quality']
+args = {'code_postal': '91120', 'commune': 'Palaiseau', 'adresse': '12, Bd Marechaux'}
 geocoder.find(**args)
 ```
 
@@ -165,36 +101,32 @@ The reverse functionality
 import geocoder
 
 # longitude and latitude
-query = (2.2099, 48.7099)
-output = geocoder.near(query)
+output = geocoder.near((2.2099, 48.7099))
 output['commune']['nom']  # PALAISEAU
 output['voie']['nom']  # BOULEVARD DES MARECHAUX
 ```
 
-Benchmarks
-----------
+Development
+===========
 
-```python
-import time
-import geocoder
-
-begin = time.time()
-for _ in range(2000):
-    geocoder.find('91130', 'PALISEAU', '12 BD DES MARECHUX')
-print(time.time() - begin, 'seconds')  # 1.063 seconds
-
-begin = time.time()
-for _ in range(10000):
-    geocoder.find('91120', 'PALAISEAU', '12 BD DES MARECHAUX')
-print(time.time() - begin, 'seconds')  # 1.407 seconds
-
-begin = time.time()
-for _ in range(10000):
-    geocoder.find('75015', 'PARIS', '1 RUE SAINT CHARLES')
-print(time.time() - begin, 'seconds')  # 1.525 seconds
-
-begin = time.time()
-for _ in range(1000):
-    geocoder.near((2, 48))
-print(time.time() - begin, 'seconds')  # 0.922 seconds
+```shell
+uv sync --all-extras                 # environment (Python >= 3.10)
+uv run pytest                        # unit tests, on a tiny fixture database: no download
+uv run pytest -m integration         # builds the database of the département 01 from the real BAN (~20 s)
+uv run ruff check geocoder tests benchmarks
+uv run sphinx-build -W -b html docs/source docs/build/html   # needs: uv sync --extra api --group docs
 ```
+
+[`benchmarks/`](benchmarks) measures speed and accuracy against the true coordinates of random BAN addresses.
+On the département 01, compared with the version before the modernisation (2.1.23):
+
+| | before | now |
+|---|---|---|
+| Queries answered within 100 m of the true address (400 mixed queries) | 63 % | 87 % |
+| Building the database (index) | 17 s | 3.4 s (on one core, parallel over départements) |
+| Building the reverse search index | 6.8 s (kd-tree, ~30 min for France) | 1.3 s |
+| Reverse query | 2.6 ms, wrong address for 12 % of the queries | 0.55 ms, always the nearest |
+| Fuzzy street search, worst case | 4.7 ms | 1.3 ms |
+
+Releases: push a `vX.Y.Z` tag matching `geocoder/__version__`; GitHub Actions scans and publishes the image to
+`ghcr.io/adimajo/geocoder` and creates the GitHub release.
